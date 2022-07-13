@@ -20,7 +20,7 @@ namespace Cowin_Portal
 
         public string display_text()
         {
-            return "Register for Vaccination";
+            return "Search for a vaccination center";
         }
 
         public User_Dashboard_slots()
@@ -116,6 +116,5 @@ namespace Cowin_Portal
 
             Centers_gridview.DataSource = display;
         }
-
     }
 }

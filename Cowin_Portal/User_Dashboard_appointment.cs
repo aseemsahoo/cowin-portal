@@ -143,14 +143,19 @@ namespace Cowin_Portal
             int index = districtDropdown.SelectedIndex;
             int district_id = district_list[index].id;
 
-            int vaccine_index = 0;
-            int age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox));
-
-            get_vaccine_index(ref vaccine_index);
+            int vaccine_index = 0, age_limit;
+            if(dose_type != 0)
+            {
+                age_limit = age_id;
+                vaccine_index = vaccine_id;
+            }
+            else
+            {
+                age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox).Substring(0, 2));
+                get_vaccine_index(ref vaccine_index);
+            }
 
             DataAccess db = new DataAccess();
-            
-            // check if age works
             display = db.search_center(district_id, vaccine_index, age_limit);
 
             Centers_gridview.DataSource = display;

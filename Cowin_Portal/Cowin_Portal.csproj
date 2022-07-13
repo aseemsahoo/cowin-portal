@@ -117,6 +117,11 @@
     <Compile Include="Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegexValidation.cs" />
     <Compile Include="User_Dashboard.cs">
       <SubType>Form</SubType>
@@ -153,14 +158,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="User_Dashboard.resx">
       <DependentUpon>User_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,9 +187,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\icons8-checkmark-500.png" />
+    <None Include="Resources\icons8-dashboard-layout-96.png" />
+    <None Include="Resources\icons8-gold.png" />
+    <None Include="Resources\icons8-green.png" />
+    <None Include="Resources\icons8-info-96.png" />
+    <None Include="Resources\icons8-red.png" />
+    <None Include="Resources\icons8-search-96.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-display-pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-circled-user-male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-circled-user-female.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

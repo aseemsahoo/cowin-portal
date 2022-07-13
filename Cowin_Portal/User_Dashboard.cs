@@ -12,6 +12,8 @@ namespace Cowin_Portal
             user_id = userId;
             DataAccess db = new DataAccess();
             username_label.Text = db.get_username(user_id);
+
+            user_dashboardButton_Click(new object(), new EventArgs());
         }
 
         private Form activeForm = null;
@@ -57,6 +59,11 @@ namespace Cowin_Portal
             User_Dashboard_slots u_register = new User_Dashboard_slots();
             openChildForm(u_register);
             dashboard_label.Text = u_register.display_text();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

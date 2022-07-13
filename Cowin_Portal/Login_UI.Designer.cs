@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties33 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties34 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties35 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties36 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties37 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties38 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties39 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties40 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_UI));
             this.cowin_page_dock = new Bunifu.UI.WinForms.BunifuFormDock();
             this.login_select_button = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -61,7 +61,6 @@
             this.cowin_page_GradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.exit_label = new Bunifu.UI.WinForms.BunifuLabel();
             this.cowin_PictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.cowin_intro_page = new Bunifu.UI.WinForms.BunifuPages();
             this.signup_page = new System.Windows.Forms.TabPage();
@@ -85,9 +84,9 @@
             this.intro_tab = new System.Windows.Forms.TabPage();
             this.intro_picture = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.errorProvider_signup = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider_login = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_ui = new System.Windows.Forms.ErrorProvider(this.components);
             this.status_label = new System.Windows.Forms.Label();
+            this.cowin_descriptionLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.cowin_page_GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cowin_PictureBox1)).BeginInit();
             this.cowin_intro_page.SuspendLayout();
@@ -95,8 +94,7 @@
             this.login_page.SuspendLayout();
             this.intro_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intro_picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_signup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_login)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ui)).BeginInit();
             this.SuspendLayout();
             // 
             // cowin_page_dock
@@ -158,11 +156,11 @@
             this.login_select_button.ColorContrastOnClick = 45;
             this.login_select_button.ColorContrastOnHover = 45;
             this.login_select_button.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.login_select_button.CustomizableEdges = borderEdges4;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.login_select_button.CustomizableEdges = borderEdges6;
             this.login_select_button.DialogResult = System.Windows.Forms.DialogResult.None;
             this.login_select_button.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.login_select_button.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -248,11 +246,11 @@
             this.signup_select_Button.ColorContrastOnClick = 45;
             this.signup_select_Button.ColorContrastOnHover = 45;
             this.signup_select_Button.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.signup_select_Button.CustomizableEdges = borderEdges3;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.signup_select_Button.CustomizableEdges = borderEdges5;
             this.signup_select_Button.DialogResult = System.Windows.Forms.DialogResult.None;
             this.signup_select_Button.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.signup_select_Button.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -325,11 +323,11 @@
             this.cowin_page_GradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cowin_page_GradientPanel1.BackgroundImage")));
             this.cowin_page_GradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cowin_page_GradientPanel1.BorderRadius = 1;
+            this.cowin_page_GradientPanel1.Controls.Add(this.cowin_descriptionLabel);
             this.cowin_page_GradientPanel1.Controls.Add(this.exit_label);
             this.cowin_page_GradientPanel1.Controls.Add(this.cowin_PictureBox1);
             this.cowin_page_GradientPanel1.Controls.Add(this.signup_select_Button);
             this.cowin_page_GradientPanel1.Controls.Add(this.login_select_button);
-            this.cowin_page_GradientPanel1.Controls.Add(this.bunifuLabel2);
             this.cowin_page_GradientPanel1.Controls.Add(this.bunifuLabel1);
             this.cowin_page_GradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
             this.cowin_page_GradientPanel1.GradientBottomRight = System.Drawing.Color.MediumBlue;
@@ -376,26 +374,6 @@
             this.cowin_PictureBox1.TabStop = false;
             this.cowin_PictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Custom;
             // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.AutoSize = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuLabel2.Location = new System.Drawing.Point(25, 197);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(258, 96);
-            this.bunifuLabel2.TabIndex = 1;
-            this.bunifuLabel2.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia sed augue " +
-    "eu ullamcorper. Cras suscipit quam erat. Cras sed egestas metus. Ut eu nulla non" +
-    " tortor egestas varius vel ac nisl.";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
@@ -404,7 +382,7 @@
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
             this.bunifuLabel1.ForeColor = System.Drawing.Color.Beige;
-            this.bunifuLabel1.Location = new System.Drawing.Point(25, 162);
+            this.bunifuLabel1.Location = new System.Drawing.Point(25, 169);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(82, 37);
@@ -423,29 +401,29 @@
             this.cowin_intro_page.Location = new System.Drawing.Point(314, 12);
             this.cowin_intro_page.Multiline = true;
             this.cowin_intro_page.Name = "cowin_intro_page";
-            this.cowin_intro_page.Page = this.login_page;
-            this.cowin_intro_page.PageIndex = 1;
-            this.cowin_intro_page.PageName = "login_page";
-            this.cowin_intro_page.PageTitle = "login";
+            this.cowin_intro_page.Page = this.intro_tab;
+            this.cowin_intro_page.PageIndex = 2;
+            this.cowin_intro_page.PageName = "intro_tab";
+            this.cowin_intro_page.PageTitle = "intro";
             this.cowin_intro_page.SelectedIndex = 0;
             this.cowin_intro_page.Size = new System.Drawing.Size(419, 447);
             this.cowin_intro_page.TabIndex = 1;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.cowin_intro_page.Transition = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.cowin_intro_page.Transition = animation2;
             this.cowin_intro_page.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Transparent;
             // 
             // signup_page
@@ -534,11 +512,11 @@
             this.signup_final_button.ColorContrastOnClick = 45;
             this.signup_final_button.ColorContrastOnHover = 45;
             this.signup_final_button.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.signup_final_button.CustomizableEdges = borderEdges1;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.signup_final_button.CustomizableEdges = borderEdges7;
             this.signup_final_button.DialogResult = System.Windows.Forms.DialogResult.None;
             this.signup_final_button.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.signup_final_button.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -638,26 +616,26 @@
             this.usernameInsTxt.Modified = false;
             this.usernameInsTxt.Multiline = false;
             this.usernameInsTxt.Name = "usernameInsTxt";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.usernameInsTxt.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.usernameInsTxt.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.Blue;
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.usernameInsTxt.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Navy;
-            stateProperties4.FillColor = System.Drawing.Color.WhiteSmoke;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.usernameInsTxt.OnIdleState = stateProperties4;
+            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties21.FillColor = System.Drawing.Color.Empty;
+            stateProperties21.ForeColor = System.Drawing.Color.Empty;
+            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.usernameInsTxt.OnActiveState = stateProperties21;
+            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.usernameInsTxt.OnDisabledState = stateProperties22;
+            stateProperties23.BorderColor = System.Drawing.Color.Blue;
+            stateProperties23.FillColor = System.Drawing.Color.Empty;
+            stateProperties23.ForeColor = System.Drawing.Color.Empty;
+            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.usernameInsTxt.OnHoverState = stateProperties23;
+            stateProperties24.BorderColor = System.Drawing.Color.Navy;
+            stateProperties24.FillColor = System.Drawing.Color.WhiteSmoke;
+            stateProperties24.ForeColor = System.Drawing.Color.Empty;
+            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.usernameInsTxt.OnIdleState = stateProperties24;
             this.usernameInsTxt.Padding = new System.Windows.Forms.Padding(3);
             this.usernameInsTxt.PasswordChar = '\0';
             this.usernameInsTxt.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -712,26 +690,26 @@
             this.passwordInsTxt.Modified = false;
             this.passwordInsTxt.Multiline = false;
             this.passwordInsTxt.Name = "passwordInsTxt";
-            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordInsTxt.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.passwordInsTxt.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.Blue;
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordInsTxt.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Navy;
-            stateProperties8.FillColor = System.Drawing.Color.WhiteSmoke;
-            stateProperties8.ForeColor = System.Drawing.Color.Empty;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.passwordInsTxt.OnIdleState = stateProperties8;
+            stateProperties25.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties25.FillColor = System.Drawing.Color.Empty;
+            stateProperties25.ForeColor = System.Drawing.Color.Empty;
+            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordInsTxt.OnActiveState = stateProperties25;
+            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.passwordInsTxt.OnDisabledState = stateProperties26;
+            stateProperties27.BorderColor = System.Drawing.Color.Blue;
+            stateProperties27.FillColor = System.Drawing.Color.Empty;
+            stateProperties27.ForeColor = System.Drawing.Color.Empty;
+            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordInsTxt.OnHoverState = stateProperties27;
+            stateProperties28.BorderColor = System.Drawing.Color.Navy;
+            stateProperties28.FillColor = System.Drawing.Color.WhiteSmoke;
+            stateProperties28.ForeColor = System.Drawing.Color.Empty;
+            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.passwordInsTxt.OnIdleState = stateProperties28;
             this.passwordInsTxt.Padding = new System.Windows.Forms.Padding(3);
             this.passwordInsTxt.PasswordChar = '●';
             this.passwordInsTxt.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -786,26 +764,26 @@
             this.PhNumberInsTxt.Modified = false;
             this.PhNumberInsTxt.Multiline = false;
             this.PhNumberInsTxt.Name = "PhNumberInsTxt";
-            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.PhNumberInsTxt.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.PhNumberInsTxt.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.Blue;
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.PhNumberInsTxt.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Navy;
-            stateProperties12.FillColor = System.Drawing.Color.WhiteSmoke;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.PhNumberInsTxt.OnIdleState = stateProperties12;
+            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties29.FillColor = System.Drawing.Color.Empty;
+            stateProperties29.ForeColor = System.Drawing.Color.Empty;
+            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.PhNumberInsTxt.OnActiveState = stateProperties29;
+            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.PhNumberInsTxt.OnDisabledState = stateProperties30;
+            stateProperties31.BorderColor = System.Drawing.Color.Blue;
+            stateProperties31.FillColor = System.Drawing.Color.Empty;
+            stateProperties31.ForeColor = System.Drawing.Color.Empty;
+            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.PhNumberInsTxt.OnHoverState = stateProperties31;
+            stateProperties32.BorderColor = System.Drawing.Color.Navy;
+            stateProperties32.FillColor = System.Drawing.Color.WhiteSmoke;
+            stateProperties32.ForeColor = System.Drawing.Color.Empty;
+            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.PhNumberInsTxt.OnIdleState = stateProperties32;
             this.PhNumberInsTxt.Padding = new System.Windows.Forms.Padding(3);
             this.PhNumberInsTxt.PasswordChar = '\0';
             this.PhNumberInsTxt.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -943,26 +921,26 @@
             this.login_username.Modified = false;
             this.login_username.Multiline = false;
             this.login_username.Name = "login_username";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.login_username.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.login_username.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.Blue;
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.login_username.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Navy;
-            stateProperties16.FillColor = System.Drawing.Color.WhiteSmoke;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.login_username.OnIdleState = stateProperties16;
+            stateProperties33.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties33.FillColor = System.Drawing.Color.Empty;
+            stateProperties33.ForeColor = System.Drawing.Color.Empty;
+            stateProperties33.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.login_username.OnActiveState = stateProperties33;
+            stateProperties34.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties34.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.login_username.OnDisabledState = stateProperties34;
+            stateProperties35.BorderColor = System.Drawing.Color.Blue;
+            stateProperties35.FillColor = System.Drawing.Color.Empty;
+            stateProperties35.ForeColor = System.Drawing.Color.Empty;
+            stateProperties35.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.login_username.OnHoverState = stateProperties35;
+            stateProperties36.BorderColor = System.Drawing.Color.Navy;
+            stateProperties36.FillColor = System.Drawing.Color.WhiteSmoke;
+            stateProperties36.ForeColor = System.Drawing.Color.Empty;
+            stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.login_username.OnIdleState = stateProperties36;
             this.login_username.Padding = new System.Windows.Forms.Padding(3);
             this.login_username.PasswordChar = '\0';
             this.login_username.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -1017,26 +995,26 @@
             this.login_password.Modified = false;
             this.login_password.Multiline = false;
             this.login_password.Name = "login_password";
-            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.login_password.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.login_password.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.Blue;
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.login_password.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.Navy;
-            stateProperties20.FillColor = System.Drawing.Color.WhiteSmoke;
-            stateProperties20.ForeColor = System.Drawing.Color.Empty;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.login_password.OnIdleState = stateProperties20;
+            stateProperties37.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties37.FillColor = System.Drawing.Color.Empty;
+            stateProperties37.ForeColor = System.Drawing.Color.Empty;
+            stateProperties37.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.login_password.OnActiveState = stateProperties37;
+            stateProperties38.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties38.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties38.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.login_password.OnDisabledState = stateProperties38;
+            stateProperties39.BorderColor = System.Drawing.Color.Blue;
+            stateProperties39.FillColor = System.Drawing.Color.Empty;
+            stateProperties39.ForeColor = System.Drawing.Color.Empty;
+            stateProperties39.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.login_password.OnHoverState = stateProperties39;
+            stateProperties40.BorderColor = System.Drawing.Color.Navy;
+            stateProperties40.FillColor = System.Drawing.Color.WhiteSmoke;
+            stateProperties40.ForeColor = System.Drawing.Color.Empty;
+            stateProperties40.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.login_password.OnIdleState = stateProperties40;
             this.login_password.Padding = new System.Windows.Forms.Padding(3);
             this.login_password.PasswordChar = '●';
             this.login_password.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -1077,11 +1055,11 @@
             this.login_final_button.ColorContrastOnClick = 45;
             this.login_final_button.ColorContrastOnHover = 45;
             this.login_final_button.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.login_final_button.CustomizableEdges = borderEdges2;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.login_final_button.CustomizableEdges = borderEdges8;
             this.login_final_button.DialogResult = System.Windows.Forms.DialogResult.None;
             this.login_final_button.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.login_final_button.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1225,15 +1203,10 @@
             this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // errorProvider_signup
+            // errorProvider_ui
             // 
-            this.errorProvider_signup.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider_signup.ContainerControl = this;
-            // 
-            // errorProvider_login
-            // 
-            this.errorProvider_login.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider_login.ContainerControl = this;
+            this.errorProvider_ui.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider_ui.ContainerControl = this;
             // 
             // status_label
             // 
@@ -1243,6 +1216,23 @@
             this.status_label.Size = new System.Drawing.Size(35, 13);
             this.status_label.TabIndex = 3;
             this.status_label.Text = "label1";
+            // 
+            // cowin_descriptionLabel
+            // 
+            this.cowin_descriptionLabel.AllowParentOverrides = false;
+            this.cowin_descriptionLabel.AutoEllipsis = false;
+            this.cowin_descriptionLabel.CursorType = System.Windows.Forms.Cursors.Default;
+            this.cowin_descriptionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cowin_descriptionLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.cowin_descriptionLabel.Location = new System.Drawing.Point(25, 212);
+            this.cowin_descriptionLabel.Name = "cowin_descriptionLabel";
+            this.cowin_descriptionLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cowin_descriptionLabel.Size = new System.Drawing.Size(238, 64);
+            this.cowin_descriptionLabel.TabIndex = 7;
+            this.cowin_descriptionLabel.Text = "\"India is set to defeat Covid-19. \r\nEvery Indian is making it possible.\"\r\n- PM Na" +
+    "rendra Modi";
+            this.cowin_descriptionLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.cowin_descriptionLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // Login_UI
             // 
@@ -1269,8 +1259,7 @@
             this.login_page.PerformLayout();
             this.intro_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.intro_picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_signup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_login)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ui)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1282,7 +1271,6 @@
         private Bunifu.UI.WinForms.BunifuGradientPanel cowin_page_GradientPanel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton signup_select_Button;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton login_select_button;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuPictureBox cowin_PictureBox1;
         private Bunifu.UI.WinForms.BunifuPages cowin_intro_page;
@@ -1307,10 +1295,10 @@
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
         private Bunifu.UI.WinForms.BunifuLabel login_label;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
-        private System.Windows.Forms.ErrorProvider errorProvider_signup;
-        private System.Windows.Forms.ErrorProvider errorProvider_login;
+        private System.Windows.Forms.ErrorProvider errorProvider_ui;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
         private System.Windows.Forms.Label status_label;
+        private Bunifu.UI.WinForms.BunifuLabel cowin_descriptionLabel;
     }
 }
 

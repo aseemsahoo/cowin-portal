@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Dashboard));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            this.panel_display = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.dashboard_label = new Bunifu.UI.WinForms.BunifuLabel();
             this.optionsPanel = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuButton4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.user_centersButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -41,14 +44,63 @@
             this.profilePanel = new Bunifu.UI.WinForms.BunifuPanel();
             this.username_label = new System.Windows.Forms.Label();
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.dashboard_label = new Bunifu.UI.WinForms.BunifuLabel();
-            this.panel_display = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuPanel1.SuspendLayout();
             this.optionsPanel.SuspendLayout();
             this.profilePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).BeginInit();
-            this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel_display
+            // 
+            this.panel_display.AutoScroll = true;
+            this.panel_display.BackgroundColor = System.Drawing.Color.Transparent;
+            this.panel_display.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_display.BackgroundImage")));
+            this.panel_display.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_display.BorderColor = System.Drawing.Color.Transparent;
+            this.panel_display.BorderRadius = 0;
+            this.panel_display.BorderThickness = 0;
+            this.panel_display.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_display.Location = new System.Drawing.Point(200, 47);
+            this.panel_display.Name = "panel_display";
+            this.panel_display.ShowBorders = true;
+            this.panel_display.Size = new System.Drawing.Size(584, 514);
+            this.panel_display.TabIndex = 2;
+            // 
+            // bunifuPanel1
+            // 
+            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.LightSeaGreen;
+            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel1.BorderRadius = 0;
+            this.bunifuPanel1.BorderThickness = 0;
+            this.bunifuPanel1.Controls.Add(this.dashboard_label);
+            this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuPanel1.ForeColor = System.Drawing.Color.BurlyWood;
+            this.bunifuPanel1.Location = new System.Drawing.Point(200, 0);
+            this.bunifuPanel1.Name = "bunifuPanel1";
+            this.bunifuPanel1.ShowBorders = true;
+            this.bunifuPanel1.Size = new System.Drawing.Size(584, 47);
+            this.bunifuPanel1.TabIndex = 1;
+            // 
+            // dashboard_label
+            // 
+            this.dashboard_label.AllowParentOverrides = false;
+            this.dashboard_label.AutoEllipsis = false;
+            this.dashboard_label.AutoSize = false;
+            this.dashboard_label.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dashboard_label.CursorType = System.Windows.Forms.Cursors.Default;
+            this.dashboard_label.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dashboard_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboard_label.ForeColor = System.Drawing.Color.FloralWhite;
+            this.dashboard_label.Location = new System.Drawing.Point(0, 6);
+            this.dashboard_label.Name = "dashboard_label";
+            this.dashboard_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dashboard_label.Size = new System.Drawing.Size(584, 41);
+            this.dashboard_label.TabIndex = 0;
+            this.dashboard_label.Text = "YOUR DASHBOARD";
+            this.dashboard_label.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dashboard_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // optionsPanel
             // 
@@ -89,11 +141,11 @@
             this.bunifuButton4.ColorContrastOnClick = 45;
             this.bunifuButton4.ColorContrastOnHover = 45;
             this.bunifuButton4.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuButton4.CustomizableEdges = borderEdges1;
+            borderEdges13.BottomLeft = true;
+            borderEdges13.BottomRight = true;
+            borderEdges13.TopLeft = true;
+            borderEdges13.TopRight = true;
+            this.bunifuButton4.CustomizableEdges = borderEdges13;
             this.bunifuButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton4.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -115,7 +167,7 @@
             this.bunifuButton4.IdleBorderRadius = 1;
             this.bunifuButton4.IdleBorderThickness = 1;
             this.bunifuButton4.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
-            this.bunifuButton4.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.IdleIconLeftImage")));
+            this.bunifuButton4.IdleIconLeftImage = global::Cowin_Portal.Properties.Resources.icons8_info_96;
             this.bunifuButton4.IdleIconRightImage = null;
             this.bunifuButton4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bunifuButton4.IndicateFocus = false;
@@ -143,7 +195,7 @@
             this.bunifuButton4.OnIdleState.BorderThickness = 1;
             this.bunifuButton4.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
             this.bunifuButton4.OnIdleState.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuButton4.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.OnIdleState.IconLeftImage")));
+            this.bunifuButton4.OnIdleState.IconLeftImage = global::Cowin_Portal.Properties.Resources.icons8_info_96;
             this.bunifuButton4.OnIdleState.IconRightImage = null;
             this.bunifuButton4.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             this.bunifuButton4.OnPressedState.BorderRadius = 1;
@@ -180,11 +232,11 @@
             this.user_centersButton.ColorContrastOnClick = 45;
             this.user_centersButton.ColorContrastOnHover = 45;
             this.user_centersButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.user_centersButton.CustomizableEdges = borderEdges2;
+            borderEdges14.BottomLeft = true;
+            borderEdges14.BottomRight = true;
+            borderEdges14.TopLeft = true;
+            borderEdges14.TopRight = true;
+            this.user_centersButton.CustomizableEdges = borderEdges14;
             this.user_centersButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.user_centersButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.user_centersButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -206,7 +258,7 @@
             this.user_centersButton.IdleBorderRadius = 1;
             this.user_centersButton.IdleBorderThickness = 1;
             this.user_centersButton.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
-            this.user_centersButton.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("user_centersButton.IdleIconLeftImage")));
+            this.user_centersButton.IdleIconLeftImage = global::Cowin_Portal.Properties.Resources.icons8_search_96;
             this.user_centersButton.IdleIconRightImage = null;
             this.user_centersButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.user_centersButton.IndicateFocus = false;
@@ -234,7 +286,7 @@
             this.user_centersButton.OnIdleState.BorderThickness = 1;
             this.user_centersButton.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
             this.user_centersButton.OnIdleState.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.user_centersButton.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("user_centersButton.OnIdleState.IconLeftImage")));
+            this.user_centersButton.OnIdleState.IconLeftImage = global::Cowin_Portal.Properties.Resources.icons8_search_96;
             this.user_centersButton.OnIdleState.IconRightImage = null;
             this.user_centersButton.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             this.user_centersButton.OnPressedState.BorderRadius = 1;
@@ -272,11 +324,11 @@
             this.user_registerButton.ColorContrastOnClick = 45;
             this.user_registerButton.ColorContrastOnHover = 45;
             this.user_registerButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.user_registerButton.CustomizableEdges = borderEdges3;
+            borderEdges15.BottomLeft = true;
+            borderEdges15.BottomRight = true;
+            borderEdges15.TopLeft = true;
+            borderEdges15.TopRight = true;
+            this.user_registerButton.CustomizableEdges = borderEdges15;
             this.user_registerButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.user_registerButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.user_registerButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -364,11 +416,11 @@
             this.user_dashboardButton.ColorContrastOnClick = 45;
             this.user_dashboardButton.ColorContrastOnHover = 45;
             this.user_dashboardButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.user_dashboardButton.CustomizableEdges = borderEdges4;
+            borderEdges16.BottomLeft = true;
+            borderEdges16.BottomRight = true;
+            borderEdges16.TopLeft = true;
+            borderEdges16.TopRight = true;
+            this.user_dashboardButton.CustomizableEdges = borderEdges16;
             this.user_dashboardButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.user_dashboardButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.user_dashboardButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -390,7 +442,7 @@
             this.user_dashboardButton.IdleBorderRadius = 1;
             this.user_dashboardButton.IdleBorderThickness = 1;
             this.user_dashboardButton.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
-            this.user_dashboardButton.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("user_dashboardButton.IdleIconLeftImage")));
+            this.user_dashboardButton.IdleIconLeftImage = global::Cowin_Portal.Properties.Resources.icons8_dashboard_layout_96;
             this.user_dashboardButton.IdleIconRightImage = null;
             this.user_dashboardButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.user_dashboardButton.IndicateFocus = false;
@@ -418,7 +470,7 @@
             this.user_dashboardButton.OnIdleState.BorderThickness = 1;
             this.user_dashboardButton.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
             this.user_dashboardButton.OnIdleState.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.user_dashboardButton.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("user_dashboardButton.OnIdleState.IconLeftImage")));
+            this.user_dashboardButton.OnIdleState.IconLeftImage = global::Cowin_Portal.Properties.Resources.icons8_dashboard_layout_96;
             this.user_dashboardButton.OnIdleState.IconRightImage = null;
             this.user_dashboardButton.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             this.user_dashboardButton.OnPressedState.BorderRadius = 1;
@@ -459,7 +511,7 @@
             this.username_label.AutoSize = true;
             this.username_label.BackColor = System.Drawing.Color.Transparent;
             this.username_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_label.Location = new System.Drawing.Point(95, 33);
+            this.username_label.Location = new System.Drawing.Point(94, 39);
             this.username_label.Name = "username_label";
             this.username_label.Size = new System.Drawing.Size(54, 17);
             this.username_label.TabIndex = 1;
@@ -470,68 +522,16 @@
             this.bunifuPictureBox2.AllowFocused = false;
             this.bunifuPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox2.AutoSizeHeight = true;
-            this.bunifuPictureBox2.BorderRadius = 42;
-            this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
+            this.bunifuPictureBox2.BorderRadius = 37;
+            this.bunifuPictureBox2.Image = global::Cowin_Portal.Properties.Resources.icons8_display_pic;
             this.bunifuPictureBox2.IsCircle = true;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(3, 6);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(11, 10);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
-            this.bunifuPictureBox2.Size = new System.Drawing.Size(85, 85);
+            this.bunifuPictureBox2.Size = new System.Drawing.Size(75, 75);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox2.TabIndex = 0;
             this.bunifuPictureBox2.TabStop = false;
             this.bunifuPictureBox2.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // bunifuPanel1
-            // 
-            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.LightSeaGreen;
-            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
-            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BorderRadius = 0;
-            this.bunifuPanel1.BorderThickness = 0;
-            this.bunifuPanel1.Controls.Add(this.dashboard_label);
-            this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuPanel1.ForeColor = System.Drawing.Color.BurlyWood;
-            this.bunifuPanel1.Location = new System.Drawing.Point(200, 0);
-            this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(584, 47);
-            this.bunifuPanel1.TabIndex = 1;
-            // 
-            // dashboard_label
-            // 
-            this.dashboard_label.AllowParentOverrides = false;
-            this.dashboard_label.AutoEllipsis = false;
-            this.dashboard_label.AutoSize = false;
-            this.dashboard_label.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dashboard_label.CursorType = System.Windows.Forms.Cursors.Default;
-            this.dashboard_label.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dashboard_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboard_label.ForeColor = System.Drawing.Color.FloralWhite;
-            this.dashboard_label.Location = new System.Drawing.Point(0, 6);
-            this.dashboard_label.Name = "dashboard_label";
-            this.dashboard_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dashboard_label.Size = new System.Drawing.Size(584, 41);
-            this.dashboard_label.TabIndex = 0;
-            this.dashboard_label.Text = "YOUR DASHBOARD";
-            this.dashboard_label.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dashboard_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // panel_display
-            // 
-            this.panel_display.AutoScroll = true;
-            this.panel_display.BackgroundColor = System.Drawing.Color.Transparent;
-            this.panel_display.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_display.BackgroundImage")));
-            this.panel_display.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel_display.BorderColor = System.Drawing.Color.Transparent;
-            this.panel_display.BorderRadius = 0;
-            this.panel_display.BorderThickness = 0;
-            this.panel_display.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_display.Location = new System.Drawing.Point(200, 47);
-            this.panel_display.Name = "panel_display";
-            this.panel_display.ShowBorders = true;
-            this.panel_display.Size = new System.Drawing.Size(584, 514);
-            this.panel_display.TabIndex = 2;
             // 
             // User_Dashboard
             // 
@@ -546,11 +546,11 @@
             this.Name = "User_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User_Dashboard";
+            this.bunifuPanel1.ResumeLayout(false);
             this.optionsPanel.ResumeLayout(false);
             this.profilePanel.ResumeLayout(false);
             this.profilePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).EndInit();
-            this.bunifuPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

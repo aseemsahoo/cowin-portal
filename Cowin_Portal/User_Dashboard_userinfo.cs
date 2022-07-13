@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace Cowin_Portal
 {
@@ -25,23 +26,21 @@ namespace Cowin_Portal
         }
         private void fill_dose_data(int i, Label doseLabel, Label vaccineLabel, Label hospitalLabel, Label dateLabel, Bunifu.UI.WinForms.BunifuPictureBox dosePic, Bunifu.UI.WinForms.BunifuButton.BunifuButton doseButton)
         {
-            doseLabel.Text = "DOSE " + (i+1).ToString();
-            if(i == 2)
+            doseLabel.Text = "DOSE " + (i + 1).ToString();
+            if (i == 2)
                 doseLabel.Text = "PRECAUTION DOSE";
 
             if (curr_user_doses.Count <= i)
             {
-                // set photo red
+                // red
+                dosePic.Image = Cowin_Portal.Properties.Resources.icons8_red;
                 hospitalLabel.Text = "Appointment not scheduled";
                 doseButton.Text = "Schedule";
-                int a = curr_user_doses.Count;
                 if (i == 0 || curr_user_doses.Count == i)
                     doseButton.Enabled = true;
                 return;
             }
 
-            // change button text to schedule
-            doseButton.Text = "Download Certificate";
             vaccineLabel.Text = curr_user_doses[i].vaccine_name;
             hospitalLabel.Text = curr_user_doses[i].hospital_name;
             dateLabel.Text = curr_user_doses[i].dose_date.ToString("yyyy-MM-dd");
@@ -52,11 +51,17 @@ namespace Cowin_Portal
             dateLabel.ForeColor = Color.LimeGreen;
 
             // photo green
+            dosePic.Image = Cowin_Portal.Properties.Resources.icons8_green;
             doseButton.Text = "Download Certificate";
             doseButton.Enabled = false;
         }
         private void fill_user_data()
         {
+            if (curr_user[0].gender == "Male")
+                user_pictureBox.Image = Cowin_Portal.Properties.Resources.icons8_circled_user_male;
+            else
+                user_pictureBox.Image = Cowin_Portal.Properties.Resources.icons8_circled_user_female;
+            
             name_label.Text = curr_user[0].fullname;
             ref_id_label.Text = curr_user[0].ref_id;
             secret_code_label.Text = curr_user[0].ref_id.Substring(10);
@@ -72,9 +77,9 @@ namespace Cowin_Portal
             
 
             fill_user_data();
-            fill_dose_data(0, dose1Label, vaccine1Label, hospital1Label, date1Label, dose1Pic, dose1Button);
-            fill_dose_data(1, dose2Label, vaccine2Label, hospital2Label, date2Label, dose2Pic, dose2Button);
-            fill_dose_data(2, dosePrecautionLabel, vaccinePrecautionLabel, hospitalPrecautionLabel, datePrecautionLabel, dosePrecautionPic, dosePrecautionButton);
+            fill_dose_data(0, dose1Label, vaccine1Label, hospital1Label, date1Label, dose1_picbox, dose1Button);
+            fill_dose_data(1, dose2Label, vaccine2Label, hospital2Label, date2Label, dose2_picbox, dose2Button);
+            fill_dose_data(2, dosePrecautionLabel, vaccinePrecautionLabel, hospitalPrecautionLabel, datePrecautionLabel, dosePrecaution_picbox, dosePrecautionButton);
         }
 
         private void open_appointment_form(int dose_type)
@@ -84,7 +89,6 @@ namespace Cowin_Portal
                 Dock = DockStyle.Fill,
                 TopLevel = false,
             };
-
 
             Form frm = this.Parent.FindForm();
             Control match = frm.Controls.Find("panel_display", true).FirstOrDefault();

@@ -45,22 +45,22 @@ namespace Cowin_Portal
         }
         private bool validate_signup()
         {
-            errorProvider_signup.Clear();
+            errorProvider_ui.Clear();
             RegexValidation regex_signup = new RegexValidation();
             if (Regex.IsMatch(PhNumberInsTxt.Text, regex_signup.PHONENUMBER_REGEX) == false)
             {
-                errorProvider_signup.SetError(this.PhNumberInsTxt, "Please enter valid Phone Number");
+                errorProvider_ui.SetError(this.PhNumberInsTxt, "Please enter valid Phone Number");
                 return false;
             }
             if (Regex.IsMatch(usernameInsTxt.Text, regex_signup.USERNAME_REGEX) == false)
             {
-                errorProvider_signup.SetError(this.usernameInsTxt, "Username invalid");
+                errorProvider_ui.SetError(this.usernameInsTxt, "Username invalid");
                 return false;
             }
             // note we use == true here;
             if (Regex.IsMatch(passwordInsTxt.Text, regex_signup.PASSWORD_REGEX) == true)
             {
-                errorProvider_signup.SetError(this.passwordInsTxt, "Passsword must be within 9-14 characters and contain a symbol");
+                errorProvider_ui.SetError(this.passwordInsTxt, "Passsword must be within 9-14 characters and contain a symbol");
                 return false;
             }
             return true;
@@ -90,7 +90,7 @@ namespace Cowin_Portal
 
         private void login_final_button_Click(object sender, EventArgs e)
         {
-            errorProvider_signup.Clear();
+            errorProvider_ui.Clear();
             DataAccess db = new DataAccess();
             int res = db.get_login_status(login_username.Text, login_password.Text);
             if (res > 0)
@@ -101,9 +101,9 @@ namespace Cowin_Portal
             }
             else
             if(res == -1)
-                errorProvider_signup.SetError(this.login_password, "Wrong Password");
+                errorProvider_ui.SetError(this.login_password, "Wrong Password");
             else
-                errorProvider_signup.SetError(this.login_username, "Username doesn't exist");
+                errorProvider_ui.SetError(this.login_username, "Username doesn't exist");
         }
         private void exit_label_Click(object sender, EventArgs e)
         {

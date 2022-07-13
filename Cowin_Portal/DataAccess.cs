@@ -297,6 +297,7 @@ namespace Cowin_Portal
                     {
                         connection.Execute("dbo.insert_user_dose1", p, commandType: CommandType.StoredProcedure);
                     }
+                    else
                     if (dose_type == 1)
                     {
                         connection.Execute("dbo.insert_user_dose2", p, commandType: CommandType.StoredProcedure);

@@ -86,9 +86,9 @@
             this.bunifuLabel15 = new Bunifu.UI.WinForms.BunifuLabel();
             this.hospital_nameLabel = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.finish_button = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.bunifuCheckBox4 = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.errorProvider_ap = new System.Windows.Forms.ErrorProvider(this.components);
             this.appointment_stepsPages.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -99,6 +99,7 @@
             this.time_groupbox.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -337,10 +338,10 @@
             this.appointment_stepsPages.Location = new System.Drawing.Point(-2, 56);
             this.appointment_stepsPages.Multiline = true;
             this.appointment_stepsPages.Name = "appointment_stepsPages";
-            this.appointment_stepsPages.Page = this.tabPage1;
-            this.appointment_stepsPages.PageIndex = 0;
-            this.appointment_stepsPages.PageName = "tabPage1";
-            this.appointment_stepsPages.PageTitle = "slot_select";
+            this.appointment_stepsPages.Page = this.tabPage2;
+            this.appointment_stepsPages.PageIndex = 1;
+            this.appointment_stepsPages.PageName = "tabPage2";
+            this.appointment_stepsPages.PageTitle = "time_select";
             this.appointment_stepsPages.SelectedIndex = 0;
             this.appointment_stepsPages.Size = new System.Drawing.Size(587, 458);
             this.appointment_stepsPages.TabIndex = 8;
@@ -1333,9 +1334,9 @@
             this.user_name_label.Location = new System.Drawing.Point(16, 15);
             this.user_name_label.Name = "user_name_label";
             this.user_name_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.user_name_label.Size = new System.Drawing.Size(95, 21);
+            this.user_name_label.Size = new System.Drawing.Size(86, 21);
             this.user_name_label.TabIndex = 2;
-            this.user_name_label.Text = "Aseem Sahoo";
+            this.user_name_label.Text = "[user_name]";
             this.user_name_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.user_name_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -1409,15 +1410,31 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage3.Controls.Add(this.bunifuPictureBox1);
             this.tabPage3.Controls.Add(this.finish_button);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.bunifuCheckBox4);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(579, 432);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "finish";
+            // 
+            // bunifuPictureBox1
+            // 
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BorderRadius = 113;
+            this.bunifuPictureBox1.Image = global::Cowin_Portal.Properties.Resources.icons8_checkmark_500;
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(176, 14);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(227, 227);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 59;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // finish_button
             // 
@@ -1520,59 +1537,6 @@
     "ecified time slot.";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // bunifuCheckBox4
-            // 
-            this.bunifuCheckBox4.AllowBindingControlAnimation = true;
-            this.bunifuCheckBox4.AllowBindingControlColorChanges = false;
-            this.bunifuCheckBox4.AllowBindingControlLocation = true;
-            this.bunifuCheckBox4.AllowCheckBoxAnimation = false;
-            this.bunifuCheckBox4.AllowCheckmarkAnimation = true;
-            this.bunifuCheckBox4.AllowOnHoverStates = true;
-            this.bunifuCheckBox4.AutoCheck = true;
-            this.bunifuCheckBox4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCheckBox4.BackgroundImage")));
-            this.bunifuCheckBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bunifuCheckBox4.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.bunifuCheckBox4.BorderRadius = 12;
-            this.bunifuCheckBox4.Checked = true;
-            this.bunifuCheckBox4.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
-            this.bunifuCheckBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuCheckBox4.CustomCheckmarkImage = null;
-            this.bunifuCheckBox4.Location = new System.Drawing.Point(195, 35);
-            this.bunifuCheckBox4.MinimumSize = new System.Drawing.Size(17, 17);
-            this.bunifuCheckBox4.Name = "bunifuCheckBox4";
-            this.bunifuCheckBox4.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckBox4.OnCheck.BorderRadius = 12;
-            this.bunifuCheckBox4.OnCheck.BorderThickness = 2;
-            this.bunifuCheckBox4.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckBox4.OnCheck.CheckmarkColor = System.Drawing.Color.White;
-            this.bunifuCheckBox4.OnCheck.CheckmarkThickness = 2;
-            this.bunifuCheckBox4.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.bunifuCheckBox4.OnDisable.BorderRadius = 12;
-            this.bunifuCheckBox4.OnDisable.BorderThickness = 2;
-            this.bunifuCheckBox4.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox4.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
-            this.bunifuCheckBox4.OnDisable.CheckmarkThickness = 2;
-            this.bunifuCheckBox4.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuCheckBox4.OnHoverChecked.BorderRadius = 12;
-            this.bunifuCheckBox4.OnHoverChecked.BorderThickness = 2;
-            this.bunifuCheckBox4.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuCheckBox4.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
-            this.bunifuCheckBox4.OnHoverChecked.CheckmarkThickness = 2;
-            this.bunifuCheckBox4.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuCheckBox4.OnHoverUnchecked.BorderRadius = 12;
-            this.bunifuCheckBox4.OnHoverUnchecked.BorderThickness = 1;
-            this.bunifuCheckBox4.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox4.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
-            this.bunifuCheckBox4.OnUncheck.BorderRadius = 12;
-            this.bunifuCheckBox4.OnUncheck.BorderThickness = 1;
-            this.bunifuCheckBox4.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox4.Size = new System.Drawing.Size(188, 188);
-            this.bunifuCheckBox4.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Round;
-            this.bunifuCheckBox4.TabIndex = 0;
-            this.bunifuCheckBox4.ThreeState = false;
-            this.bunifuCheckBox4.ToolTipText = null;
-            // 
             // errorProvider_ap
             // 
             this.errorProvider_ap.ContainerControl = this;
@@ -1611,6 +1575,7 @@
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1652,7 +1617,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton time_select_submitButton;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton time_select_backButton;
         private System.Windows.Forms.TabPage tabPage3;
-        private Bunifu.UI.WinForms.BunifuCheckBox bunifuCheckBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider errorProvider_ap;
         private System.Windows.Forms.DataGridView Centers_gridview;
@@ -1672,5 +1636,6 @@
         private System.Windows.Forms.RadioButton slot0103radiobutton;
         private System.Windows.Forms.RadioButton slot1101radiobutton;
         private System.Windows.Forms.RadioButton slot0911radiobutton;
+        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
     }
 }
