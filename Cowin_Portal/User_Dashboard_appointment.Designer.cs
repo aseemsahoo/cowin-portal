@@ -338,10 +338,10 @@
             this.appointment_stepsPages.Location = new System.Drawing.Point(-2, 56);
             this.appointment_stepsPages.Multiline = true;
             this.appointment_stepsPages.Name = "appointment_stepsPages";
-            this.appointment_stepsPages.Page = this.tabPage2;
-            this.appointment_stepsPages.PageIndex = 1;
-            this.appointment_stepsPages.PageName = "tabPage2";
-            this.appointment_stepsPages.PageTitle = "time_select";
+            this.appointment_stepsPages.Page = this.tabPage1;
+            this.appointment_stepsPages.PageIndex = 0;
+            this.appointment_stepsPages.PageName = "tabPage1";
+            this.appointment_stepsPages.PageTitle = "slot_select";
             this.appointment_stepsPages.SelectedIndex = 0;
             this.appointment_stepsPages.Size = new System.Drawing.Size(587, 458);
             this.appointment_stepsPages.TabIndex = 8;
@@ -396,6 +396,7 @@
             this.age_groupbox.BorderThickness = 1;
             this.age_groupbox.Controls.Add(this.age45_radiobutton);
             this.age_groupbox.Controls.Add(this.age18_radiobutton);
+            this.age_groupbox.Enabled = false;
             this.age_groupbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.age_groupbox.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.age_groupbox.LabelIndent = 10;

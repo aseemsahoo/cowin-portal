@@ -73,7 +73,6 @@ namespace Cowin_Portal
             }
         }
 
-
         public string insert_user(string phone_no, string u_name, string pw)
         {
             try

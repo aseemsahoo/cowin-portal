@@ -1,19 +1,12 @@
 ﻿using Bunifu.UI.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cowin_Portal
 {
     public partial class User_Dashboard_slots : Form
     {
-
         List<Hospital> display = new List<Hospital>();
         List<States> state_list = new List<States>();
         List<Districts> district_list = new List<Districts>();
@@ -111,7 +104,6 @@ namespace Cowin_Portal
             get_vaccine_index(ref vaccine_index);
 
             DataAccess db = new DataAccess();
-
             display = db.search_center(district_id, vaccine_index, age_limit);
 
             Centers_gridview.DataSource = display;

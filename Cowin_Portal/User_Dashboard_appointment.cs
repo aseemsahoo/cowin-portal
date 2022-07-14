@@ -9,7 +9,7 @@ namespace Cowin_Portal
 {
     public partial class User_Dashboard_appointment : Form
     {
-        int user_id;
+        int user_id, birth_year;
         int dose_type, vaccine_id, age_id;
         string dose1_date;
 
@@ -32,17 +32,27 @@ namespace Cowin_Portal
 
             if(dose_type == 0)
             {
-                age_groupbox.Enabled = true;
+                set_age_radiobutton();
                 vaccine_groupbox.Enabled = true;
             }
             else
             {
                 load_age_vaccine_refid();
-                age_groupbox.Enabled = false;
                 vaccine_groupbox.Enabled = false;
             }
             vaccineDatePicker.MinDate = DateTime.Today;
             vaccineDatePicker.MaxDate = DateTime.Today.AddDays(10);
+        }
+
+        private void set_age_radiobutton()
+        {
+            DataAccess db = new DataAccess();
+            birth_year = db.get_full_details(user_id)[0].birth_year;
+            int age = DateTime.Now.Year - birth_year;
+            if (age >= 18 && age < 45)
+                age18_radiobutton.Checked = true;
+            else
+                age45_radiobutton.Checked = true;
         }
 
         private void initialize_state_dropdown()
@@ -61,6 +71,18 @@ namespace Cowin_Portal
             age_id = db.get_dose1_age(user_id)[0];
             vaccine_id = db.get_dose1_vaccine(user_id)[0];
             dose1_date = db.get_dose1_date(user_id)[0].ToString("yyyy-MM-dd");
+
+            set_radiobutton(age_groupbox, age_id + "+");
+            set_radiobutton(vaccine_groupbox, vaccine_from_id());
+        }
+
+        private void set_radiobutton(BunifuGroupBox groupbox, string s)
+        {
+            foreach(RadioButton r in groupbox.Controls)
+            {
+                if (r.Text == s)
+                    r.Checked = true;
+            }
         }
 
         private void stateDropdown_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,11 +127,6 @@ namespace Cowin_Portal
             }
             if(dose_type == 0)
             {
-                if (get_groupbox_radiobuttion(age_groupbox) == "")
-                {
-                    errorProvider_ap.SetError(this.age_groupbox, "Please select appropriate age");
-                    return false;
-                }
                 if (get_groupbox_radiobuttion(vaccine_groupbox) == "")
                 {
                     errorProvider_ap.SetError(this.vaccine_groupbox, "Please select a vaccine");
@@ -295,11 +312,10 @@ namespace Cowin_Portal
                 user_info_form.Show();
             }
 
-            // TEST THIS
             Control match_label = frm.Controls.Find("dashboard_label", true).FirstOrDefault();
             if (match_label != null && match_label is Label)
             {
-                Label l = (Label)match;
+                Label l = (Label)match_label;
                 l.Text = user_info_form.display_text();
             }
         }

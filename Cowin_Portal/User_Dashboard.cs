@@ -49,21 +49,11 @@ namespace Cowin_Portal
             }
         }
 
-        private void user_registerButton_Click(object sender, EventArgs e)
-        {
-            // Think of something
-        }
-
         private void user_centersButton_Click(object sender, EventArgs e)
         {
             User_Dashboard_slots u_register = new User_Dashboard_slots();
             openChildForm(u_register);
             dashboard_label.Text = u_register.display_text();
-        }
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

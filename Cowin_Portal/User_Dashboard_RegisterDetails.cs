@@ -120,11 +120,10 @@ namespace Cowin_Portal
                 user_info_form.Show();
             }
 
-            // TEST THIS !!!!!!!!!!!!
             Control match_label = frm.Controls.Find("dashboard_label", true).FirstOrDefault();
             if (match_label != null && match_label is Label)
             {
-                Label l = (Label) match;
+                Label l = (Label) match_label;
                 l.Text = user_info_form.display_text();
             }
         }

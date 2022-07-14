@@ -16,6 +16,11 @@ namespace Cowin_Portal
             cowin_page_dock.SubscribeControlToDragEvents(login_page);
             cowin_page_dock.SubscribeControlToDragEvents(signup_page);
             */
+            set_status_text();
+        }
+
+        private void set_status_text()
+        {
             DataAccess db = new DataAccess();
             bool res = db.get_register_status(1);
             if (res == true)
@@ -27,8 +32,9 @@ namespace Cowin_Portal
             {
                 status_label.Text = "Couldn't connect to Database";
                 status_label.ForeColor = System.Drawing.Color.Red;
-            }    
+            }
         }
+
         private void login_select_button_Click(object sender, EventArgs e)
         {
             cowin_intro_page.SetPage(1);

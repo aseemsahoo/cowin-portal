@@ -14,7 +14,6 @@ namespace Cowin_Portal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login_UI());
-            //Application.Run(new User_Dashboard(""));
         }
     }
 }
