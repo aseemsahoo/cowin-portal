@@ -10,7 +10,7 @@ namespace Cowin_Portal
     }
     public class User_full_info
     {
-        public int userID { get; set; }
+        public int user_id { get; set; }
         public string fullname { get; set; }
         public string gender { get; set; }
         public string ref_id { get; set; }
@@ -22,7 +22,7 @@ namespace Cowin_Portal
         public string vaccine_name { get; set; }
         public string hospital_name { get; set; }
         public DateTime dose_date { get; set; }
-        public string city_name { get; set; }
+        public string district_name { get; set; }
         public string state_name { get; set; }
     }
 

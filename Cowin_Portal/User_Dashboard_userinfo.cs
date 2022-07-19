@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace Cowin_Portal
 {
     public partial class User_Dashboard_userinfo : Form
     {
         int user_id;
-        
+
         List<User_full_info> curr_user = new List<User_full_info>();
         List<User_dose_data> curr_user_doses = new List<User_dose_data>();
-        
+
         public string display_text()
         {
             return "Your Information";
@@ -23,22 +24,25 @@ namespace Cowin_Portal
             user_id = userID;
             fill_form(user_id);
         }
-        private void fill_dose_data(int i, Label doseLabel, Label vaccineLabel, Label hospitalLabel, Label dateLabel, Bunifu.UI.WinForms.BunifuPictureBox dosePic, Bunifu.UI.WinForms.BunifuButton.BunifuButton doseButton)
+        private void fill_dose_data(int i, Label doseLabel, Label vaccineLabel, Label hospitalLabel, Label dateLabel, PictureBox dosePic, Guna2Button doseButton)
         {
             doseLabel.Text = "DOSE " + (i + 1).ToString();
             if (i == 2)
                 doseLabel.Text = "PRECAUTION DOSE";
 
-            if (curr_user_doses.Count <= i || (i != 0 && (curr_user_doses[i-1].dose_date - DateTime.Today).TotalDays >= 0))
+            if (curr_user_doses.Count <= i || (i != 0 && (curr_user_doses[i - 1].dose_date - DateTime.Today).TotalDays >= 0))
             {
                 // red
                 dosePic.Image = Cowin_Portal.Properties.Resources.icons8_red;
                 hospitalLabel.Text = "Appointment not scheduled";
+                
                 doseButton.Text = "Schedule";
-                if (curr_user_doses.Count < i)
+                if (i == 0)
+                    doseButton.Enabled = true;
+                if (i == 0 || curr_user_doses.Count < i)
                     return;
                 var diff_days = (curr_user_doses[i - 1].dose_date - DateTime.Today).TotalDays;
-                if (i == 0 || (curr_user_doses.Count == i && diff_days < 0))
+                if (curr_user_doses.Count == i && diff_days < 0)
                     doseButton.Enabled = true;
                 else
                     doseButton.Enabled = false;
@@ -50,7 +54,7 @@ namespace Cowin_Portal
             dateLabel.Text = curr_user_doses[i].dose_date.ToString("yyyy-MM-dd");
 
             var days = (curr_user_doses[i].dose_date - DateTime.Today).TotalDays;
-            if (days > 0)
+            if (days >= 0)
             {
                 // yellow
                 dosePic.Image = Cowin_Portal.Properties.Resources.icons8_gold;
@@ -66,7 +70,7 @@ namespace Cowin_Portal
             {
                 // green
                 dosePic.Image = Cowin_Portal.Properties.Resources.icons8_green;
-                doseButton.Text = "Download Certificate";
+                doseButton.Text = "Schedule";
                 doseButton.Enabled = false;
 
                 doseLabel.ForeColor = Color.LimeGreen;
@@ -81,7 +85,7 @@ namespace Cowin_Portal
                 user_pictureBox.Image = Cowin_Portal.Properties.Resources.icons8_circled_user_male;
             else
                 user_pictureBox.Image = Cowin_Portal.Properties.Resources.icons8_circled_user_female;
-            
+
             name_label.Text = curr_user[0].fullname;
             ref_id_label.Text = curr_user[0].ref_id;
             secret_code_label.Text = curr_user[0].ref_id.Substring(10);
@@ -96,9 +100,9 @@ namespace Cowin_Portal
             curr_user_doses = db.get_all_doses(userID);
 
             fill_user_data();
-            fill_dose_data(0, dose1Label, vaccine1Label, hospital1Label, date1Label, dose1_picbox, dose1Button);
-            fill_dose_data(1, dose2Label, vaccine2Label, hospital2Label, date2Label, dose2_picbox, dose2Button);
-            fill_dose_data(2, dosePrecautionLabel, vaccinePrecautionLabel, hospitalPrecautionLabel, datePrecautionLabel, dosePrecaution_picbox, dosePrecautionButton);
+            fill_dose_data(0, dose1Label, vaccine1Label, hospital1Label, date1Label, dose1Pic, dose1Button);
+            fill_dose_data(1, dose2Label, vaccine2Label, hospital2Label, date2Label, dose2Pic, dose2Button);
+            fill_dose_data(2, dosePrecautionLabel, vaccinePrecautionLabel, hospitalPrecautionLabel, datePrecautionLabel, dosePrecautionPic, dosePrecautionButton);
         }
 
         private void open_appointment_form(int dose_type)
@@ -126,6 +130,7 @@ namespace Cowin_Portal
                 l.Text = user_appointment_form.display_text();
             }
         }
+
         private void dose1Button_Click(object sender, EventArgs e)
         {
             open_appointment_form(0);

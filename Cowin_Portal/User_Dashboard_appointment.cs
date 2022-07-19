@@ -1,5 +1,4 @@
-﻿using Bunifu.UI.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -16,7 +15,7 @@ namespace Cowin_Portal
         List<Hospital> display = new List<Hospital>();
         List<States> state_list = new List<States>();
         List<Districts> district_list = new List<Districts>();
-        
+
         public string display_text()
         {
             return "Schedule vaccination appointment";
@@ -26,11 +25,11 @@ namespace Cowin_Portal
         {
             InitializeComponent();
             initialize_state_dropdown();
-            
+
             user_id = userId;
             dose_type = doseType;
 
-            if(dose_type == 0)
+            if (dose_type == 0)
             {
                 set_age_radiobutton();
                 vaccine_groupbox.Enabled = true;
@@ -61,7 +60,7 @@ namespace Cowin_Portal
             state_list = db.get_all_states();
             foreach (States s in state_list)
             {
-                stateDropdown.Items.Add(s.name);
+                state_comboBox.Items.Add(s.name);
             }
         }
 
@@ -76,33 +75,33 @@ namespace Cowin_Portal
             set_radiobutton(vaccine_groupbox, vaccine_from_id());
         }
 
-        private void set_radiobutton(BunifuGroupBox groupbox, string s)
+        private void set_radiobutton(GroupBox groupbox, string s)
         {
-            foreach(RadioButton r in groupbox.Controls)
+            foreach (RadioButton r in groupbox.Controls)
             {
                 if (r.Text == s)
                     r.Checked = true;
             }
         }
 
-        private void stateDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        private void state_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = stateDropdown.SelectedIndex;
+            int index = state_comboBox.SelectedIndex;
             int state_id = state_list[index].id;
 
             DataAccess db = new DataAccess();
             district_list = db.get_districts(state_id);
 
-            districtDropdown.Items.Clear();
-            districtDropdown.SelectedIndex = -1;
-            districtDropdown.Text = "";
+            district_comboBox.Items.Clear();
+            district_comboBox.SelectedIndex = -1;
+            district_comboBox.Text = "";
             foreach (Districts d in district_list)
             {
-                districtDropdown.Items.Add(d.name);
+                district_comboBox.Items.Add(d.name);
             }
         }
 
-        private string get_groupbox_radiobuttion(BunifuGroupBox groupbox)
+        private string get_groupbox_radiobuttion(GroupBox groupbox)
         {
             string res = "";
             foreach (RadioButton r in groupbox.Controls)
@@ -115,17 +114,17 @@ namespace Cowin_Portal
         private bool validate_controls()
         {
             errorProvider_ap.Clear();
-            if(stateDropdown.SelectedIndex <= -1)
+            if (state_comboBox.SelectedIndex <= -1)
             {
-                errorProvider_ap.SetError(this.stateDropdown, "Please select a state");
+                errorProvider_ap.SetError(this.state_comboBox, "Please select a state");
                 return false;
             }
-            if (districtDropdown.SelectedIndex <= -1)
+            if (district_comboBox.SelectedIndex <= -1)
             {
-                errorProvider_ap.SetError(this.districtDropdown, "Please select a district");
+                errorProvider_ap.SetError(this.district_comboBox, "Please select a district");
                 return false;
             }
-            if(dose_type == 0)
+            if (dose_type == 0)
             {
                 if (get_groupbox_radiobuttion(vaccine_groupbox) == "")
                 {
@@ -135,15 +134,16 @@ namespace Cowin_Portal
             }
             return true;
         }
+
         private void get_vaccine_index(ref int vaccine_index)
         {
-            if(dose_type != 0)
+            if (dose_type != 0)
             {
                 vaccine_index = vaccine_id;
                 return;
             }
             string vaccine = get_groupbox_radiobuttion(vaccine_groupbox);
-            
+
             if (vaccine == "Covishield")
                 vaccine_index = 1;
             else
@@ -155,13 +155,14 @@ namespace Cowin_Portal
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            if(validate_controls() == false)
-                return ;
-            int index = districtDropdown.SelectedIndex;
+
+            if (validate_controls() == false)
+                return;
+            int index = district_comboBox.SelectedIndex;
             int district_id = district_list[index].id;
 
             int vaccine_index = 0, age_limit;
-            if(dose_type != 0)
+            if (dose_type != 0)
             {
                 age_limit = age_id;
                 vaccine_index = vaccine_id;
@@ -177,15 +178,14 @@ namespace Cowin_Portal
 
             Centers_gridview.DataSource = display;
         }
-
         private void slot_select_nextButton_Click(object sender, EventArgs e)
         {
             if (validate_controls() == false)
                 return;
-            if(Centers_gridview.SelectedRows.Count == 0)
+            if (Centers_gridview.SelectedRows.Count == 0)
                 return;
             display_on_second_tab();
-            appointment_stepsPages.SetPage(1);
+            appointment_stepsPages.SelectedIndex = 1;
         }
 
         //---------------------------------------------------------------------------------
@@ -209,7 +209,7 @@ namespace Cowin_Portal
         {
             DataAccess db = new DataAccess();
             string ref_id = db.get_full_details(user_id)[0].ref_id;
-            
+
             int index = Centers_gridview.CurrentCell.RowIndex;
             int hospital_id = display[index].id;
 
@@ -227,28 +227,29 @@ namespace Cowin_Portal
 
         private void appointment_stepsPages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(appointment_stepsPages.SelectedIndex)
+            switch (appointment_stepsPages.SelectedIndex)
             {
                 case 1:
-                    c1.Checked = c1.Enabled = true;
+                    ck1.Checked = ck1.Enabled = true;
                     l1.ForeColor = Color.Navy;
                     break;
                 case 2:
-                    c2.Checked = c2.Enabled = true;
+                    ck2.Checked = ck2.Enabled = true;
                     l2.ForeColor = Color.Navy;
                     break;
             }
         }
+
         private bool validate_date_time()
         {
-            if(dose_type != 0)
+            if (dose_type != 0)
             {
                 DateTime chosen_date = vaccineDatePicker.Value;
                 DateTime dose_date = DateTime.Parse(dose1_date);
 
                 var days = (chosen_date - dose_date).TotalDays;
 
-                if(days <= 180)
+                if (days <= 180)
                 {
                     MessageBox.Show
                         ("Gap between two doses must be at least 3 months. Please try later. " +
@@ -269,9 +270,8 @@ namespace Cowin_Portal
 
         private void time_select_backButton_Click(object sender, EventArgs e)
         {
-            appointment_stepsPages.SetPage(0);
+            appointment_stepsPages.SelectedIndex = 0;
         }
-
         private void time_select_submitButton_Click(object sender, EventArgs e)
         {
             if (validate_date_time() == false)
@@ -288,8 +288,8 @@ namespace Cowin_Portal
             if (res != "OK")
                 return;
 
-            appointment_stepsPages.SetPage(2);
-            c3.Checked = c3.Enabled = true;
+            appointment_stepsPages.SelectedIndex = 2;
+            ck3.Checked = ck3.Enabled = true;
             l3.ForeColor = Color.Navy;
         }
 
@@ -300,9 +300,9 @@ namespace Cowin_Portal
                 Dock = DockStyle.Fill,
                 TopLevel = false,
             };
-            
+
             Form frm = this.Parent.FindForm();
-            
+
             Control match = frm.Controls.Find("panel_display", true).FirstOrDefault();
             if (match != null && match is Panel)
             {

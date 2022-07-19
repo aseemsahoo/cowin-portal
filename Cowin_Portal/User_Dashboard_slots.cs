@@ -1,5 +1,4 @@
-﻿using Bunifu.UI.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -27,27 +26,28 @@ namespace Cowin_Portal
             state_list = db.get_all_states();
             foreach (States s in state_list)
             {
-                stateDropdown.Items.Add(s.name);
+                state_comboBox.Items.Add(s.name);
             }
         }
-        private void stateDropdown_SelectedIndexChanged_1(object sender, EventArgs e)
+
+        private void state_comboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            int index = stateDropdown.SelectedIndex;
+            int index = state_comboBox.SelectedIndex;
             int state_id = state_list[index].id;
 
             DataAccess db = new DataAccess();
             district_list = db.get_districts(state_id);
 
-            districtDropdown.Items.Clear();
-            districtDropdown.SelectedIndex = -1;
-            districtDropdown.Text = "";
+            district_comboBox.Items.Clear();
+            district_comboBox.SelectedIndex = -1;
+            district_comboBox.Text = "";
             foreach (Districts d in district_list)
             {
-                districtDropdown.Items.Add(d.name);
+                district_comboBox.Items.Add(d.name);
             }
         }
 
-        private string get_groupbox_radiobuttion(BunifuGroupBox groupbox)
+        private string get_groupbox_radiobuttion(GroupBox groupbox)
         {
             string res = "";
             foreach (RadioButton r in groupbox.Controls)
@@ -60,14 +60,14 @@ namespace Cowin_Portal
         private bool validate_controls()
         {
             errorProvider_slots.Clear();
-            if (stateDropdown.SelectedIndex <= -1)
+            if (state_comboBox.SelectedIndex <= -1)
             {
-                errorProvider_slots.SetError(this.stateDropdown, "Please select a state");
+                errorProvider_slots.SetError(this.state_comboBox, "Please select a state");
                 return false;
             }
-            if (districtDropdown.SelectedIndex <= -1)
+            if (district_comboBox.SelectedIndex <= -1)
             {
-                errorProvider_slots.SetError(this.districtDropdown, "Please select a district");
+                errorProvider_slots.SetError(this.district_comboBox, "Please select a district");
                 return false;
             }
             if (get_groupbox_radiobuttion(vaccine_groupbox) == "")
@@ -95,11 +95,11 @@ namespace Cowin_Portal
         {
             if (validate_controls() == false)
                 return;
-            int index = districtDropdown.SelectedIndex;
+            int index = district_comboBox.SelectedIndex;
             int district_id = district_list[index].id;
 
             int vaccine_index = 0;
-            int age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox));
+            int age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox).Substring(0,2));
 
             get_vaccine_index(ref vaccine_index);
 

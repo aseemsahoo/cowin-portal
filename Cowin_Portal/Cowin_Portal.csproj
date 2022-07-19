@@ -32,63 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
-    <Reference Include="Bunifu.UI.WinForms.1.5.3">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
-      <HintPath>..\..\..\..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
-    </Reference>
     <Reference Include="Dapper, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.0\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.3, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.3\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -209,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-circled-user-female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cowin_intro_pic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cowin_intro_pic2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

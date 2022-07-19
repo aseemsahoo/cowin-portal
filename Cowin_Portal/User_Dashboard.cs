@@ -19,7 +19,7 @@ namespace Cowin_Portal
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
-            if(activeForm != null)
+            if (activeForm != null)
                 activeForm.Close();
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -35,7 +35,7 @@ namespace Cowin_Portal
         {
             DataAccess db = new DataAccess();
             bool isRegister = db.get_register_status(user_id);
-            if(isRegister == true)
+            if (isRegister == true)
             {
                 User_Dashboard_userinfo u_info = new User_Dashboard_userinfo(user_id);
                 openChildForm(u_info);

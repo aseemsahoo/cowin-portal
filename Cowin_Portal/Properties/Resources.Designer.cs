@@ -63,6 +63,26 @@ namespace Cowin_Portal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap cowin_intro_pic1 {
+            get {
+                object obj = ResourceManager.GetObject("cowin_intro_pic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cowin_intro_pic2 {
+            get {
+                object obj = ResourceManager.GetObject("cowin_intro_pic2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_checkmark_500 {
             get {
                 object obj = ResourceManager.GetObject("icons8_checkmark_500", resourceCulture);

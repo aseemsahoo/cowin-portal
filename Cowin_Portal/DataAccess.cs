@@ -51,14 +51,13 @@ namespace Cowin_Portal
 
         public bool get_register_status(int user_id)
         {
-
             try
             {
                 using (IDbConnection connection =
                 new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     var p = new DynamicParameters();
-                    p.Add("@userID", user_id);
+                    p.Add("@userId", user_id);
                     p.Add("@result", dbType: DbType.Boolean, direction: ParameterDirection.Output);
 
                     connection.Execute
@@ -107,7 +106,7 @@ namespace Cowin_Portal
                 {
                     User_full_info curr_user = new User_full_info
                     {
-                        userID = user_ID,
+                        user_id = user_ID,
                         fullname = name,
                         aadhaar_no = aadhaar,
                         ref_id = r_id,
@@ -116,7 +115,7 @@ namespace Cowin_Portal
                     };
                     List<User_full_info> user_insert = new List<User_full_info>();
                     user_insert.Add(curr_user);
-                    connection.Execute("dbo.insert_user_register @userID, @fullname, @aadhaar_no, @ref_id, @gender, @birth_year", user_insert);
+                    connection.Execute("dbo.insert_user_register @user_id, @fullname, @aadhaar_no, @ref_id, @gender, @birth_year", user_insert);
                     return "OK";
                 }
             }
@@ -167,16 +166,15 @@ namespace Cowin_Portal
                 using (IDbConnection connection =
                     new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    // change dose type to 0
-                    var d0 = new { userId = userID, dose_type = 0 };
-                    var d1 = new { userId = userID, dose_type = 1 };
-                    var d2 = new { userId = userID, dose_type = 2 };
-                    var list1 = connection.Query<User_dose_data>("dbo.get_dose_info @userId, @dose_type", d0).ToList();
-                    var list2 = connection.Query<User_dose_data>("dbo.get_dose_info @userId, @dose_type", d1).ToList();
-                    var list3 = connection.Query<User_dose_data>("dbo.get_dose_info @userId, @dose_type", d2).ToList();
+                    var d0 = new { userId = userID };
+                    //var d1 = new { userId = userID };
+                    //var d2 = new { userId = userID };
+                    var list1 = connection.Query<User_dose_data>("dbo.get_dose_info @userId", d0).ToList();
+                    //var list2 = connection.Query<User_dose_data>("dbo.get_dose_info @userId", d1).ToList();
+                    //var list3 = connection.Query<User_dose_data>("dbo.get_dose_info @userId", d2).ToList();
 
-                    list2.AddRange(list3);
-                    list1.AddRange(list2);
+                    //list2.AddRange(list3);
+                    //list1.AddRange(list2);
                     return list1;
                 }
             }
@@ -287,8 +285,8 @@ namespace Cowin_Portal
                 new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     var p = new DynamicParameters();
-                    p.Add("@userID", user_id);
-                    p.Add("@centerID", hospital_id);
+                    p.Add("@userId", user_id);
+                    p.Add("@centerId", hospital_id);
                     p.Add("@date", date);
                     p.Add("@time", time);
 

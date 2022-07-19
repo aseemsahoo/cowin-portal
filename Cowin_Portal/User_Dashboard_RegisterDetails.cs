@@ -13,7 +13,7 @@ namespace Cowin_Portal
             user_id = userID;
             InitializeComponent();
         }
-        
+
         public string display_text()
         {
             return "Register for vaccination";
@@ -36,7 +36,7 @@ namespace Cowin_Portal
             }
             if (isChecked == false)
             {
-                errorProvider_register.SetError(this.gender_label, "Please select a gender");
+                errorProvider_register.SetError(this.genderLabel, "Please select a gender");
                 return false;
             }
             if (Regex.IsMatch(YearInsText.Text, regex_register.YEAR_REGEX) == false)
@@ -72,10 +72,10 @@ namespace Cowin_Portal
         {
             Random rnd = new Random();
 
-            int n1 = rnd.Next(60000, 98000); 
+            int n1 = rnd.Next(60000, 98000);
             int n2 = rnd.Next(10000, 99999);
             int n3 = rnd.Next(0001, 9999);
-            
+
             string ref_id = n1.ToString() + n2.ToString() + n3.ToString();
             return ref_id;
         }
@@ -114,7 +114,7 @@ namespace Cowin_Portal
             Control match = frm.Controls.Find("panel_display", true).FirstOrDefault();
             if (match != null && match is Panel)
             {
-                Panel p = (Panel) match;
+                Panel p = (Panel)match;
                 p.Controls.Clear();
                 p.Controls.Add(user_info_form);
                 user_info_form.Show();
@@ -123,7 +123,7 @@ namespace Cowin_Portal
             Control match_label = frm.Controls.Find("dashboard_label", true).FirstOrDefault();
             if (match_label != null && match_label is Label)
             {
-                Label l = (Label) match_label;
+                Label l = (Label)match_label;
                 l.Text = user_info_form.display_text();
             }
         }

@@ -117,63 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 15.75pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(7, 32, 94); text-align: left; }</value>
-  </data>
-  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Calibri'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(188, 143, 143); text-align: left; }</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="NameInsText.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPkAAAA2CAYAAAAF8T/xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABeSURBVHhe7dMBDQAgDASxScXJ3jkgAAwsbXISrgAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD46HWLpKlVtqTJPc+XNKPO
-        AfccZKPUZQofAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="gender_label.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Calibri'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(188, 143, 143); text-align: left; }</value>
-  </data>
-  <data name="YearInsText.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPkAAAA2CAYAAAAF8T/xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABeSURBVHhe7dMBDQAgDASxScXJ3jkgAAwsbXISrgAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD46HWLpKlVtqTJPc+XNKPO
-        AfccZKPUZQofAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="bunifuLabel4.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Calibri'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(188, 143, 143); text-align: left; }</value>
-  </data>
-  <data name="AadhaarInsText.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPkAAAA2CAYAAAAF8T/xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABeSURBVHhe7dMBDQAgDASxScXJ3jkgAAwsbXISrgAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD46HWLpKlVtqTJPc+XNKPO
-        AfccZKPUZQofAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="bunifuLabel5.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Calibri'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(188, 143, 143); text-align: left; }</value>
-  </data>
-  <data name="user_registerButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIkAAAAkCAYAAAC9phn5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVHhe7dstUgNBEIbhlUgkR0AikZGRyEgkMjJuxnEE
-        JJIj5AhIJDIyEgmK0L1pkdntogPBsP1+VU/FdNbMV/tXOx0hf5hyKWbiVlT8W3dC1/HKFvbUlPP9geur
-        2GFytuJB1lhOAL9KmdtBvINjWt5lveUKcXT07FEfBwdBDmtZ/wsrwnehIMk9S1HOrAxe+kuM90ekoveh
-        bvrLDPcgEOVDXFsxDlPvx8NITC47o9TNYAjpNTex+mLFG0JuZWEF0ZQbfwi5lZUVRFOW/hBya55y+lfv
-        zhByoyQIURKEKAlClAQhSoIQJUGIkiBESRCiJAi1JVn5Q8itLcnCH0JubUlm/hBya76g1w9f9bN6bxB5
-        jTZw1afxEBLbWDEOox++usPI5XP/q9tB3fAojN7aCuGlvzd5GfwBuWylB9EuPt08zAbxZOwSU99k/edW
-        hCjsB07o2H3Aw/TbPtmPM2169ljagp8SfV7WV/d6Y4sJ8bZyEvLTdN0XbSCHEhZmJykAAAAASUVORK5C
-        YII=
-</value>
-  </data>
   <metadata name="errorProvider_register.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>48</value>
   </metadata>
 </root>

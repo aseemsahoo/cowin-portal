@@ -28,675 +28,272 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Dashboard_userinfo));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.name_label = new System.Windows.Forms.Label();
-            this.secret_code_tag = new Bunifu.UI.WinForms.BunifuLabel();
-            this.aadhaar_tag = new Bunifu.UI.WinForms.BunifuLabel();
-            this.year_tag = new Bunifu.UI.WinForms.BunifuLabel();
-            this.ref_id_label = new Bunifu.UI.WinForms.BunifuLabel();
-            this.secret_code_label = new Bunifu.UI.WinForms.BunifuLabel();
-            this.aadhaar_hidden_label = new Bunifu.UI.WinForms.BunifuLabel();
-            this.year_label = new Bunifu.UI.WinForms.BunifuLabel();
-            this.aadhaar_last_label = new Bunifu.UI.WinForms.BunifuLabel();
-            this.ref_id_tag = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuPanel5 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.dosePrecaution_picbox = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.vaccinePrecautionLabel = new System.Windows.Forms.Label();
-            this.datePrecautionLabel = new System.Windows.Forms.Label();
-            this.hospitalPrecautionLabel = new System.Windows.Forms.Label();
-            this.dosePrecautionLabel = new System.Windows.Forms.Label();
-            this.dosePrecautionButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuSeparator4 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.date2Label = new System.Windows.Forms.Label();
-            this.hospital2Label = new System.Windows.Forms.Label();
-            this.vaccine2Label = new System.Windows.Forms.Label();
-            this.dose2Label = new System.Windows.Forms.Label();
-            this.dose2Button = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuSeparator3 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.dose2_picbox = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.dose1_picbox = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.user_pictureBox = new System.Windows.Forms.PictureBox();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.ref_id_tag = new System.Windows.Forms.Label();
+            this.secret_code_tag = new System.Windows.Forms.Label();
+            this.aadhaar_tag = new System.Windows.Forms.Label();
+            this.year_tag = new System.Windows.Forms.Label();
+            this.ref_id_label = new System.Windows.Forms.Label();
+            this.secret_code_label = new System.Windows.Forms.Label();
+            this.aadhaar_hidden_label = new System.Windows.Forms.Label();
+            this.aadhaar_last_label = new System.Windows.Forms.Label();
+            this.year_label = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dose1Button = new Guna.UI2.WinForms.Guna2Button();
+            this.dose1Pic = new System.Windows.Forms.PictureBox();
+            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.date1Label = new System.Windows.Forms.Label();
             this.hospital1Label = new System.Windows.Forms.Label();
             this.vaccine1Label = new System.Windows.Forms.Label();
             this.dose1Label = new System.Windows.Forms.Label();
-            this.dose1Button = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.user_pictureBox = new System.Windows.Forms.PictureBox();
-            this.bunifuPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dosePrecaution_picbox)).BeginInit();
-            this.bunifuPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dose2_picbox)).BeginInit();
-            this.bunifuPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dose1_picbox)).BeginInit();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dose2Button = new Guna.UI2.WinForms.Guna2Button();
+            this.dose2Pic = new System.Windows.Forms.PictureBox();
+            this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.date2Label = new System.Windows.Forms.Label();
+            this.hospital2Label = new System.Windows.Forms.Label();
+            this.vaccine2Label = new System.Windows.Forms.Label();
+            this.dose2Label = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dosePrecautionButton = new Guna.UI2.WinForms.Guna2Button();
+            this.dosePrecautionPic = new System.Windows.Forms.PictureBox();
+            this.guna2VSeparator3 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.vaccinePrecautionLabel = new System.Windows.Forms.Label();
+            this.datePrecautionLabel = new System.Windows.Forms.Label();
+            this.hospitalPrecautionLabel = new System.Windows.Forms.Label();
+            this.dosePrecautionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.user_pictureBox)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dose1Pic)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dose2Pic)).BeginInit();
+            this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dosePrecautionPic)).BeginInit();
             this.SuspendLayout();
             // 
             // name_label
             // 
             this.name_label.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_label.Location = new System.Drawing.Point(139, 35);
+            this.name_label.Location = new System.Drawing.Point(151, 37);
             this.name_label.Name = "name_label";
             this.name_label.Size = new System.Drawing.Size(213, 40);
             this.name_label.TabIndex = 1;
             this.name_label.Text = "[full name]";
             // 
-            // secret_code_tag
+            // user_pictureBox
             // 
-            this.secret_code_tag.AllowParentOverrides = false;
-            this.secret_code_tag.AutoEllipsis = false;
-            this.secret_code_tag.CursorType = null;
-            this.secret_code_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secret_code_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.secret_code_tag.Location = new System.Drawing.Point(173, 156);
-            this.secret_code_tag.Name = "secret_code_tag";
-            this.secret_code_tag.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.secret_code_tag.Size = new System.Drawing.Size(82, 17);
-            this.secret_code_tag.TabIndex = 3;
-            this.secret_code_tag.Text = "SECRET CODE";
-            this.secret_code_tag.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.secret_code_tag.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.user_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.user_pictureBox.Location = new System.Drawing.Point(38, 27);
+            this.user_pictureBox.Name = "user_pictureBox";
+            this.user_pictureBox.Size = new System.Drawing.Size(106, 105);
+            this.user_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.user_pictureBox.TabIndex = 19;
+            this.user_pictureBox.TabStop = false;
             // 
-            // aadhaar_tag
+            // guna2Separator1
             // 
-            this.aadhaar_tag.AllowParentOverrides = false;
-            this.aadhaar_tag.AutoEllipsis = false;
-            this.aadhaar_tag.CursorType = null;
-            this.aadhaar_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aadhaar_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.aadhaar_tag.Location = new System.Drawing.Point(304, 156);
-            this.aadhaar_tag.Name = "aadhaar_tag";
-            this.aadhaar_tag.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.aadhaar_tag.Size = new System.Drawing.Size(90, 17);
-            this.aadhaar_tag.TabIndex = 4;
-            this.aadhaar_tag.Text = "AADHAAR NO.";
-            this.aadhaar_tag.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.aadhaar_tag.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // year_tag
-            // 
-            this.year_tag.AllowParentOverrides = false;
-            this.year_tag.AutoEllipsis = false;
-            this.year_tag.CursorType = null;
-            this.year_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.year_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.year_tag.Location = new System.Drawing.Point(450, 156);
-            this.year_tag.Name = "year_tag";
-            this.year_tag.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.year_tag.Size = new System.Drawing.Size(94, 17);
-            this.year_tag.TabIndex = 5;
-            this.year_tag.Text = "YEAR OF BIRTH";
-            this.year_tag.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.year_tag.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // ref_id_label
-            // 
-            this.ref_id_label.AllowParentOverrides = false;
-            this.ref_id_label.AutoEllipsis = false;
-            this.ref_id_label.CursorType = null;
-            this.ref_id_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ref_id_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.ref_id_label.Location = new System.Drawing.Point(41, 177);
-            this.ref_id_label.Name = "ref_id_label";
-            this.ref_id_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ref_id_label.Size = new System.Drawing.Size(91, 17);
-            this.ref_id_label.TabIndex = 6;
-            this.ref_id_label.Text = "[ref id number]";
-            this.ref_id_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.ref_id_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // secret_code_label
-            // 
-            this.secret_code_label.AllowParentOverrides = false;
-            this.secret_code_label.AutoEllipsis = false;
-            this.secret_code_label.CursorType = null;
-            this.secret_code_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secret_code_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.secret_code_label.Location = new System.Drawing.Point(173, 177);
-            this.secret_code_label.Name = "secret_code_label";
-            this.secret_code_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.secret_code_label.Size = new System.Drawing.Size(77, 17);
-            this.secret_code_label.TabIndex = 7;
-            this.secret_code_label.Text = "[last 4 digits]";
-            this.secret_code_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.secret_code_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // aadhaar_hidden_label
-            // 
-            this.aadhaar_hidden_label.AllowParentOverrides = false;
-            this.aadhaar_hidden_label.AutoEllipsis = false;
-            this.aadhaar_hidden_label.CursorType = null;
-            this.aadhaar_hidden_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aadhaar_hidden_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.aadhaar_hidden_label.Location = new System.Drawing.Point(303, 177);
-            this.aadhaar_hidden_label.Name = "aadhaar_hidden_label";
-            this.aadhaar_hidden_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.aadhaar_hidden_label.Size = new System.Drawing.Size(68, 17);
-            this.aadhaar_hidden_label.TabIndex = 8;
-            this.aadhaar_hidden_label.Text = "XXXX XXXX ";
-            this.aadhaar_hidden_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.aadhaar_hidden_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // year_label
-            // 
-            this.year_label.AllowParentOverrides = false;
-            this.year_label.AutoEllipsis = false;
-            this.year_label.CursorType = null;
-            this.year_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.year_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.year_label.Location = new System.Drawing.Point(450, 177);
-            this.year_label.Name = "year_label";
-            this.year_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.year_label.Size = new System.Drawing.Size(34, 17);
-            this.year_label.TabIndex = 9;
-            this.year_label.Text = "[year]";
-            this.year_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.year_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // aadhaar_last_label
-            // 
-            this.aadhaar_last_label.AllowParentOverrides = false;
-            this.aadhaar_last_label.AutoEllipsis = false;
-            this.aadhaar_last_label.CursorType = null;
-            this.aadhaar_last_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aadhaar_last_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.aadhaar_last_label.Location = new System.Drawing.Point(377, 177);
-            this.aadhaar_last_label.Name = "aadhaar_last_label";
-            this.aadhaar_last_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.aadhaar_last_label.Size = new System.Drawing.Size(33, 17);
-            this.aadhaar_last_label.TabIndex = 10;
-            this.aadhaar_last_label.Text = "[4 ns]";
-            this.aadhaar_last_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.aadhaar_last_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.guna2Separator1.Location = new System.Drawing.Point(49, 216);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(503, 10);
+            this.guna2Separator1.TabIndex = 20;
             // 
             // ref_id_tag
             // 
-            this.ref_id_tag.AllowParentOverrides = false;
-            this.ref_id_tag.AutoEllipsis = false;
-            this.ref_id_tag.CursorType = null;
-            this.ref_id_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ref_id_tag.AutoSize = true;
+            this.ref_id_tag.BackColor = System.Drawing.Color.Transparent;
+            this.ref_id_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.ref_id_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.ref_id_tag.Location = new System.Drawing.Point(41, 156);
+            this.ref_id_tag.Location = new System.Drawing.Point(45, 156);
             this.ref_id_tag.Name = "ref_id_tag";
-            this.ref_id_tag.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ref_id_tag.Size = new System.Drawing.Size(42, 17);
-            this.ref_id_tag.TabIndex = 14;
+            this.ref_id_tag.Size = new System.Drawing.Size(49, 17);
+            this.ref_id_tag.TabIndex = 88;
             this.ref_id_tag.Text = "REF. ID";
-            this.ref_id_tag.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.ref_id_tag.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuPanel5
+            // secret_code_tag
             // 
-            this.bunifuPanel5.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel5.BackgroundImage")));
-            this.bunifuPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel5.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel5.BorderRadius = 3;
-            this.bunifuPanel5.BorderThickness = 1;
-            this.bunifuPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuPanel5.Location = new System.Drawing.Point(0, 651);
-            this.bunifuPanel5.Name = "bunifuPanel5";
-            this.bunifuPanel5.ShowBorders = true;
-            this.bunifuPanel5.Size = new System.Drawing.Size(584, 30);
-            this.bunifuPanel5.TabIndex = 18;
+            this.secret_code_tag.AutoSize = true;
+            this.secret_code_tag.BackColor = System.Drawing.Color.Transparent;
+            this.secret_code_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.secret_code_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.secret_code_tag.Location = new System.Drawing.Point(177, 156);
+            this.secret_code_tag.Name = "secret_code_tag";
+            this.secret_code_tag.Size = new System.Drawing.Size(90, 17);
+            this.secret_code_tag.TabIndex = 89;
+            this.secret_code_tag.Text = "SECRET CODE";
             // 
-            // bunifuPanel4
+            // aadhaar_tag
             // 
-            this.bunifuPanel4.BackgroundColor = System.Drawing.Color.Navy;
-            this.bunifuPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel4.BackgroundImage")));
-            this.bunifuPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel4.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel4.BorderRadius = 0;
-            this.bunifuPanel4.BorderThickness = 0;
-            this.bunifuPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuPanel4.Location = new System.Drawing.Point(0, 681);
-            this.bunifuPanel4.Name = "bunifuPanel4";
-            this.bunifuPanel4.ShowBorders = true;
-            this.bunifuPanel4.Size = new System.Drawing.Size(584, 30);
-            this.bunifuPanel4.TabIndex = 17;
+            this.aadhaar_tag.AutoSize = true;
+            this.aadhaar_tag.BackColor = System.Drawing.Color.Transparent;
+            this.aadhaar_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.aadhaar_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.aadhaar_tag.Location = new System.Drawing.Point(307, 156);
+            this.aadhaar_tag.Name = "aadhaar_tag";
+            this.aadhaar_tag.Size = new System.Drawing.Size(97, 17);
+            this.aadhaar_tag.TabIndex = 90;
+            this.aadhaar_tag.Text = "AADHAAR NO.";
             // 
-            // bunifuPanel3
+            // year_tag
             // 
-            this.bunifuPanel3.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel3.BackgroundImage")));
-            this.bunifuPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel3.BorderColor = System.Drawing.Color.Navy;
-            this.bunifuPanel3.BorderRadius = 10;
-            this.bunifuPanel3.BorderThickness = 1;
-            this.bunifuPanel3.Controls.Add(this.dosePrecaution_picbox);
-            this.bunifuPanel3.Controls.Add(this.vaccinePrecautionLabel);
-            this.bunifuPanel3.Controls.Add(this.datePrecautionLabel);
-            this.bunifuPanel3.Controls.Add(this.hospitalPrecautionLabel);
-            this.bunifuPanel3.Controls.Add(this.dosePrecautionLabel);
-            this.bunifuPanel3.Controls.Add(this.dosePrecautionButton);
-            this.bunifuPanel3.Controls.Add(this.bunifuSeparator4);
-            this.bunifuPanel3.Location = new System.Drawing.Point(123, 528);
-            this.bunifuPanel3.Name = "bunifuPanel3";
-            this.bunifuPanel3.ShowBorders = true;
-            this.bunifuPanel3.Size = new System.Drawing.Size(338, 123);
-            this.bunifuPanel3.TabIndex = 16;
+            this.year_tag.AutoSize = true;
+            this.year_tag.BackColor = System.Drawing.Color.Transparent;
+            this.year_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.year_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.year_tag.Location = new System.Drawing.Point(454, 156);
+            this.year_tag.Name = "year_tag";
+            this.year_tag.Size = new System.Drawing.Size(102, 17);
+            this.year_tag.TabIndex = 91;
+            this.year_tag.Text = "YEAR OF BIRTH";
             // 
-            // dosePrecaution_picbox
+            // ref_id_label
             // 
-            this.dosePrecaution_picbox.AllowFocused = false;
-            this.dosePrecaution_picbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dosePrecaution_picbox.AutoSizeHeight = true;
-            this.dosePrecaution_picbox.BorderRadius = 10;
-            this.dosePrecaution_picbox.Image = ((System.Drawing.Image)(resources.GetObject("dosePrecaution_picbox.Image")));
-            this.dosePrecaution_picbox.IsCircle = true;
-            this.dosePrecaution_picbox.Location = new System.Drawing.Point(11, 13);
-            this.dosePrecaution_picbox.Name = "dosePrecaution_picbox";
-            this.dosePrecaution_picbox.Size = new System.Drawing.Size(20, 20);
-            this.dosePrecaution_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dosePrecaution_picbox.TabIndex = 13;
-            this.dosePrecaution_picbox.TabStop = false;
-            this.dosePrecaution_picbox.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.ref_id_label.AutoSize = true;
+            this.ref_id_label.BackColor = System.Drawing.Color.Transparent;
+            this.ref_id_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.ref_id_label.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.ref_id_label.Location = new System.Drawing.Point(45, 177);
+            this.ref_id_label.Name = "ref_id_label";
+            this.ref_id_label.Size = new System.Drawing.Size(99, 17);
+            this.ref_id_label.TabIndex = 92;
+            this.ref_id_label.Text = "[ref id number]";
             // 
-            // vaccinePrecautionLabel
+            // secret_code_label
             // 
-            this.vaccinePrecautionLabel.AutoSize = true;
-            this.vaccinePrecautionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vaccinePrecautionLabel.ForeColor = System.Drawing.Color.Red;
-            this.vaccinePrecautionLabel.Location = new System.Drawing.Point(166, 13);
-            this.vaccinePrecautionLabel.Name = "vaccinePrecautionLabel";
-            this.vaccinePrecautionLabel.Size = new System.Drawing.Size(55, 15);
-            this.vaccinePrecautionLabel.TabIndex = 12;
-            this.vaccinePrecautionLabel.Text = "[vaccine]";
+            this.secret_code_label.AutoSize = true;
+            this.secret_code_label.BackColor = System.Drawing.Color.Transparent;
+            this.secret_code_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.secret_code_label.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.secret_code_label.Location = new System.Drawing.Point(177, 177);
+            this.secret_code_label.Name = "secret_code_label";
+            this.secret_code_label.Size = new System.Drawing.Size(85, 17);
+            this.secret_code_label.TabIndex = 93;
+            this.secret_code_label.Text = "[last 4 digits]";
             // 
-            // datePrecautionLabel
+            // aadhaar_hidden_label
             // 
-            this.datePrecautionLabel.AutoSize = true;
-            this.datePrecautionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePrecautionLabel.ForeColor = System.Drawing.Color.Red;
-            this.datePrecautionLabel.Location = new System.Drawing.Point(38, 65);
-            this.datePrecautionLabel.Name = "datePrecautionLabel";
-            this.datePrecautionLabel.Size = new System.Drawing.Size(38, 15);
-            this.datePrecautionLabel.TabIndex = 12;
-            this.datePrecautionLabel.Text = "[date]";
+            this.aadhaar_hidden_label.AutoSize = true;
+            this.aadhaar_hidden_label.BackColor = System.Drawing.Color.Transparent;
+            this.aadhaar_hidden_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.aadhaar_hidden_label.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.aadhaar_hidden_label.Location = new System.Drawing.Point(307, 177);
+            this.aadhaar_hidden_label.Name = "aadhaar_hidden_label";
+            this.aadhaar_hidden_label.Size = new System.Drawing.Size(76, 17);
+            this.aadhaar_hidden_label.TabIndex = 94;
+            this.aadhaar_hidden_label.Text = "XXXX XXXX";
             // 
-            // hospitalPrecautionLabel
+            // aadhaar_last_label
             // 
-            this.hospitalPrecautionLabel.AutoSize = true;
-            this.hospitalPrecautionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hospitalPrecautionLabel.ForeColor = System.Drawing.Color.Red;
-            this.hospitalPrecautionLabel.Location = new System.Drawing.Point(38, 41);
-            this.hospitalPrecautionLabel.Name = "hospitalPrecautionLabel";
-            this.hospitalPrecautionLabel.Size = new System.Drawing.Size(90, 15);
-            this.hospitalPrecautionLabel.TabIndex = 11;
-            this.hospitalPrecautionLabel.Text = "[hospital name]";
+            this.aadhaar_last_label.AutoSize = true;
+            this.aadhaar_last_label.BackColor = System.Drawing.Color.Transparent;
+            this.aadhaar_last_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.aadhaar_last_label.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.aadhaar_last_label.Location = new System.Drawing.Point(380, 177);
+            this.aadhaar_last_label.Name = "aadhaar_last_label";
+            this.aadhaar_last_label.Size = new System.Drawing.Size(41, 17);
+            this.aadhaar_last_label.TabIndex = 95;
+            this.aadhaar_last_label.Text = "[4 ns]";
             // 
-            // dosePrecautionLabel
+            // year_label
             // 
-            this.dosePrecautionLabel.AutoSize = true;
-            this.dosePrecautionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dosePrecautionLabel.ForeColor = System.Drawing.Color.Red;
-            this.dosePrecautionLabel.Location = new System.Drawing.Point(39, 13);
-            this.dosePrecautionLabel.Name = "dosePrecautionLabel";
-            this.dosePrecautionLabel.Size = new System.Drawing.Size(40, 15);
-            this.dosePrecautionLabel.TabIndex = 9;
-            this.dosePrecautionLabel.Text = "[dose]";
+            this.year_label.AutoSize = true;
+            this.year_label.BackColor = System.Drawing.Color.Transparent;
+            this.year_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.year_label.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.year_label.Location = new System.Drawing.Point(454, 177);
+            this.year_label.Name = "year_label";
+            this.year_label.Size = new System.Drawing.Size(42, 17);
+            this.year_label.TabIndex = 96;
+            this.year_label.Text = "[year]";
             // 
-            // dosePrecautionButton
+            // panel1
             // 
-            this.dosePrecautionButton.AllowAnimations = true;
-            this.dosePrecautionButton.AllowMouseEffects = true;
-            this.dosePrecautionButton.AllowToggling = false;
-            this.dosePrecautionButton.AnimationSpeed = 200;
-            this.dosePrecautionButton.AutoGenerateColors = false;
-            this.dosePrecautionButton.AutoRoundBorders = false;
-            this.dosePrecautionButton.AutoSizeLeftIcon = true;
-            this.dosePrecautionButton.AutoSizeRightIcon = true;
-            this.dosePrecautionButton.BackColor = System.Drawing.Color.Transparent;
-            this.dosePrecautionButton.BackColor1 = System.Drawing.Color.Transparent;
-            this.dosePrecautionButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dosePrecautionButton.BackgroundImage")));
-            this.dosePrecautionButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dosePrecautionButton.ButtonText = "[button]";
-            this.dosePrecautionButton.ButtonTextMarginLeft = 0;
-            this.dosePrecautionButton.ColorContrastOnClick = 45;
-            this.dosePrecautionButton.ColorContrastOnHover = 45;
-            this.dosePrecautionButton.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.dosePrecautionButton.CustomizableEdges = borderEdges1;
-            this.dosePrecautionButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.dosePrecautionButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dosePrecautionButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dosePrecautionButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dosePrecautionButton.Enabled = false;
-            this.dosePrecautionButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.dosePrecautionButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dosePrecautionButton.ForeColor = System.Drawing.Color.MediumBlue;
-            this.dosePrecautionButton.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dosePrecautionButton.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.dosePrecautionButton.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.dosePrecautionButton.IconMarginLeft = 11;
-            this.dosePrecautionButton.IconPadding = 10;
-            this.dosePrecautionButton.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dosePrecautionButton.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.dosePrecautionButton.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.dosePrecautionButton.IconSize = 25;
-            this.dosePrecautionButton.IdleBorderColor = System.Drawing.Color.Navy;
-            this.dosePrecautionButton.IdleBorderRadius = 15;
-            this.dosePrecautionButton.IdleBorderThickness = 1;
-            this.dosePrecautionButton.IdleFillColor = System.Drawing.Color.Transparent;
-            this.dosePrecautionButton.IdleIconLeftImage = null;
-            this.dosePrecautionButton.IdleIconRightImage = null;
-            this.dosePrecautionButton.IndicateFocus = false;
-            this.dosePrecautionButton.Location = new System.Drawing.Point(192, 84);
-            this.dosePrecautionButton.Name = "dosePrecautionButton";
-            this.dosePrecautionButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dosePrecautionButton.OnDisabledState.BorderRadius = 15;
-            this.dosePrecautionButton.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dosePrecautionButton.OnDisabledState.BorderThickness = 1;
-            this.dosePrecautionButton.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dosePrecautionButton.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dosePrecautionButton.OnDisabledState.IconLeftImage = null;
-            this.dosePrecautionButton.OnDisabledState.IconRightImage = null;
-            this.dosePrecautionButton.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.dosePrecautionButton.onHoverState.BorderRadius = 15;
-            this.dosePrecautionButton.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dosePrecautionButton.onHoverState.BorderThickness = 1;
-            this.dosePrecautionButton.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.dosePrecautionButton.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.dosePrecautionButton.onHoverState.IconLeftImage = null;
-            this.dosePrecautionButton.onHoverState.IconRightImage = null;
-            this.dosePrecautionButton.OnIdleState.BorderColor = System.Drawing.Color.Navy;
-            this.dosePrecautionButton.OnIdleState.BorderRadius = 15;
-            this.dosePrecautionButton.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dosePrecautionButton.OnIdleState.BorderThickness = 1;
-            this.dosePrecautionButton.OnIdleState.FillColor = System.Drawing.Color.Transparent;
-            this.dosePrecautionButton.OnIdleState.ForeColor = System.Drawing.Color.MediumBlue;
-            this.dosePrecautionButton.OnIdleState.IconLeftImage = null;
-            this.dosePrecautionButton.OnIdleState.IconRightImage = null;
-            this.dosePrecautionButton.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.dosePrecautionButton.OnPressedState.BorderRadius = 15;
-            this.dosePrecautionButton.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dosePrecautionButton.OnPressedState.BorderThickness = 1;
-            this.dosePrecautionButton.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.dosePrecautionButton.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.dosePrecautionButton.OnPressedState.IconLeftImage = null;
-            this.dosePrecautionButton.OnPressedState.IconRightImage = null;
-            this.dosePrecautionButton.Size = new System.Drawing.Size(131, 22);
-            this.dosePrecautionButton.TabIndex = 7;
-            this.dosePrecautionButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dosePrecautionButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.dosePrecautionButton.TextMarginLeft = 0;
-            this.dosePrecautionButton.TextPadding = new System.Windows.Forms.Padding(0);
-            this.dosePrecautionButton.UseDefaultRadiusAndThickness = true;
-            this.dosePrecautionButton.Click += new System.EventHandler(this.dosePrecautionButton_Click);
+            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 678);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(601, 30);
+            this.panel1.TabIndex = 97;
             // 
-            // bunifuSeparator4
+            // panel2
             // 
-            this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator4.BackgroundImage")));
-            this.bunifuSeparator4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator4.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator4.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator4.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator4.LineThickness = 1;
-            this.bunifuSeparator4.Location = new System.Drawing.Point(154, 13);
-            this.bunifuSeparator4.Name = "bunifuSeparator4";
-            this.bunifuSeparator4.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator4.Size = new System.Drawing.Size(10, 15);
-            this.bunifuSeparator4.TabIndex = 3;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 648);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(601, 30);
+            this.panel2.TabIndex = 98;
             // 
-            // bunifuPanel2
+            // guna2Panel1
             // 
-            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
-            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel2.BorderColor = System.Drawing.Color.Navy;
-            this.bunifuPanel2.BorderRadius = 10;
-            this.bunifuPanel2.BorderThickness = 1;
-            this.bunifuPanel2.Controls.Add(this.date2Label);
-            this.bunifuPanel2.Controls.Add(this.hospital2Label);
-            this.bunifuPanel2.Controls.Add(this.vaccine2Label);
-            this.bunifuPanel2.Controls.Add(this.dose2Label);
-            this.bunifuPanel2.Controls.Add(this.dose2Button);
-            this.bunifuPanel2.Controls.Add(this.bunifuSeparator3);
-            this.bunifuPanel2.Controls.Add(this.dose2_picbox);
-            this.bunifuPanel2.Location = new System.Drawing.Point(123, 387);
-            this.bunifuPanel2.Name = "bunifuPanel2";
-            this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(338, 123);
-            this.bunifuPanel2.TabIndex = 15;
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Navy;
+            this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.dose1Button);
+            this.guna2Panel1.Controls.Add(this.dose1Pic);
+            this.guna2Panel1.Controls.Add(this.guna2VSeparator1);
+            this.guna2Panel1.Controls.Add(this.date1Label);
+            this.guna2Panel1.Controls.Add(this.hospital1Label);
+            this.guna2Panel1.Controls.Add(this.vaccine1Label);
+            this.guna2Panel1.Controls.Add(this.dose1Label);
+            this.guna2Panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.guna2Panel1.Location = new System.Drawing.Point(131, 247);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(338, 123);
+            this.guna2Panel1.TabIndex = 99;
             // 
-            // date2Label
+            // dose1Button
             // 
-            this.date2Label.AutoSize = true;
-            this.date2Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date2Label.ForeColor = System.Drawing.Color.Red;
-            this.date2Label.Location = new System.Drawing.Point(39, 64);
-            this.date2Label.Name = "date2Label";
-            this.date2Label.Size = new System.Drawing.Size(38, 15);
-            this.date2Label.TabIndex = 11;
-            this.date2Label.Text = "[date]";
+            this.dose1Button.Animated = true;
+            this.dose1Button.BorderColor = System.Drawing.Color.Navy;
+            this.dose1Button.BorderRadius = 6;
+            this.dose1Button.BorderThickness = 1;
+            this.dose1Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dose1Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dose1Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dose1Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dose1Button.FillColor = System.Drawing.Color.Transparent;
+            this.dose1Button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dose1Button.ForeColor = System.Drawing.Color.MediumBlue;
+            this.dose1Button.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.dose1Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.dose1Button.HoverState.ForeColor = System.Drawing.Color.White;
+            this.dose1Button.Location = new System.Drawing.Point(194, 86);
+            this.dose1Button.Name = "dose1Button";
+            this.dose1Button.Size = new System.Drawing.Size(131, 22);
+            this.dose1Button.TabIndex = 20;
+            this.dose1Button.Text = "[button1]";
+            this.dose1Button.Click += new System.EventHandler(this.dose1Button_Click);
             // 
-            // hospital2Label
+            // dose1Pic
             // 
-            this.hospital2Label.AutoSize = true;
-            this.hospital2Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hospital2Label.ForeColor = System.Drawing.Color.Red;
-            this.hospital2Label.Location = new System.Drawing.Point(39, 40);
-            this.hospital2Label.Name = "hospital2Label";
-            this.hospital2Label.Size = new System.Drawing.Size(90, 15);
-            this.hospital2Label.TabIndex = 10;
-            this.hospital2Label.Text = "[hospital name]";
+            this.dose1Pic.Location = new System.Drawing.Point(12, 12);
+            this.dose1Pic.Name = "dose1Pic";
+            this.dose1Pic.Size = new System.Drawing.Size(22, 22);
+            this.dose1Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dose1Pic.TabIndex = 19;
+            this.dose1Pic.TabStop = false;
             // 
-            // vaccine2Label
+            // guna2VSeparator1
             // 
-            this.vaccine2Label.AutoSize = true;
-            this.vaccine2Label.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vaccine2Label.ForeColor = System.Drawing.Color.Red;
-            this.vaccine2Label.Location = new System.Drawing.Point(99, 13);
-            this.vaccine2Label.Name = "vaccine2Label";
-            this.vaccine2Label.Size = new System.Drawing.Size(55, 15);
-            this.vaccine2Label.TabIndex = 9;
-            this.vaccine2Label.Text = "[vaccine]";
-            // 
-            // dose2Label
-            // 
-            this.dose2Label.AutoSize = true;
-            this.dose2Label.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dose2Label.ForeColor = System.Drawing.Color.Red;
-            this.dose2Label.Location = new System.Drawing.Point(38, 13);
-            this.dose2Label.Name = "dose2Label";
-            this.dose2Label.Size = new System.Drawing.Size(40, 15);
-            this.dose2Label.TabIndex = 8;
-            this.dose2Label.Text = "[dose]";
-            // 
-            // dose2Button
-            // 
-            this.dose2Button.AllowAnimations = true;
-            this.dose2Button.AllowMouseEffects = true;
-            this.dose2Button.AllowToggling = false;
-            this.dose2Button.AnimationSpeed = 200;
-            this.dose2Button.AutoGenerateColors = false;
-            this.dose2Button.AutoRoundBorders = false;
-            this.dose2Button.AutoSizeLeftIcon = true;
-            this.dose2Button.AutoSizeRightIcon = true;
-            this.dose2Button.BackColor = System.Drawing.Color.Transparent;
-            this.dose2Button.BackColor1 = System.Drawing.Color.Transparent;
-            this.dose2Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dose2Button.BackgroundImage")));
-            this.dose2Button.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose2Button.ButtonText = "[button]";
-            this.dose2Button.ButtonTextMarginLeft = 0;
-            this.dose2Button.ColorContrastOnClick = 45;
-            this.dose2Button.ColorContrastOnHover = 45;
-            this.dose2Button.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.dose2Button.CustomizableEdges = borderEdges2;
-            this.dose2Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.dose2Button.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dose2Button.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dose2Button.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dose2Button.Enabled = false;
-            this.dose2Button.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.dose2Button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dose2Button.ForeColor = System.Drawing.Color.MediumBlue;
-            this.dose2Button.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dose2Button.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.dose2Button.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.dose2Button.IconMarginLeft = 11;
-            this.dose2Button.IconPadding = 10;
-            this.dose2Button.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dose2Button.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.dose2Button.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.dose2Button.IconSize = 25;
-            this.dose2Button.IdleBorderColor = System.Drawing.Color.Navy;
-            this.dose2Button.IdleBorderRadius = 15;
-            this.dose2Button.IdleBorderThickness = 1;
-            this.dose2Button.IdleFillColor = System.Drawing.Color.Transparent;
-            this.dose2Button.IdleIconLeftImage = null;
-            this.dose2Button.IdleIconRightImage = null;
-            this.dose2Button.IndicateFocus = false;
-            this.dose2Button.Location = new System.Drawing.Point(192, 84);
-            this.dose2Button.Name = "dose2Button";
-            this.dose2Button.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dose2Button.OnDisabledState.BorderRadius = 15;
-            this.dose2Button.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose2Button.OnDisabledState.BorderThickness = 1;
-            this.dose2Button.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dose2Button.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dose2Button.OnDisabledState.IconLeftImage = null;
-            this.dose2Button.OnDisabledState.IconRightImage = null;
-            this.dose2Button.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.dose2Button.onHoverState.BorderRadius = 15;
-            this.dose2Button.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose2Button.onHoverState.BorderThickness = 1;
-            this.dose2Button.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.dose2Button.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.dose2Button.onHoverState.IconLeftImage = null;
-            this.dose2Button.onHoverState.IconRightImage = null;
-            this.dose2Button.OnIdleState.BorderColor = System.Drawing.Color.Navy;
-            this.dose2Button.OnIdleState.BorderRadius = 15;
-            this.dose2Button.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose2Button.OnIdleState.BorderThickness = 1;
-            this.dose2Button.OnIdleState.FillColor = System.Drawing.Color.Transparent;
-            this.dose2Button.OnIdleState.ForeColor = System.Drawing.Color.MediumBlue;
-            this.dose2Button.OnIdleState.IconLeftImage = null;
-            this.dose2Button.OnIdleState.IconRightImage = null;
-            this.dose2Button.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.dose2Button.OnPressedState.BorderRadius = 15;
-            this.dose2Button.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose2Button.OnPressedState.BorderThickness = 1;
-            this.dose2Button.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.dose2Button.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.dose2Button.OnPressedState.IconLeftImage = null;
-            this.dose2Button.OnPressedState.IconRightImage = null;
-            this.dose2Button.Size = new System.Drawing.Size(131, 22);
-            this.dose2Button.TabIndex = 7;
-            this.dose2Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dose2Button.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.dose2Button.TextMarginLeft = 0;
-            this.dose2Button.TextPadding = new System.Windows.Forms.Padding(0);
-            this.dose2Button.UseDefaultRadiusAndThickness = true;
-            this.dose2Button.Click += new System.EventHandler(this.dose2Button_Click);
-            // 
-            // bunifuSeparator3
-            // 
-            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
-            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(86, 13);
-            this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator3.Size = new System.Drawing.Size(10, 15);
-            this.bunifuSeparator3.TabIndex = 3;
-            // 
-            // dose2_picbox
-            // 
-            this.dose2_picbox.AllowFocused = false;
-            this.dose2_picbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dose2_picbox.AutoSizeHeight = true;
-            this.dose2_picbox.BorderRadius = 10;
-            this.dose2_picbox.Image = ((System.Drawing.Image)(resources.GetObject("dose2_picbox.Image")));
-            this.dose2_picbox.IsCircle = true;
-            this.dose2_picbox.Location = new System.Drawing.Point(12, 13);
-            this.dose2_picbox.Name = "dose2_picbox";
-            this.dose2_picbox.Size = new System.Drawing.Size(20, 20);
-            this.dose2_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dose2_picbox.TabIndex = 0;
-            this.dose2_picbox.TabStop = false;
-            this.dose2_picbox.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator1.BackgroundImage")));
-            this.bunifuSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator1.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(41, 211);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(503, 19);
-            this.bunifuSeparator1.TabIndex = 12;
-            // 
-            // bunifuPanel1
-            // 
-            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
-            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel1.BorderColor = System.Drawing.Color.Navy;
-            this.bunifuPanel1.BorderRadius = 10;
-            this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Controls.Add(this.dose1_picbox);
-            this.bunifuPanel1.Controls.Add(this.date1Label);
-            this.bunifuPanel1.Controls.Add(this.hospital1Label);
-            this.bunifuPanel1.Controls.Add(this.vaccine1Label);
-            this.bunifuPanel1.Controls.Add(this.dose1Label);
-            this.bunifuPanel1.Controls.Add(this.dose1Button);
-            this.bunifuPanel1.Controls.Add(this.bunifuSeparator2);
-            this.bunifuPanel1.Location = new System.Drawing.Point(123, 246);
-            this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(338, 123);
-            this.bunifuPanel1.TabIndex = 11;
-            // 
-            // dose1_picbox
-            // 
-            this.dose1_picbox.AllowFocused = false;
-            this.dose1_picbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dose1_picbox.AutoSizeHeight = true;
-            this.dose1_picbox.BorderRadius = 10;
-            this.dose1_picbox.Image = ((System.Drawing.Image)(resources.GetObject("dose1_picbox.Image")));
-            this.dose1_picbox.IsCircle = true;
-            this.dose1_picbox.Location = new System.Drawing.Point(13, 13);
-            this.dose1_picbox.Name = "dose1_picbox";
-            this.dose1_picbox.Size = new System.Drawing.Size(20, 20);
-            this.dose1_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dose1_picbox.TabIndex = 11;
-            this.dose1_picbox.TabStop = false;
-            this.dose1_picbox.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.guna2VSeparator1.Location = new System.Drawing.Point(88, 15);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 15);
+            this.guna2VSeparator1.TabIndex = 0;
             // 
             // date1Label
             // 
             this.date1Label.AutoSize = true;
             this.date1Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date1Label.ForeColor = System.Drawing.Color.Red;
-            this.date1Label.Location = new System.Drawing.Point(39, 66);
+            this.date1Label.Location = new System.Drawing.Point(41, 66);
             this.date1Label.Name = "date1Label";
             this.date1Label.Size = new System.Drawing.Size(38, 15);
-            this.date1Label.TabIndex = 10;
+            this.date1Label.TabIndex = 18;
             this.date1Label.Text = "[date]";
             // 
             // hospital1Label
@@ -704,10 +301,10 @@
             this.hospital1Label.AutoSize = true;
             this.hospital1Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hospital1Label.ForeColor = System.Drawing.Color.Red;
-            this.hospital1Label.Location = new System.Drawing.Point(39, 42);
+            this.hospital1Label.Location = new System.Drawing.Point(41, 42);
             this.hospital1Label.Name = "hospital1Label";
             this.hospital1Label.Size = new System.Drawing.Size(90, 15);
-            this.hospital1Label.TabIndex = 9;
+            this.hospital1Label.TabIndex = 17;
             this.hospital1Label.Text = "[hospital name]";
             // 
             // vaccine1Label
@@ -715,10 +312,10 @@
             this.vaccine1Label.AutoSize = true;
             this.vaccine1Label.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaccine1Label.ForeColor = System.Drawing.Color.Red;
-            this.vaccine1Label.Location = new System.Drawing.Point(98, 13);
+            this.vaccine1Label.Location = new System.Drawing.Point(101, 15);
             this.vaccine1Label.Name = "vaccine1Label";
             this.vaccine1Label.Size = new System.Drawing.Size(55, 15);
-            this.vaccine1Label.TabIndex = 8;
+            this.vaccine1Label.TabIndex = 16;
             this.vaccine1Label.Text = "[vaccine]";
             // 
             // dose1Label
@@ -726,127 +323,219 @@
             this.dose1Label.AutoSize = true;
             this.dose1Label.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dose1Label.ForeColor = System.Drawing.Color.Red;
-            this.dose1Label.Location = new System.Drawing.Point(39, 13);
+            this.dose1Label.Location = new System.Drawing.Point(40, 15);
             this.dose1Label.Name = "dose1Label";
             this.dose1Label.Size = new System.Drawing.Size(40, 15);
-            this.dose1Label.TabIndex = 2;
+            this.dose1Label.TabIndex = 15;
             this.dose1Label.Text = "[dose]";
             // 
-            // dose1Button
+            // guna2Panel2
             // 
-            this.dose1Button.AllowAnimations = true;
-            this.dose1Button.AllowMouseEffects = true;
-            this.dose1Button.AllowToggling = false;
-            this.dose1Button.AnimationSpeed = 200;
-            this.dose1Button.AutoGenerateColors = false;
-            this.dose1Button.AutoRoundBorders = false;
-            this.dose1Button.AutoSizeLeftIcon = true;
-            this.dose1Button.AutoSizeRightIcon = true;
-            this.dose1Button.BackColor = System.Drawing.Color.Transparent;
-            this.dose1Button.BackColor1 = System.Drawing.Color.Transparent;
-            this.dose1Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dose1Button.BackgroundImage")));
-            this.dose1Button.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose1Button.ButtonText = "[button]";
-            this.dose1Button.ButtonTextMarginLeft = 0;
-            this.dose1Button.ColorContrastOnClick = 45;
-            this.dose1Button.ColorContrastOnHover = 45;
-            this.dose1Button.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.dose1Button.CustomizableEdges = borderEdges3;
-            this.dose1Button.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.dose1Button.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dose1Button.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dose1Button.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dose1Button.Enabled = false;
-            this.dose1Button.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.dose1Button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dose1Button.ForeColor = System.Drawing.Color.MediumBlue;
-            this.dose1Button.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dose1Button.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.dose1Button.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.dose1Button.IconMarginLeft = 11;
-            this.dose1Button.IconPadding = 10;
-            this.dose1Button.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dose1Button.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.dose1Button.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.dose1Button.IconSize = 25;
-            this.dose1Button.IdleBorderColor = System.Drawing.Color.Navy;
-            this.dose1Button.IdleBorderRadius = 15;
-            this.dose1Button.IdleBorderThickness = 1;
-            this.dose1Button.IdleFillColor = System.Drawing.Color.Transparent;
-            this.dose1Button.IdleIconLeftImage = null;
-            this.dose1Button.IdleIconRightImage = null;
-            this.dose1Button.IndicateFocus = false;
-            this.dose1Button.Location = new System.Drawing.Point(192, 84);
-            this.dose1Button.Name = "dose1Button";
-            this.dose1Button.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.dose1Button.OnDisabledState.BorderRadius = 15;
-            this.dose1Button.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose1Button.OnDisabledState.BorderThickness = 1;
-            this.dose1Button.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dose1Button.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.dose1Button.OnDisabledState.IconLeftImage = null;
-            this.dose1Button.OnDisabledState.IconRightImage = null;
-            this.dose1Button.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.dose1Button.onHoverState.BorderRadius = 15;
-            this.dose1Button.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose1Button.onHoverState.BorderThickness = 1;
-            this.dose1Button.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.dose1Button.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.dose1Button.onHoverState.IconLeftImage = null;
-            this.dose1Button.onHoverState.IconRightImage = null;
-            this.dose1Button.OnIdleState.BorderColor = System.Drawing.Color.Navy;
-            this.dose1Button.OnIdleState.BorderRadius = 15;
-            this.dose1Button.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose1Button.OnIdleState.BorderThickness = 1;
-            this.dose1Button.OnIdleState.FillColor = System.Drawing.Color.Transparent;
-            this.dose1Button.OnIdleState.ForeColor = System.Drawing.Color.MediumBlue;
-            this.dose1Button.OnIdleState.IconLeftImage = null;
-            this.dose1Button.OnIdleState.IconRightImage = null;
-            this.dose1Button.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.dose1Button.OnPressedState.BorderRadius = 15;
-            this.dose1Button.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.dose1Button.OnPressedState.BorderThickness = 1;
-            this.dose1Button.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.dose1Button.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.dose1Button.OnPressedState.IconLeftImage = null;
-            this.dose1Button.OnPressedState.IconRightImage = null;
-            this.dose1Button.Size = new System.Drawing.Size(131, 22);
-            this.dose1Button.TabIndex = 7;
-            this.dose1Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dose1Button.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.dose1Button.TextMarginLeft = 0;
-            this.dose1Button.TextPadding = new System.Windows.Forms.Padding(0);
-            this.dose1Button.UseDefaultRadiusAndThickness = true;
-            this.dose1Button.Click += new System.EventHandler(this.dose1Button_Click);
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Navy;
+            this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Controls.Add(this.dose2Button);
+            this.guna2Panel2.Controls.Add(this.dose2Pic);
+            this.guna2Panel2.Controls.Add(this.guna2VSeparator2);
+            this.guna2Panel2.Controls.Add(this.date2Label);
+            this.guna2Panel2.Controls.Add(this.hospital2Label);
+            this.guna2Panel2.Controls.Add(this.vaccine2Label);
+            this.guna2Panel2.Controls.Add(this.dose2Label);
+            this.guna2Panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.guna2Panel2.Location = new System.Drawing.Point(131, 386);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(338, 123);
+            this.guna2Panel2.TabIndex = 100;
             // 
-            // bunifuSeparator2
+            // dose2Button
             // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
-            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(86, 13);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator2.Size = new System.Drawing.Size(10, 15);
-            this.bunifuSeparator2.TabIndex = 3;
+            this.dose2Button.Animated = true;
+            this.dose2Button.BorderColor = System.Drawing.Color.Navy;
+            this.dose2Button.BorderRadius = 6;
+            this.dose2Button.BorderThickness = 1;
+            this.dose2Button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dose2Button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dose2Button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dose2Button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dose2Button.Enabled = false;
+            this.dose2Button.FillColor = System.Drawing.Color.Transparent;
+            this.dose2Button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dose2Button.ForeColor = System.Drawing.Color.MediumBlue;
+            this.dose2Button.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.dose2Button.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.dose2Button.HoverState.ForeColor = System.Drawing.Color.White;
+            this.dose2Button.Location = new System.Drawing.Point(193, 86);
+            this.dose2Button.Name = "dose2Button";
+            this.dose2Button.Size = new System.Drawing.Size(131, 22);
+            this.dose2Button.TabIndex = 21;
+            this.dose2Button.Text = "[button2]";
+            this.dose2Button.Click += new System.EventHandler(this.dose2Button_Click);
             // 
-            // user_pictureBox
+            // dose2Pic
             // 
-            this.user_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.user_pictureBox.Location = new System.Drawing.Point(26, 25);
-            this.user_pictureBox.Name = "user_pictureBox";
-            this.user_pictureBox.Size = new System.Drawing.Size(106, 105);
-            this.user_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.user_pictureBox.TabIndex = 19;
-            this.user_pictureBox.TabStop = false;
+            this.dose2Pic.Location = new System.Drawing.Point(12, 12);
+            this.dose2Pic.Name = "dose2Pic";
+            this.dose2Pic.Size = new System.Drawing.Size(22, 22);
+            this.dose2Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dose2Pic.TabIndex = 20;
+            this.dose2Pic.TabStop = false;
+            // 
+            // guna2VSeparator2
+            // 
+            this.guna2VSeparator2.Location = new System.Drawing.Point(88, 15);
+            this.guna2VSeparator2.Name = "guna2VSeparator2";
+            this.guna2VSeparator2.Size = new System.Drawing.Size(10, 15);
+            this.guna2VSeparator2.TabIndex = 19;
+            // 
+            // date2Label
+            // 
+            this.date2Label.AutoSize = true;
+            this.date2Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date2Label.ForeColor = System.Drawing.Color.Red;
+            this.date2Label.Location = new System.Drawing.Point(40, 68);
+            this.date2Label.Name = "date2Label";
+            this.date2Label.Size = new System.Drawing.Size(38, 15);
+            this.date2Label.TabIndex = 17;
+            this.date2Label.Text = "[date]";
+            // 
+            // hospital2Label
+            // 
+            this.hospital2Label.AutoSize = true;
+            this.hospital2Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hospital2Label.ForeColor = System.Drawing.Color.Red;
+            this.hospital2Label.Location = new System.Drawing.Point(40, 44);
+            this.hospital2Label.Name = "hospital2Label";
+            this.hospital2Label.Size = new System.Drawing.Size(90, 15);
+            this.hospital2Label.TabIndex = 16;
+            this.hospital2Label.Text = "[hospital name]";
+            // 
+            // vaccine2Label
+            // 
+            this.vaccine2Label.AutoSize = true;
+            this.vaccine2Label.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vaccine2Label.ForeColor = System.Drawing.Color.Red;
+            this.vaccine2Label.Location = new System.Drawing.Point(99, 15);
+            this.vaccine2Label.Name = "vaccine2Label";
+            this.vaccine2Label.Size = new System.Drawing.Size(55, 15);
+            this.vaccine2Label.TabIndex = 15;
+            this.vaccine2Label.Text = "[vaccine]";
+            // 
+            // dose2Label
+            // 
+            this.dose2Label.AutoSize = true;
+            this.dose2Label.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dose2Label.ForeColor = System.Drawing.Color.Red;
+            this.dose2Label.Location = new System.Drawing.Point(40, 15);
+            this.dose2Label.Name = "dose2Label";
+            this.dose2Label.Size = new System.Drawing.Size(40, 15);
+            this.dose2Label.TabIndex = 12;
+            this.dose2Label.Text = "[dose]";
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel3.BorderColor = System.Drawing.Color.Navy;
+            this.guna2Panel3.BorderRadius = 10;
+            this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.Controls.Add(this.dosePrecautionButton);
+            this.guna2Panel3.Controls.Add(this.dosePrecautionPic);
+            this.guna2Panel3.Controls.Add(this.guna2VSeparator3);
+            this.guna2Panel3.Controls.Add(this.vaccinePrecautionLabel);
+            this.guna2Panel3.Controls.Add(this.datePrecautionLabel);
+            this.guna2Panel3.Controls.Add(this.hospitalPrecautionLabel);
+            this.guna2Panel3.Controls.Add(this.dosePrecautionLabel);
+            this.guna2Panel3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.guna2Panel3.Location = new System.Drawing.Point(131, 525);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(338, 123);
+            this.guna2Panel3.TabIndex = 101;
+            // 
+            // dosePrecautionButton
+            // 
+            this.dosePrecautionButton.Animated = true;
+            this.dosePrecautionButton.BorderColor = System.Drawing.Color.Navy;
+            this.dosePrecautionButton.BorderRadius = 6;
+            this.dosePrecautionButton.BorderThickness = 1;
+            this.dosePrecautionButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dosePrecautionButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dosePrecautionButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dosePrecautionButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dosePrecautionButton.Enabled = false;
+            this.dosePrecautionButton.FillColor = System.Drawing.Color.Transparent;
+            this.dosePrecautionButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dosePrecautionButton.ForeColor = System.Drawing.Color.MediumBlue;
+            this.dosePrecautionButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.dosePrecautionButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.dosePrecautionButton.HoverState.ForeColor = System.Drawing.Color.White;
+            this.dosePrecautionButton.Location = new System.Drawing.Point(193, 86);
+            this.dosePrecautionButton.Name = "dosePrecautionButton";
+            this.dosePrecautionButton.Size = new System.Drawing.Size(131, 22);
+            this.dosePrecautionButton.TabIndex = 29;
+            this.dosePrecautionButton.Text = "[button3]";
+            this.dosePrecautionButton.Click += new System.EventHandler(this.dosePrecautionButton_Click);
+            // 
+            // dosePrecautionPic
+            // 
+            this.dosePrecautionPic.Location = new System.Drawing.Point(12, 12);
+            this.dosePrecautionPic.Name = "dosePrecautionPic";
+            this.dosePrecautionPic.Size = new System.Drawing.Size(22, 22);
+            this.dosePrecautionPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dosePrecautionPic.TabIndex = 28;
+            this.dosePrecautionPic.TabStop = false;
+            // 
+            // guna2VSeparator3
+            // 
+            this.guna2VSeparator3.Location = new System.Drawing.Point(155, 15);
+            this.guna2VSeparator3.Name = "guna2VSeparator3";
+            this.guna2VSeparator3.Size = new System.Drawing.Size(10, 15);
+            this.guna2VSeparator3.TabIndex = 27;
+            // 
+            // vaccinePrecautionLabel
+            // 
+            this.vaccinePrecautionLabel.AutoSize = true;
+            this.vaccinePrecautionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vaccinePrecautionLabel.ForeColor = System.Drawing.Color.Red;
+            this.vaccinePrecautionLabel.Location = new System.Drawing.Point(167, 15);
+            this.vaccinePrecautionLabel.Name = "vaccinePrecautionLabel";
+            this.vaccinePrecautionLabel.Size = new System.Drawing.Size(55, 15);
+            this.vaccinePrecautionLabel.TabIndex = 25;
+            this.vaccinePrecautionLabel.Text = "[vaccine]";
+            // 
+            // datePrecautionLabel
+            // 
+            this.datePrecautionLabel.AutoSize = true;
+            this.datePrecautionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePrecautionLabel.ForeColor = System.Drawing.Color.Red;
+            this.datePrecautionLabel.Location = new System.Drawing.Point(39, 67);
+            this.datePrecautionLabel.Name = "datePrecautionLabel";
+            this.datePrecautionLabel.Size = new System.Drawing.Size(38, 15);
+            this.datePrecautionLabel.TabIndex = 26;
+            this.datePrecautionLabel.Text = "[date]";
+            // 
+            // hospitalPrecautionLabel
+            // 
+            this.hospitalPrecautionLabel.AutoSize = true;
+            this.hospitalPrecautionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hospitalPrecautionLabel.ForeColor = System.Drawing.Color.Red;
+            this.hospitalPrecautionLabel.Location = new System.Drawing.Point(39, 43);
+            this.hospitalPrecautionLabel.Name = "hospitalPrecautionLabel";
+            this.hospitalPrecautionLabel.Size = new System.Drawing.Size(90, 15);
+            this.hospitalPrecautionLabel.TabIndex = 24;
+            this.hospitalPrecautionLabel.Text = "[hospital name]";
+            // 
+            // dosePrecautionLabel
+            // 
+            this.dosePrecautionLabel.AutoSize = true;
+            this.dosePrecautionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dosePrecautionLabel.ForeColor = System.Drawing.Color.Red;
+            this.dosePrecautionLabel.Location = new System.Drawing.Point(40, 15);
+            this.dosePrecautionLabel.Name = "dosePrecautionLabel";
+            this.dosePrecautionLabel.Size = new System.Drawing.Size(40, 15);
+            this.dosePrecautionLabel.TabIndex = 23;
+            this.dosePrecautionLabel.Text = "[dose]";
             // 
             // User_Dashboard_userinfo
             // 
@@ -854,37 +543,37 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(601, 514);
-            this.Controls.Add(this.user_pictureBox);
-            this.Controls.Add(this.bunifuPanel5);
-            this.Controls.Add(this.bunifuPanel4);
-            this.Controls.Add(this.bunifuPanel3);
-            this.Controls.Add(this.bunifuPanel2);
-            this.Controls.Add(this.ref_id_tag);
-            this.Controls.Add(this.bunifuSeparator1);
-            this.Controls.Add(this.bunifuPanel1);
-            this.Controls.Add(this.aadhaar_last_label);
+            this.ClientSize = new System.Drawing.Size(618, 514);
+            this.Controls.Add(this.guna2Panel3);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.year_label);
+            this.Controls.Add(this.aadhaar_last_label);
             this.Controls.Add(this.aadhaar_hidden_label);
             this.Controls.Add(this.secret_code_label);
             this.Controls.Add(this.ref_id_label);
             this.Controls.Add(this.year_tag);
             this.Controls.Add(this.aadhaar_tag);
             this.Controls.Add(this.secret_code_tag);
+            this.Controls.Add(this.ref_id_tag);
+            this.Controls.Add(this.guna2Separator1);
+            this.Controls.Add(this.user_pictureBox);
             this.Controls.Add(this.name_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Dashboard_userinfo";
             this.Text = "User_dashboard_userinfo";
-            this.bunifuPanel3.ResumeLayout(false);
-            this.bunifuPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dosePrecaution_picbox)).EndInit();
-            this.bunifuPanel2.ResumeLayout(false);
-            this.bunifuPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dose2_picbox)).EndInit();
-            this.bunifuPanel1.ResumeLayout(false);
-            this.bunifuPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dose1_picbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.user_pictureBox)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dose1Pic)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dose2Pic)).EndInit();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dosePrecautionPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -892,42 +581,42 @@
 
         #endregion
         private System.Windows.Forms.Label name_label;
-        private Bunifu.UI.WinForms.BunifuLabel secret_code_tag;
-        private Bunifu.UI.WinForms.BunifuLabel aadhaar_tag;
-        private Bunifu.UI.WinForms.BunifuLabel year_tag;
-        private Bunifu.UI.WinForms.BunifuLabel ref_id_label;
-        private Bunifu.UI.WinForms.BunifuLabel secret_code_label;
-        private Bunifu.UI.WinForms.BunifuLabel aadhaar_hidden_label;
-        private Bunifu.UI.WinForms.BunifuLabel year_label;
-        private Bunifu.UI.WinForms.BunifuLabel aadhaar_last_label;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
-        private Bunifu.UI.WinForms.BunifuLabel ref_id_tag;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton dose1Button;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton dose2Button;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
-        private Bunifu.UI.WinForms.BunifuPictureBox dose2_picbox;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel3;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton dosePrecautionButton;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator4;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel4;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel5;
+        private System.Windows.Forms.PictureBox user_pictureBox;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private System.Windows.Forms.Label ref_id_tag;
+        private System.Windows.Forms.Label secret_code_tag;
+        private System.Windows.Forms.Label aadhaar_tag;
+        private System.Windows.Forms.Label year_tag;
+        private System.Windows.Forms.Label ref_id_label;
+        private System.Windows.Forms.Label secret_code_label;
+        private System.Windows.Forms.Label aadhaar_hidden_label;
+        private System.Windows.Forms.Label aadhaar_last_label;
+        private System.Windows.Forms.Label year_label;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label date1Label;
         private System.Windows.Forms.Label hospital1Label;
         private System.Windows.Forms.Label vaccine1Label;
         private System.Windows.Forms.Label dose1Label;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label date2Label;
         private System.Windows.Forms.Label hospital2Label;
         private System.Windows.Forms.Label vaccine2Label;
         private System.Windows.Forms.Label dose2Label;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
+        private System.Windows.Forms.PictureBox dose1Pic;
+        private System.Windows.Forms.PictureBox dose2Pic;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.PictureBox dosePrecautionPic;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator3;
+        private System.Windows.Forms.Label vaccinePrecautionLabel;
         private System.Windows.Forms.Label datePrecautionLabel;
         private System.Windows.Forms.Label hospitalPrecautionLabel;
-        private System.Windows.Forms.Label vaccinePrecautionLabel;
-        private Bunifu.UI.WinForms.BunifuPictureBox dose1_picbox;
-        private Bunifu.UI.WinForms.BunifuPictureBox dosePrecaution_picbox;
         private System.Windows.Forms.Label dosePrecautionLabel;
-        private System.Windows.Forms.PictureBox user_pictureBox;
+        private Guna.UI2.WinForms.Guna2Button dose1Button;
+        private Guna.UI2.WinForms.Guna2Button dose2Button;
+        private Guna.UI2.WinForms.Guna2Button dosePrecautionButton;
     }
 }
