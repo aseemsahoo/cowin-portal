@@ -8,9 +8,11 @@ namespace Cowin_Portal
 {
     public partial class User_Dashboard_appointment : Form
     {
-        int user_id, birth_year;
+        int user_id;
         int dose_type, vaccine_id, age_id;
         string dose1_date;
+
+        User_full_info curr_user = new User_full_info();
 
         List<Hospital> display = new List<Hospital>();
         List<States> state_list = new List<States>();
@@ -29,6 +31,9 @@ namespace Cowin_Portal
             user_id = userId;
             dose_type = doseType;
 
+            DataAccess db = new DataAccess();
+            curr_user = db.get_full_details(user_id)[0];
+
             if (dose_type == 0)
             {
                 set_age_radiobutton();
@@ -45,13 +50,39 @@ namespace Cowin_Portal
 
         private void set_age_radiobutton()
         {
-            DataAccess db = new DataAccess();
-            birth_year = db.get_full_details(user_id)[0].birth_year;
+            int birth_year = curr_user.birth_year;
             int age = DateTime.Now.Year - birth_year;
-            if (age >= 18 && age < 45)
-                age18_radiobutton.Checked = true;
+            if( age < 18)
+            {
+                MessageBox.Show
+                    ("You must be minimum 18 years of age. " +
+                    "You will be re-directed back to the user dashboard.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                finish_button_Click(new Object(), new EventArgs());
+            }
             else
+            if (age >= 18 && age < 45)
+            {
+                age18_radiobutton.Checked = true;
+                age_groupbox.Enabled = false;
+            }
+            else
+            {
                 age45_radiobutton.Checked = true;
+                age_groupbox.Enabled = true;
+            }
+        }
+
+        private void load_age_vaccine_refid()
+        {
+            DataAccess db = new DataAccess();
+
+            age_id = db.get_dose1_age(user_id)[0];
+            vaccine_id = db.get_dose1_vaccine(user_id)[0];
+            dose1_date = db.get_dose1_date(user_id)[0].ToString("yyyy-MM-dd");
+
+            set_radiobutton(age_groupbox, age_id + "+");
+            set_radiobutton(vaccine_groupbox, vaccine_from_id());
         }
 
         private void initialize_state_dropdown()
@@ -62,17 +93,6 @@ namespace Cowin_Portal
             {
                 state_comboBox.Items.Add(s.name);
             }
-        }
-
-        private void load_age_vaccine_refid()
-        {
-            DataAccess db = new DataAccess();
-            age_id = db.get_dose1_age(user_id)[0];
-            vaccine_id = db.get_dose1_vaccine(user_id)[0];
-            dose1_date = db.get_dose1_date(user_id)[0].ToString("yyyy-MM-dd");
-
-            set_radiobutton(age_groupbox, age_id + "+");
-            set_radiobutton(vaccine_groupbox, vaccine_from_id());
         }
 
         private void set_radiobutton(GroupBox groupbox, string s)
@@ -177,13 +197,22 @@ namespace Cowin_Portal
             display = db.search_center(district_id, vaccine_index, age_limit);
 
             Centers_gridview.DataSource = display;
+            Centers_gridview.CurrentCell = null;
+
+
+            Centers_gridview.Columns[0].Width = (int)(Centers_gridview.Width * 0.45);
+            Centers_gridview.Columns[1].Width = (int)(Centers_gridview.Width * 0.4);
+            Centers_gridview.Columns[2].Width = (int)(Centers_gridview.Width * 0.15);
         }
         private void slot_select_nextButton_Click(object sender, EventArgs e)
         {
             if (validate_controls() == false)
                 return;
-            if (Centers_gridview.SelectedRows.Count == 0)
+            if (Centers_gridview.CurrentCell == null)
+            {
+                errorProvider_ap.SetError(this.slot_search_label, "Please select a center");
                 return;
+            }
             display_on_second_tab();
             appointment_stepsPages.SelectedIndex = 1;
         }
@@ -207,9 +236,6 @@ namespace Cowin_Portal
 
         private void display_on_second_tab()
         {
-            DataAccess db = new DataAccess();
-            string ref_id = db.get_full_details(user_id)[0].ref_id;
-
             int index = Centers_gridview.CurrentCell.RowIndex;
             int hospital_id = display[index].id;
 
@@ -222,7 +248,8 @@ namespace Cowin_Portal
             hospital_nameLabel.Text = display[index].name;
             hospital_addressLabel.Text = display[index].address;
             vaccineLabel.Text = vaccine;
-            ref_idLabel.Text = ref_id;
+            fullname_label.Text = curr_user.fullname;
+            ref_idLabel.Text = curr_user.ref_id;
         }
 
         private void appointment_stepsPages_SelectedIndexChanged(object sender, EventArgs e)
@@ -230,12 +257,12 @@ namespace Cowin_Portal
             switch (appointment_stepsPages.SelectedIndex)
             {
                 case 1:
-                    ck1.Checked = ck1.Enabled = true;
-                    l1.ForeColor = Color.Navy;
+                    ck2.Checked = true;
+                    l2.ForeColor = Color.Navy;
                     break;
                 case 2:
-                    ck2.Checked = ck2.Enabled = true;
-                    l2.ForeColor = Color.Navy;
+                    ck3.Checked = true;
+                    l3.ForeColor = Color.Navy;
                     break;
             }
         }
@@ -272,6 +299,7 @@ namespace Cowin_Portal
         {
             appointment_stepsPages.SelectedIndex = 0;
         }
+
         private void time_select_submitButton_Click(object sender, EventArgs e)
         {
             if (validate_date_time() == false)
@@ -289,8 +317,6 @@ namespace Cowin_Portal
                 return;
 
             appointment_stepsPages.SelectedIndex = 2;
-            ck3.Checked = ck3.Enabled = true;
-            l3.ForeColor = Color.Navy;
         }
 
         private void finish_button_Click(object sender, EventArgs e)

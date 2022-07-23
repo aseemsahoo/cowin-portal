@@ -77,7 +77,6 @@
             // optionsPanel
             // 
             this.optionsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(32)))), ((int)(((byte)(94)))));
-            this.optionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.optionsPanel.Controls.Add(this.user_aboutButton);
             this.optionsPanel.Controls.Add(this.user_centersButton);
             this.optionsPanel.Controls.Add(this.user_dashboardButton);
@@ -111,7 +110,7 @@
             this.user_aboutButton.Location = new System.Drawing.Point(0, 203);
             this.user_aboutButton.Name = "user_aboutButton";
             this.user_aboutButton.Padding = new System.Windows.Forms.Padding(3);
-            this.user_aboutButton.Size = new System.Drawing.Size(198, 50);
+            this.user_aboutButton.Size = new System.Drawing.Size(200, 50);
             this.user_aboutButton.TabIndex = 9;
             this.user_aboutButton.Text = "About";
             // 
@@ -138,7 +137,7 @@
             this.user_centersButton.Location = new System.Drawing.Point(0, 153);
             this.user_centersButton.Name = "user_centersButton";
             this.user_centersButton.Padding = new System.Windows.Forms.Padding(3);
-            this.user_centersButton.Size = new System.Drawing.Size(198, 50);
+            this.user_centersButton.Size = new System.Drawing.Size(200, 50);
             this.user_centersButton.TabIndex = 8;
             this.user_centersButton.Text = "Nearest Centers";
             this.user_centersButton.Click += new System.EventHandler(this.user_centersButton_Click);
@@ -166,21 +165,20 @@
             this.user_dashboardButton.Location = new System.Drawing.Point(0, 103);
             this.user_dashboardButton.Name = "user_dashboardButton";
             this.user_dashboardButton.Padding = new System.Windows.Forms.Padding(3);
-            this.user_dashboardButton.Size = new System.Drawing.Size(198, 50);
+            this.user_dashboardButton.Size = new System.Drawing.Size(200, 50);
             this.user_dashboardButton.TabIndex = 7;
             this.user_dashboardButton.Text = "Dashboard";
             this.user_dashboardButton.Click += new System.EventHandler(this.user_dashboardButton_Click);
             // 
             // profilePanel
             // 
-            this.profilePanel.BackColor = System.Drawing.Color.Bisque;
-            this.profilePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.profilePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.profilePanel.Controls.Add(this.username_label);
             this.profilePanel.Controls.Add(this.guna2PictureBox1);
             this.profilePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.profilePanel.Location = new System.Drawing.Point(0, 0);
             this.profilePanel.Name = "profilePanel";
-            this.profilePanel.Size = new System.Drawing.Size(198, 103);
+            this.profilePanel.Size = new System.Drawing.Size(200, 103);
             this.profilePanel.TabIndex = 6;
             // 
             // username_label
@@ -214,6 +212,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.optionsPanel);
             this.Controls.Add(this.panel_display);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "User_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

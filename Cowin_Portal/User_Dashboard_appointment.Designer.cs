@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.appointment_stepsPages = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -49,8 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Centers_gridview = new System.Windows.Forms.DataGridView();
+            this.slot_search_label = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ref_id_textLabel = new System.Windows.Forms.Label();
@@ -79,18 +82,21 @@
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.ck3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.ck2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.ck1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.l3 = new System.Windows.Forms.Label();
             this.l2 = new System.Windows.Forms.Label();
             this.l1 = new System.Windows.Forms.Label();
+            this.ck1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.ck_panel1 = new System.Windows.Forms.Panel();
+            this.ck_panel3 = new System.Windows.Forms.Panel();
+            this.ck_panel2 = new System.Windows.Forms.Panel();
+            this.Centers_gridview = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.appointment_stepsPages.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.vaccine_groupbox.SuspendLayout();
             this.age_groupbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.time_groupbox.SuspendLayout();
@@ -98,6 +104,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.success_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ap)).BeginInit();
             this.guna2ContainerControl1.SuspendLayout();
+            this.ck_panel1.SuspendLayout();
+            this.ck_panel3.SuspendLayout();
+            this.ck_panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -124,7 +134,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.Centers_gridview);
             this.tabPage1.Controls.Add(this.district_comboBox);
             this.tabPage1.Controls.Add(this.state_comboBox);
             this.tabPage1.Controls.Add(this.slot_select_nextButton);
@@ -137,8 +149,7 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.guna2VSeparator2);
             this.tabPage1.Controls.Add(this.guna2VSeparator1);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.Centers_gridview);
+            this.tabPage1.Controls.Add(this.slot_search_label);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -267,8 +278,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(19, 144);
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(19, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 17);
             this.label5.TabIndex = 100;
@@ -280,7 +291,7 @@
             this.vaccine_groupbox.Controls.Add(this.covaxin_radiobutton);
             this.vaccine_groupbox.Controls.Add(this.sputnik_radiobutton);
             this.vaccine_groupbox.Controls.Add(this.covishield_radiobutton);
-            this.vaccine_groupbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.vaccine_groupbox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.vaccine_groupbox.Location = new System.Drawing.Point(261, 99);
             this.vaccine_groupbox.Name = "vaccine_groupbox";
             this.vaccine_groupbox.Size = new System.Drawing.Size(298, 80);
@@ -293,6 +304,7 @@
             this.covaxin_radiobutton.AutoSize = true;
             this.covaxin_radiobutton.BackColor = System.Drawing.Color.Transparent;
             this.covaxin_radiobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.covaxin_radiobutton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.covaxin_radiobutton.ForeColor = System.Drawing.Color.Black;
             this.covaxin_radiobutton.Location = new System.Drawing.Point(117, 46);
             this.covaxin_radiobutton.Name = "covaxin_radiobutton";
@@ -306,6 +318,7 @@
             this.sputnik_radiobutton.AutoSize = true;
             this.sputnik_radiobutton.BackColor = System.Drawing.Color.Transparent;
             this.sputnik_radiobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.sputnik_radiobutton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.sputnik_radiobutton.ForeColor = System.Drawing.Color.Black;
             this.sputnik_radiobutton.Location = new System.Drawing.Point(211, 46);
             this.sputnik_radiobutton.Name = "sputnik_radiobutton";
@@ -319,6 +332,7 @@
             this.covishield_radiobutton.AutoSize = true;
             this.covishield_radiobutton.BackColor = System.Drawing.Color.Transparent;
             this.covishield_radiobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.covishield_radiobutton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.covishield_radiobutton.ForeColor = System.Drawing.Color.Black;
             this.covishield_radiobutton.Location = new System.Drawing.Point(11, 46);
             this.covishield_radiobutton.Name = "covishield_radiobutton";
@@ -332,7 +346,7 @@
             this.age_groupbox.BackColor = System.Drawing.Color.Transparent;
             this.age_groupbox.Controls.Add(this.age45_radiobutton);
             this.age_groupbox.Controls.Add(this.age18_radiobutton);
-            this.age_groupbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.age_groupbox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.age_groupbox.Location = new System.Drawing.Point(139, 99);
             this.age_groupbox.Name = "age_groupbox";
             this.age_groupbox.Size = new System.Drawing.Size(100, 80);
@@ -345,6 +359,7 @@
             this.age45_radiobutton.AutoSize = true;
             this.age45_radiobutton.BackColor = System.Drawing.Color.Transparent;
             this.age45_radiobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.age45_radiobutton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.age45_radiobutton.ForeColor = System.Drawing.Color.Black;
             this.age45_radiobutton.Location = new System.Drawing.Point(52, 46);
             this.age45_radiobutton.Name = "age45_radiobutton";
@@ -358,6 +373,7 @@
             this.age18_radiobutton.AutoSize = true;
             this.age18_radiobutton.BackColor = System.Drawing.Color.Transparent;
             this.age18_radiobutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.age18_radiobutton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.age18_radiobutton.ForeColor = System.Drawing.Color.Black;
             this.age18_radiobutton.Location = new System.Drawing.Point(6, 46);
             this.age18_radiobutton.Name = "age18_radiobutton";
@@ -404,32 +420,20 @@
             this.guna2VSeparator1.Size = new System.Drawing.Size(10, 72);
             this.guna2VSeparator1.TabIndex = 95;
             // 
-            // label2
+            // slot_search_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(17, 75);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 25);
-            this.label2.TabIndex = 94;
-            this.label2.Text = "Slot Search Results:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Centers_gridview
-            // 
-            this.Centers_gridview.AllowUserToAddRows = false;
-            this.Centers_gridview.AllowUserToDeleteRows = false;
-            this.Centers_gridview.BackgroundColor = System.Drawing.Color.Beige;
-            this.Centers_gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Centers_gridview.Location = new System.Drawing.Point(22, 186);
-            this.Centers_gridview.Name = "Centers_gridview";
-            this.Centers_gridview.ReadOnly = true;
-            this.Centers_gridview.Size = new System.Drawing.Size(537, 187);
-            this.Centers_gridview.TabIndex = 93;
+            this.slot_search_label.AutoSize = true;
+            this.slot_search_label.BackColor = System.Drawing.Color.Transparent;
+            this.slot_search_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.slot_search_label.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.slot_search_label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.slot_search_label.Location = new System.Drawing.Point(17, 73);
+            this.slot_search_label.Margin = new System.Windows.Forms.Padding(0);
+            this.slot_search_label.Name = "slot_search_label";
+            this.slot_search_label.Size = new System.Drawing.Size(177, 25);
+            this.slot_search_label.TabIndex = 94;
+            this.slot_search_label.Text = "Slot Search Results:";
+            this.slot_search_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPage2
             // 
@@ -458,7 +462,7 @@
             this.groupBox1.Controls.Add(this.fullname_label);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(30, 166);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(517, 83);
@@ -472,7 +476,7 @@
             this.ref_id_textLabel.BackColor = System.Drawing.Color.Transparent;
             this.ref_id_textLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.ref_id_textLabel.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.ref_id_textLabel.Location = new System.Drawing.Point(35, 56);
+            this.ref_id_textLabel.Location = new System.Drawing.Point(35, 53);
             this.ref_id_textLabel.Name = "ref_id_textLabel";
             this.ref_id_textLabel.Size = new System.Drawing.Size(87, 17);
             this.ref_id_textLabel.TabIndex = 115;
@@ -481,18 +485,20 @@
             // ref_idLabel
             // 
             this.ref_idLabel.AutoSize = true;
-            this.ref_idLabel.Location = new System.Drawing.Point(138, 58);
+            this.ref_idLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ref_idLabel.Location = new System.Drawing.Point(169, 53);
             this.ref_idLabel.Name = "ref_idLabel";
-            this.ref_idLabel.Size = new System.Drawing.Size(44, 15);
+            this.ref_idLabel.Size = new System.Drawing.Size(48, 17);
             this.ref_idLabel.TabIndex = 114;
             this.ref_idLabel.Text = "[ref_id]";
             // 
             // fullname_label
             // 
             this.fullname_label.AutoSize = true;
-            this.fullname_label.Location = new System.Drawing.Point(138, 35);
+            this.fullname_label.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullname_label.Location = new System.Drawing.Point(169, 30);
             this.fullname_label.Name = "fullname_label";
-            this.fullname_label.Size = new System.Drawing.Size(65, 15);
+            this.fullname_label.Size = new System.Drawing.Size(69, 17);
             this.fullname_label.TabIndex = 113;
             this.fullname_label.Text = "[full name]";
             // 
@@ -502,7 +508,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(35, 33);
+            this.label8.Location = new System.Drawing.Point(35, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 17);
             this.label8.TabIndex = 112;
@@ -515,7 +521,7 @@
             this.time_groupbox.Controls.Add(this.slot1101radiobutton);
             this.time_groupbox.Controls.Add(this.slot0911radiobutton);
             this.time_groupbox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.time_groupbox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.time_groupbox.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.time_groupbox.Location = new System.Drawing.Point(30, 275);
             this.time_groupbox.Name = "time_groupbox";
             this.time_groupbox.Size = new System.Drawing.Size(517, 83);
@@ -582,10 +588,10 @@
             // vaccineLabel
             // 
             this.vaccineLabel.AutoSize = true;
-            this.vaccineLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.vaccineLabel.Location = new System.Drawing.Point(125, 128);
+            this.vaccineLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vaccineLabel.Location = new System.Drawing.Point(131, 126);
             this.vaccineLabel.Name = "vaccineLabel";
-            this.vaccineLabel.Size = new System.Drawing.Size(45, 15);
+            this.vaccineLabel.Size = new System.Drawing.Size(48, 17);
             this.vaccineLabel.TabIndex = 114;
             this.vaccineLabel.Text = "[name]";
             // 
@@ -789,71 +795,69 @@
             // 
             // guna2Separator3
             // 
-            this.guna2Separator3.Location = new System.Drawing.Point(7, 2);
+            this.guna2Separator3.Location = new System.Drawing.Point(27, 2);
             this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(570, 21);
+            this.guna2Separator3.Size = new System.Drawing.Size(530, 21);
             this.guna2Separator3.TabIndex = 0;
             // 
             // ck3
             // 
-            this.ck3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ck3.BackColor = System.Drawing.Color.Transparent;
+            this.ck3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.ck3.CheckedState.BorderColor = System.Drawing.Color.Navy;
             this.ck3.CheckedState.BorderThickness = 0;
-            this.ck3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ck3.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ck3.Location = new System.Drawing.Point(507, 20);
+            this.ck3.CheckedState.FillColor = System.Drawing.Color.Navy;
+            this.ck3.CheckedState.InnerColor = System.Drawing.Color.Navy;
+            this.ck3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ck3.Enabled = false;
+            this.ck3.ForeColor = System.Drawing.Color.Navy;
+            this.ck3.Location = new System.Drawing.Point(0, 0);
             this.ck3.Name = "ck3";
+            this.ck3.ShadowDecoration.BorderRadius = 0;
+            this.ck3.ShadowDecoration.Depth = 0;
             this.ck3.Size = new System.Drawing.Size(20, 20);
             this.ck3.TabIndex = 37;
             this.ck3.Text = "guna2CustomRadioButton3";
-            this.ck3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.ck3.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
             this.ck3.UncheckedState.BorderThickness = 1;
             this.ck3.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.ck3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.ck3.UseTransparentBackground = true;
             // 
             // ck2
             // 
-            this.ck2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ck2.BackColor = System.Drawing.Color.Transparent;
+            this.ck2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.ck2.CheckedState.BorderColor = System.Drawing.Color.Navy;
             this.ck2.CheckedState.BorderThickness = 0;
-            this.ck2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ck2.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ck2.Location = new System.Drawing.Point(247, 20);
+            this.ck2.CheckedState.FillColor = System.Drawing.Color.Navy;
+            this.ck2.CheckedState.InnerColor = System.Drawing.Color.Navy;
+            this.ck2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ck2.Enabled = false;
+            this.ck2.ForeColor = System.Drawing.Color.Navy;
+            this.ck2.Location = new System.Drawing.Point(0, 0);
             this.ck2.Name = "ck2";
+            this.ck2.ShadowDecoration.BorderRadius = 0;
+            this.ck2.ShadowDecoration.Depth = 0;
             this.ck2.Size = new System.Drawing.Size(20, 20);
             this.ck2.TabIndex = 36;
             this.ck2.Text = "guna2CustomRadioButton2";
-            this.ck2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.ck2.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
             this.ck2.UncheckedState.BorderThickness = 1;
             this.ck2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.ck2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // ck1
-            // 
-            this.ck1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ck1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.ck1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ck1.CheckedState.BorderThickness = 0;
-            this.ck1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ck1.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ck1.Location = new System.Drawing.Point(13, 20);
-            this.ck1.Name = "ck1";
-            this.ck1.Size = new System.Drawing.Size(20, 20);
-            this.ck1.TabIndex = 35;
-            this.ck1.Text = "guna2CustomRadioButton1";
-            this.ck1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ck1.UncheckedState.BorderThickness = 1;
-            this.ck1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.ck1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.ck2.UseTransparentBackground = true;
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.Location = new System.Drawing.Point(377, 25);
+            this.guna2Separator2.Location = new System.Drawing.Point(376, 25);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(119, 10);
             this.guna2Separator2.TabIndex = 34;
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(128, 25);
+            this.guna2Separator1.Location = new System.Drawing.Point(130, 25);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(108, 10);
             this.guna2Separator1.TabIndex = 33;
@@ -863,7 +867,7 @@
             this.l3.AutoSize = true;
             this.l3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.l3.Location = new System.Drawing.Point(529, 20);
+            this.l3.Location = new System.Drawing.Point(528, 21);
             this.l3.Name = "l3";
             this.l3.Size = new System.Drawing.Size(43, 17);
             this.l3.TabIndex = 32;
@@ -874,7 +878,7 @@
             this.l2.AutoSize = true;
             this.l2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.l2.Location = new System.Drawing.Point(268, 20);
+            this.l2.Location = new System.Drawing.Point(268, 21);
             this.l2.Name = "l2";
             this.l2.Size = new System.Drawing.Size(103, 17);
             this.l2.TabIndex = 31;
@@ -884,12 +888,114 @@
             // 
             this.l1.AutoSize = true;
             this.l1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.l1.Location = new System.Drawing.Point(35, 20);
+            this.l1.ForeColor = System.Drawing.Color.Navy;
+            this.l1.Location = new System.Drawing.Point(33, 21);
             this.l1.Name = "l1";
-            this.l1.Size = new System.Drawing.Size(87, 17);
-            this.l1.TabIndex = 30;
-            this.l1.Text = "Select Center";
+            this.l1.Size = new System.Drawing.Size(103, 17);
+            this.l1.TabIndex = 39;
+            this.l1.Text = "Select Time Slot";
+            // 
+            // ck1
+            // 
+            this.ck1.BackColor = System.Drawing.Color.Transparent;
+            this.ck1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.ck1.Checked = true;
+            this.ck1.CheckedState.BorderColor = System.Drawing.Color.Navy;
+            this.ck1.CheckedState.BorderThickness = 0;
+            this.ck1.CheckedState.FillColor = System.Drawing.Color.Navy;
+            this.ck1.CheckedState.InnerColor = System.Drawing.Color.Navy;
+            this.ck1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ck1.Enabled = false;
+            this.ck1.ForeColor = System.Drawing.Color.Navy;
+            this.ck1.Location = new System.Drawing.Point(0, 0);
+            this.ck1.Name = "ck1";
+            this.ck1.ShadowDecoration.BorderRadius = 0;
+            this.ck1.ShadowDecoration.Depth = 0;
+            this.ck1.Size = new System.Drawing.Size(20, 20);
+            this.ck1.TabIndex = 40;
+            this.ck1.Text = "guna2CustomRadioButton2";
+            this.ck1.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
+            this.ck1.UncheckedState.BorderThickness = 1;
+            this.ck1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.ck1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.ck1.UseTransparentBackground = true;
+            // 
+            // ck_panel1
+            // 
+            this.ck_panel1.Controls.Add(this.ck1);
+            this.ck_panel1.Location = new System.Drawing.Point(12, 20);
+            this.ck_panel1.Name = "ck_panel1";
+            this.ck_panel1.Size = new System.Drawing.Size(20, 20);
+            this.ck_panel1.TabIndex = 1;
+            // 
+            // ck_panel3
+            // 
+            this.ck_panel3.Controls.Add(this.ck3);
+            this.ck_panel3.Location = new System.Drawing.Point(506, 19);
+            this.ck_panel3.Name = "ck_panel3";
+            this.ck_panel3.Size = new System.Drawing.Size(20, 20);
+            this.ck_panel3.TabIndex = 41;
+            // 
+            // ck_panel2
+            // 
+            this.ck_panel2.Controls.Add(this.ck2);
+            this.ck_panel2.Location = new System.Drawing.Point(247, 19);
+            this.ck_panel2.Name = "ck_panel2";
+            this.ck_panel2.Size = new System.Drawing.Size(20, 20);
+            this.ck_panel2.TabIndex = 2;
+            // 
+            // Centers_gridview
+            // 
+            this.Centers_gridview.AllowUserToAddRows = false;
+            this.Centers_gridview.AllowUserToDeleteRows = false;
+            this.Centers_gridview.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Centers_gridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Centers_gridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Centers_gridview.BackgroundColor = System.Drawing.Color.Beige;
+            this.Centers_gridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Centers_gridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Centers_gridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Centers_gridview.ColumnHeadersHeight = 22;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Centers_gridview.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Centers_gridview.EnableHeadersVisualStyles = false;
+            this.Centers_gridview.GridColor = System.Drawing.Color.White;
+            this.Centers_gridview.Location = new System.Drawing.Point(22, 185);
+            this.Centers_gridview.MultiSelect = false;
+            this.Centers_gridview.Name = "Centers_gridview";
+            this.Centers_gridview.ReadOnly = true;
+            this.Centers_gridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Centers_gridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.Centers_gridview.RowHeadersVisible = false;
+            this.Centers_gridview.RowTemplate.Height = 30;
+            this.Centers_gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Centers_gridview.Size = new System.Drawing.Size(537, 182);
+            this.Centers_gridview.TabIndex = 111;
             // 
             // User_Dashboard_appointment
             // 
@@ -898,15 +1004,15 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(584, 513);
+            this.Controls.Add(this.ck_panel2);
+            this.Controls.Add(this.ck_panel3);
+            this.Controls.Add(this.ck_panel1);
+            this.Controls.Add(this.l1);
             this.Controls.Add(this.guna2ContainerControl1);
-            this.Controls.Add(this.ck3);
-            this.Controls.Add(this.ck2);
-            this.Controls.Add(this.ck1);
             this.Controls.Add(this.guna2Separator2);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.l3);
             this.Controls.Add(this.l2);
-            this.Controls.Add(this.l1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Dashboard_appointment";
@@ -919,7 +1025,6 @@
             this.vaccine_groupbox.PerformLayout();
             this.age_groupbox.ResumeLayout(false);
             this.age_groupbox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -930,6 +1035,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.success_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_ap)).EndInit();
             this.guna2ContainerControl1.ResumeLayout(false);
+            this.ck_panel1.ResumeLayout(false);
+            this.ck_panel3.ResumeLayout(false);
+            this.ck_panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -958,8 +1067,7 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView Centers_gridview;
+        private System.Windows.Forms.Label slot_search_label;
         private Guna.UI2.WinForms.Guna2Button slot_select_backButton;
         private Guna.UI2.WinForms.Guna2Button slot_select_nextButton;
         private System.Windows.Forms.Label hospital_addressLabel;
@@ -983,14 +1091,18 @@
         private Guna.UI2.WinForms.Guna2ComboBox state_comboBox;
         private Guna.UI2.WinForms.Guna2CustomRadioButton ck3;
         private Guna.UI2.WinForms.Guna2CustomRadioButton ck2;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton ck1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label l3;
         private System.Windows.Forms.Label l2;
-        private System.Windows.Forms.Label l1;
         private System.Windows.Forms.Label ref_id_textLabel;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
+        private System.Windows.Forms.Panel ck_panel2;
+        private System.Windows.Forms.Panel ck_panel3;
+        private System.Windows.Forms.Panel ck_panel1;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton ck1;
+        private System.Windows.Forms.Label l1;
+        private System.Windows.Forms.DataGridView Centers_gridview;
     }
 }

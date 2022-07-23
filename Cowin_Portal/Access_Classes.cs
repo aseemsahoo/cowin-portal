@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Cowin_Portal
 {
@@ -39,6 +40,7 @@ namespace Cowin_Portal
 
     public class Hospital
     {
+        [Browsable(false)]
         public int id { get; set; }
         public string name { get; set; }
         public string address { get; set; }
