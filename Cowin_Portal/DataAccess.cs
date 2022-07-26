@@ -351,15 +351,17 @@ namespace Cowin_Portal
 
                     if (dose_type == 0)
                     {
-                        connection.Execute("dbo_insert_user_dose1", p, commandType: CommandType.StoredProcedure);
+                        await connection.ExecuteAsync("dbo_insert_user_dose1", p, commandType: CommandType.StoredProcedure);
                     }
                     else
                     if (dose_type == 1)
                     {
-                        connection.Execute("dbo_insert_user_dose2", p, commandType: CommandType.StoredProcedure);
+                        await connection.ExecuteAsync("dbo_insert_user_dose2", p, commandType: CommandType.StoredProcedure);
                     }
                     else
-                        connection.Execute("dbo_insert_user_dose_precaution", p, commandType: CommandType.StoredProcedure);
+                    {
+                        await connection.ExecuteAsync("dbo_insert_user_dose_precaution", p, commandType: CommandType.StoredProcedure);
+                    }
 
                     return "OK";
                 }
