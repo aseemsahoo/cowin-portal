@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace Cowin_Portal
 {
@@ -16,7 +17,8 @@ namespace Cowin_Portal
         private void set_status_text()
         {
             DataAccess db = new DataAccess();
-            bool res = db.get_register_status(1);
+
+            bool res = db.test_connection();
             if (res == true)
             {
                 status_label.Text = "Connected to Database";
@@ -35,30 +37,21 @@ namespace Cowin_Portal
             usernameInsTxt.Text = "";
             passwordInsTxt.Text = "";
         }
-        private void signup_select_Button_Click(object sender, EventArgs e)
-        {
-            cowin_tab.SelectedIndex = 1;
-        }
-        private void login_select_button_Click(object sender, EventArgs e)
-        {
-            cowin_tab.SelectedIndex = 2;
-        }
         private bool validate_signup()
         {
             errorProvider_cowin.Clear();
-            RegexValidation regex_signup = new RegexValidation();
-            if (Regex.IsMatch(PhNumberInsTxt.Text, regex_signup.PHONENUMBER_REGEX) == false)
+            RegexValidation rgx = new RegexValidation();
+            if (rgx.isValid_phonenumber(PhNumberInsTxt.Text) == false)
             {
                 errorProvider_cowin.SetError(this.PhNumberInsTxt, "Please enter valid Phone Number");
                 return false;
             }
-            if (Regex.IsMatch(usernameInsTxt.Text, regex_signup.USERNAME_REGEX) == false)
+            if (rgx.isValid_username(usernameInsTxt.Text) == false)
             {
                 errorProvider_cowin.SetError(this.usernameInsTxt, "Username invalid");
                 return false;
             }
-            // note we use == true here;
-            if (Regex.IsMatch(passwordInsTxt.Text, regex_signup.PASSWORD_REGEX) == true)
+            if (rgx.isValid_password(passwordInsTxt.Text) == false)
             {
                 errorProvider_cowin.SetError(this.passwordInsTxt, "Passsword must be within 9-14 characters and contain a symbol");
                 return false;
@@ -86,44 +79,65 @@ namespace Cowin_Portal
             if (validate_signup() == false)
                 return;
             DataAccess db = new DataAccess();
-            string res = db.insert_user(PhNumberInsTxt.Text, usernameInsTxt.Text, passwordInsTxt.Text);
-            if (res != "OK")
+            SaltHash sh = new SaltHash();
+
+            string salt = sh.GetSalt();
+            string hashed_password = sh.Hash(passwordInsTxt.Text, salt);
+
+            string res = db.insert_user(PhNumberInsTxt.Text, usernameInsTxt.Text, hashed_password, salt);
+            if (res == "OK")
             {
                 MessageBox.Show
-                    ("Exception catch here - details  : " + res,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                    ("Your account has been created",
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clear_textbox();
+                cowin_tab.SelectedIndex = 2;
             }
             else
             {
                 MessageBox.Show
-                    ("Your account has been created",
-                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ("Exception catch here - details  : " + res,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            clear_textbox();
-            cowin_tab.SelectedIndex = 2;
         }
 
         private void login_final_button_Click(object sender, EventArgs e)
         {
             if (validate_login() == false)
                 return;
+
             DataAccess db = new DataAccess();
-            int res = db.get_login_status(login_username.Text, login_password.Text);
-            if (res > 0)
+            SaltHash sh = new SaltHash();
+
+            List<User_Login> curr_user = db.get_login_data(login_username.Text);
+
+            if (curr_user.Count == 0)
             {
-                User_Dashboard User_d = new User_Dashboard(res);
-                this.Hide();
-                User_d.ShowDialog();
-                this.Close();
+                errorProvider_cowin.SetError(this.login_username, "Username doesn't exist");
             }
             else
-            if (res == -1)
+            if(sh.Verify(login_password.Text, curr_user[0].password) == false)
+            {
                 errorProvider_cowin.SetError(this.login_password, "Wrong Password");
+            }
             else
-                errorProvider_cowin.SetError(this.login_username, "Username doesn't exist");
+            {
+                User_Dashboard User_d = new User_Dashboard(curr_user[0].id);
+                this.Hide();
+                if(User_d.IsDisposed == false)
+                    User_d.ShowDialog();
+                this.Close();
+            }
         }
 
+        private void signup_select_Button_Click(object sender, EventArgs e)
+        {
+            cowin_tab.SelectedIndex = 1;
+        }
+        private void login_select_button_Click(object sender, EventArgs e)
+        {
+            cowin_tab.SelectedIndex = 2;
+        }
         private void exit_label_Click(object sender, EventArgs e)
         {
             this.Close();

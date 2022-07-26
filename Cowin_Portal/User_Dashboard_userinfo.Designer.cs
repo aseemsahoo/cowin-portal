@@ -37,8 +37,7 @@
             this.year_tag = new System.Windows.Forms.Label();
             this.ref_id_label = new System.Windows.Forms.Label();
             this.secret_code_label = new System.Windows.Forms.Label();
-            this.aadhaar_hidden_label = new System.Windows.Forms.Label();
-            this.aadhaar_last_label = new System.Windows.Forms.Label();
+            this.aadhaar_label = new System.Windows.Forms.Label();
             this.year_label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -77,17 +76,18 @@
             // 
             // name_label
             // 
+            this.name_label.AutoSize = true;
             this.name_label.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_label.Location = new System.Drawing.Point(151, 37);
+            this.name_label.Location = new System.Drawing.Point(139, 41);
             this.name_label.Name = "name_label";
-            this.name_label.Size = new System.Drawing.Size(213, 40);
+            this.name_label.Size = new System.Drawing.Size(157, 37);
             this.name_label.TabIndex = 1;
             this.name_label.Text = "[full name]";
             // 
             // user_pictureBox
             // 
             this.user_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.user_pictureBox.Location = new System.Drawing.Point(38, 27);
+            this.user_pictureBox.Location = new System.Drawing.Point(26, 31);
             this.user_pictureBox.Name = "user_pictureBox";
             this.user_pictureBox.Size = new System.Drawing.Size(106, 105);
             this.user_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -96,7 +96,7 @@
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(49, 216);
+            this.guna2Separator1.Location = new System.Drawing.Point(32, 216);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(503, 10);
             this.guna2Separator1.TabIndex = 20;
@@ -107,7 +107,7 @@
             this.ref_id_tag.BackColor = System.Drawing.Color.Transparent;
             this.ref_id_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.ref_id_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.ref_id_tag.Location = new System.Drawing.Point(45, 156);
+            this.ref_id_tag.Location = new System.Drawing.Point(28, 156);
             this.ref_id_tag.Name = "ref_id_tag";
             this.ref_id_tag.Size = new System.Drawing.Size(49, 17);
             this.ref_id_tag.TabIndex = 88;
@@ -119,7 +119,7 @@
             this.secret_code_tag.BackColor = System.Drawing.Color.Transparent;
             this.secret_code_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.secret_code_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.secret_code_tag.Location = new System.Drawing.Point(177, 156);
+            this.secret_code_tag.Location = new System.Drawing.Point(160, 156);
             this.secret_code_tag.Name = "secret_code_tag";
             this.secret_code_tag.Size = new System.Drawing.Size(90, 17);
             this.secret_code_tag.TabIndex = 89;
@@ -131,7 +131,7 @@
             this.aadhaar_tag.BackColor = System.Drawing.Color.Transparent;
             this.aadhaar_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.aadhaar_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.aadhaar_tag.Location = new System.Drawing.Point(307, 156);
+            this.aadhaar_tag.Location = new System.Drawing.Point(290, 156);
             this.aadhaar_tag.Name = "aadhaar_tag";
             this.aadhaar_tag.Size = new System.Drawing.Size(97, 17);
             this.aadhaar_tag.TabIndex = 90;
@@ -143,7 +143,7 @@
             this.year_tag.BackColor = System.Drawing.Color.Transparent;
             this.year_tag.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.year_tag.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.year_tag.Location = new System.Drawing.Point(454, 156);
+            this.year_tag.Location = new System.Drawing.Point(437, 156);
             this.year_tag.Name = "year_tag";
             this.year_tag.Size = new System.Drawing.Size(102, 17);
             this.year_tag.TabIndex = 91;
@@ -155,7 +155,7 @@
             this.ref_id_label.BackColor = System.Drawing.Color.Transparent;
             this.ref_id_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.ref_id_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.ref_id_label.Location = new System.Drawing.Point(45, 177);
+            this.ref_id_label.Location = new System.Drawing.Point(28, 177);
             this.ref_id_label.Name = "ref_id_label";
             this.ref_id_label.Size = new System.Drawing.Size(99, 17);
             this.ref_id_label.TabIndex = 92;
@@ -167,35 +167,23 @@
             this.secret_code_label.BackColor = System.Drawing.Color.Transparent;
             this.secret_code_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.secret_code_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.secret_code_label.Location = new System.Drawing.Point(177, 177);
+            this.secret_code_label.Location = new System.Drawing.Point(160, 177);
             this.secret_code_label.Name = "secret_code_label";
             this.secret_code_label.Size = new System.Drawing.Size(85, 17);
             this.secret_code_label.TabIndex = 93;
             this.secret_code_label.Text = "[last 4 digits]";
             // 
-            // aadhaar_hidden_label
+            // aadhaar_label
             // 
-            this.aadhaar_hidden_label.AutoSize = true;
-            this.aadhaar_hidden_label.BackColor = System.Drawing.Color.Transparent;
-            this.aadhaar_hidden_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.aadhaar_hidden_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.aadhaar_hidden_label.Location = new System.Drawing.Point(307, 177);
-            this.aadhaar_hidden_label.Name = "aadhaar_hidden_label";
-            this.aadhaar_hidden_label.Size = new System.Drawing.Size(76, 17);
-            this.aadhaar_hidden_label.TabIndex = 94;
-            this.aadhaar_hidden_label.Text = "XXXX XXXX";
-            // 
-            // aadhaar_last_label
-            // 
-            this.aadhaar_last_label.AutoSize = true;
-            this.aadhaar_last_label.BackColor = System.Drawing.Color.Transparent;
-            this.aadhaar_last_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.aadhaar_last_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.aadhaar_last_label.Location = new System.Drawing.Point(380, 177);
-            this.aadhaar_last_label.Name = "aadhaar_last_label";
-            this.aadhaar_last_label.Size = new System.Drawing.Size(41, 17);
-            this.aadhaar_last_label.TabIndex = 95;
-            this.aadhaar_last_label.Text = "[4 ns]";
+            this.aadhaar_label.AutoSize = true;
+            this.aadhaar_label.BackColor = System.Drawing.Color.Transparent;
+            this.aadhaar_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.aadhaar_label.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.aadhaar_label.Location = new System.Drawing.Point(290, 177);
+            this.aadhaar_label.Name = "aadhaar_label";
+            this.aadhaar_label.Size = new System.Drawing.Size(117, 17);
+            this.aadhaar_label.TabIndex = 94;
+            this.aadhaar_label.Text = "XXXX XXXX [abcd]";
             // 
             // year_label
             // 
@@ -203,7 +191,7 @@
             this.year_label.BackColor = System.Drawing.Color.Transparent;
             this.year_label.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.year_label.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.year_label.Location = new System.Drawing.Point(454, 177);
+            this.year_label.Location = new System.Drawing.Point(437, 177);
             this.year_label.Name = "year_label";
             this.year_label.Size = new System.Drawing.Size(42, 17);
             this.year_label.TabIndex = 96;
@@ -215,7 +203,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 678);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 30);
+            this.panel1.Size = new System.Drawing.Size(567, 30);
             this.panel1.TabIndex = 97;
             // 
             // panel2
@@ -223,7 +211,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 648);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(601, 30);
+            this.panel2.Size = new System.Drawing.Size(567, 30);
             this.panel2.TabIndex = 98;
             // 
             // guna2Panel1
@@ -241,7 +229,7 @@
             this.guna2Panel1.Controls.Add(this.vaccine1Label);
             this.guna2Panel1.Controls.Add(this.dose1Label);
             this.guna2Panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Panel1.Location = new System.Drawing.Point(131, 247);
+            this.guna2Panel1.Location = new System.Drawing.Point(114, 247);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(338, 123);
             this.guna2Panel1.TabIndex = 99;
@@ -325,9 +313,9 @@
             this.dose1Label.ForeColor = System.Drawing.Color.Red;
             this.dose1Label.Location = new System.Drawing.Point(40, 15);
             this.dose1Label.Name = "dose1Label";
-            this.dose1Label.Size = new System.Drawing.Size(40, 15);
+            this.dose1Label.Size = new System.Drawing.Size(46, 15);
             this.dose1Label.TabIndex = 15;
-            this.dose1Label.Text = "[dose]";
+            this.dose1Label.Text = "DOSE 1";
             // 
             // guna2Panel2
             // 
@@ -344,7 +332,7 @@
             this.guna2Panel2.Controls.Add(this.vaccine2Label);
             this.guna2Panel2.Controls.Add(this.dose2Label);
             this.guna2Panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Panel2.Location = new System.Drawing.Point(131, 386);
+            this.guna2Panel2.Location = new System.Drawing.Point(114, 386);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(338, 123);
             this.guna2Panel2.TabIndex = 100;
@@ -429,9 +417,9 @@
             this.dose2Label.ForeColor = System.Drawing.Color.Red;
             this.dose2Label.Location = new System.Drawing.Point(40, 15);
             this.dose2Label.Name = "dose2Label";
-            this.dose2Label.Size = new System.Drawing.Size(40, 15);
+            this.dose2Label.Size = new System.Drawing.Size(48, 15);
             this.dose2Label.TabIndex = 12;
-            this.dose2Label.Text = "[dose]";
+            this.dose2Label.Text = "DOSE 2";
             // 
             // guna2Panel3
             // 
@@ -448,7 +436,7 @@
             this.guna2Panel3.Controls.Add(this.hospitalPrecautionLabel);
             this.guna2Panel3.Controls.Add(this.dosePrecautionLabel);
             this.guna2Panel3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Panel3.Location = new System.Drawing.Point(131, 525);
+            this.guna2Panel3.Location = new System.Drawing.Point(114, 525);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(338, 123);
             this.guna2Panel3.TabIndex = 101;
@@ -488,7 +476,7 @@
             // 
             // guna2VSeparator3
             // 
-            this.guna2VSeparator3.Location = new System.Drawing.Point(155, 15);
+            this.guna2VSeparator3.Location = new System.Drawing.Point(154, 15);
             this.guna2VSeparator3.Name = "guna2VSeparator3";
             this.guna2VSeparator3.Size = new System.Drawing.Size(10, 15);
             this.guna2VSeparator3.TabIndex = 27;
@@ -533,9 +521,9 @@
             this.dosePrecautionLabel.ForeColor = System.Drawing.Color.Red;
             this.dosePrecautionLabel.Location = new System.Drawing.Point(40, 15);
             this.dosePrecautionLabel.Name = "dosePrecautionLabel";
-            this.dosePrecautionLabel.Size = new System.Drawing.Size(40, 15);
+            this.dosePrecautionLabel.Size = new System.Drawing.Size(113, 15);
             this.dosePrecautionLabel.TabIndex = 23;
-            this.dosePrecautionLabel.Text = "[dose]";
+            this.dosePrecautionLabel.Text = "PRECAUTION DOSE";
             // 
             // User_Dashboard_userinfo
             // 
@@ -543,15 +531,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(618, 514);
+            this.ClientSize = new System.Drawing.Size(584, 514);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.year_label);
-            this.Controls.Add(this.aadhaar_last_label);
-            this.Controls.Add(this.aadhaar_hidden_label);
+            this.Controls.Add(this.aadhaar_label);
             this.Controls.Add(this.secret_code_label);
             this.Controls.Add(this.ref_id_label);
             this.Controls.Add(this.year_tag);
@@ -589,8 +576,7 @@
         private System.Windows.Forms.Label year_tag;
         private System.Windows.Forms.Label ref_id_label;
         private System.Windows.Forms.Label secret_code_label;
-        private System.Windows.Forms.Label aadhaar_hidden_label;
-        private System.Windows.Forms.Label aadhaar_last_label;
+        private System.Windows.Forms.Label aadhaar_label;
         private System.Windows.Forms.Label year_label;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

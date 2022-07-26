@@ -3,106 +3,157 @@ using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using System.Data;
+using System.IO;
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Cowin_Portal
 {
     public class DataAccess
-    {   
-        public int get_login_status(string u_name, string pw)
+    {
+        public static void ErrorLogging(Exception ex)
         {
-            try
             {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
-                {
-                    var p = new DynamicParameters();
-                    p.Add("@username", u_name);
-                    p.Add("@password", pw);
-                    p.Add("@result", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                var currentDate = DateTime.Now;
+                var monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(currentDate.Month);
 
-                    connection.Execute
-                        ("dbo.get_login_status", p, commandType: CommandType.StoredProcedure);
-                    var retVal = p.Get<int>("@result");
-                    return retVal;
+                var root = AppDomain.CurrentDomain.BaseDirectory + "\\logs";
+                var yearPath = root + "\\" + currentDate.Year.ToString() + "\\";
+                var MonthPath = yearPath + currentDate.Year + "-" + monthName + "\\";
+                var errorFile = MonthPath + "ErrorLogs-" + String.Format("{0:d-M-yyyy}", currentDate.Date) + ".txt";
+                
+                if (!Directory.Exists(root))
+                {
+                    Directory.CreateDirectory(root);
                 }
-            }
-            catch (Exception ex)
-            {
-                return 0;
+                if (!Directory.Exists(yearPath))
+                {
+                    Directory.CreateDirectory(yearPath);
+                }
+                if (!Directory.Exists(MonthPath))
+                {
+                    Directory.CreateDirectory(MonthPath);
+                }
+                if (!File.Exists(errorFile))
+                {
+                    FileStream fs = File.Create(errorFile);
+                    fs.Close();
+                }
+                using (StreamWriter sw = File.AppendText(errorFile))
+                {
+                    sw.WriteLine("=============Error Logging ===========");
+                    sw.WriteLine("===========Start============= " + currentDate);
+                    sw.WriteLine("<Error Message>: ");
+                    sw.WriteLine(ex.Message);
+                    sw.WriteLine("<Stack Trace>: ");
+                    sw.WriteLine(ex.StackTrace);
+                    sw.WriteLine("===========End============= " + currentDate);
+                    sw.WriteLine();
+                }
             }
         }
 
-        public string get_username(int user_id)
+        internal bool test_connection()
         {
             try
             {
-                using (IDbConnection connection =
-                    new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<string>("dbo.get_username @userId", new { userId = user_id }).ToList();
-                    return output[0];
+                    return true;
                 }
             }
             catch (Exception ex)
             {
-                return ex.Message;
-            }
-        }
-
-        public bool get_register_status(int user_id)
-        {
-            try
-            {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
-                {
-                    var p = new DynamicParameters();
-                    p.Add("@userId", user_id);
-                    p.Add("@result", dbType: DbType.Boolean, direction: ParameterDirection.Output);
-
-                    connection.Execute
-                        ("dbo.get_register_status", p, commandType: CommandType.StoredProcedure);
-                    bool retVal = p.Get<bool>("@result");
-                    return retVal;
-                }
-            }
-            catch (Exception ex)
-            {
+                ErrorLogging(ex);
                 return false;
             }
         }
 
-        public string insert_user(string phone_no, string u_name, string pw)
+        internal List<User_Login> get_login_data(string u_name)
         {
             try
             {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                {
+                    var output = connection.Query<User_Login>("dbo.get_login_data @username", new { username = u_name });
+                    return output.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogging(ex);
+                return null;
+            }
+        }
+
+        internal string get_username(int user_id)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                {
+                    var output = connection.Query<string>("dbo.get_username @userId", new { userId = user_id });
+                    return output.ToList()[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogging(ex);
+                return ex.Message;
+            }
+        }
+
+        internal int get_register_status(int user_id)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                {
+                    var p = new { userId = user_id };
+
+                    var output = connection.Query<int>("dbo.get_register_status", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList()[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogging(ex);
+                return ex.GetHashCode();
+            }
+        }
+
+        internal string insert_user(string phone_no, string u_name, string pw, string _salt)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     User_SignIn curr_user = new User_SignIn
                     {
                         phonenumber = phone_no,
                         username = u_name,
-                        password = pw
+                        password = pw,
+                        salt = _salt
                     };
                     List<User_SignIn> user_insert = new List<User_SignIn>();
                     user_insert.Add(curr_user);
-                    connection.Execute("dbo.insert_user @phonenumber, @username, @password", user_insert);
+
+                    connection.Execute("dbo.insert_user @phonenumber, @username, @password, @salt", user_insert);
                     return "OK";
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return ex.Message;
             }
         }
-        
-        public string insert_user_register(int user_ID, string name, string gen, int yr, string aadhaar, string r_id)
+
+        internal string insert_user_register(int user_ID, string name, string gen, int yr, string aadhaar, string r_id)
         {
             try
             {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     User_full_info curr_user = new User_full_info
                     {
@@ -115,22 +166,23 @@ namespace Cowin_Portal
                     };
                     List<User_full_info> user_insert = new List<User_full_info>();
                     user_insert.Add(curr_user);
+
                     connection.Execute("dbo.insert_user_register @user_id, @fullname, @aadhaar_no, @ref_id, @gender, @birth_year", user_insert);
                     return "OK";
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return ex.Message;
             }
         }
 
-        public List<States> get_all_states()
+        internal List<States> get_all_states()
         {
             try
             {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     var output = connection.Query<States>("dbo.get_states");
                     return output.ToList();
@@ -138,16 +190,16 @@ namespace Cowin_Portal
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public List<User_full_info> get_full_details(int userID)
+        internal List<User_full_info> get_full_details(int userID)
         {
             try
             {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     var output = connection.Query<User_full_info>("dbo.get_user_dashboard_info @userId", new { userId = userID });
                     return output.ToList();
@@ -155,41 +207,36 @@ namespace Cowin_Portal
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public List<User_dose_data> get_all_doses(int userID)
+        internal List<User_dose_data> get_all_doses(int userID)
         {
             try
             {
-                using (IDbConnection connection =
-                    new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection =
+                    new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var d0 = new { userId = userID };
-                    //var d1 = new { userId = userID };
-                    //var d2 = new { userId = userID };
-                    var list1 = connection.Query<User_dose_data>("dbo.get_dose_info @userId", d0).ToList();
-                    //var list2 = connection.Query<User_dose_data>("dbo.get_dose_info @userId", d1).ToList();
-                    //var list3 = connection.Query<User_dose_data>("dbo.get_dose_info @userId", d2).ToList();
+                    var p = new { userId = userID };
 
-                    //list2.AddRange(list3);
-                    //list1.AddRange(list2);
-                    return list1;
+                    var output = connection.Query<User_dose_data>("dbo.get_dose_info @userId", p);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public List<Hospital> search_center(int district_index, int vaccine_index, int _age_limit)
+        internal List<Hospital> search_center(int district_index, int vaccine_index, int _age_limit)
         {
             try
             {
-                using (IDbConnection connection =
-                    new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     var p = new
                     {
@@ -197,92 +244,92 @@ namespace Cowin_Portal
                         vaccine_id = vaccine_index,
                         age_limit = _age_limit
                     };
-                    var output = connection.Query<Hospital>("dbo.get_centers @district_id, @vaccine_id, @age_limit", p).ToList();
-                    return output;
+                    var output = connection.Query<Hospital>("dbo.get_centers @district_id, @vaccine_id, @age_limit", p);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public List<Districts> get_districts(int stateID)
+        internal List<Districts> get_districts(int stateID)
         {
             try
             {
-                using (IDbConnection connection =
-                    new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<Districts>("dbo.get_districts @state_id", new { state_id = stateID }).ToList();
-                    return output;
+                    var output = connection.Query<Districts>("dbo.get_districts @state_id", new { state_id = stateID });
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public List<int> get_dose1_vaccine(int user_id)
+        internal List<int> get_dose1_vaccine(int user_id)
         {
             try
             {
-                using (IDbConnection connection =
-                    new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<int>("dbo.get_dose1_vaccine @userId", new { userId = user_id }).ToList();
-                    return output;
+                    var output = connection.Query<int>("dbo.get_dose1_vaccine @userId", new { userId = user_id });
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public List<int> get_dose1_age(int user_id)
+        internal List<int> get_dose1_age(int user_id)
         {
             try
             {
-                using (IDbConnection connection =
-                    new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<int>("dbo.get_dose1_age @userId", new { userId = user_id }).ToList();
-                    return output;
+                    var output = connection.Query<int>("dbo.get_dose1_age @userId", new { userId = user_id });
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public List<DateTime> get_dose1_date(int user_id)
+        internal List<DateTime> get_dose1_date(int user_id)
         {
             try
             {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<DateTime>("dbo.get_dose1_date @userId", new { userId = user_id }).ToList();
+                    var output = connection.Query<DateTime>("dbo.get_dose1_date @userId", new { userId = user_id });
 
-                    return output;
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return null;
             }
         }
 
-        public string insert_user_dose_data(int user_id, int hospital_id, string date, string time, int dose_type)
+        internal string insert_user_dose_data(int user_id, int hospital_id, string date, string time, int dose_type)
         {
 
             try
             {
-                using (IDbConnection connection =
-                new System.Data.SqlClient.SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     var p = new DynamicParameters();
                     p.Add("@userId", user_id);
@@ -290,7 +337,7 @@ namespace Cowin_Portal
                     p.Add("@date", date);
                     p.Add("@time", time);
 
-                    if(dose_type == 0)
+                    if (dose_type == 0)
                     {
                         connection.Execute("dbo.insert_user_dose1", p, commandType: CommandType.StoredProcedure);
                     }
@@ -300,13 +347,15 @@ namespace Cowin_Portal
                         connection.Execute("dbo.insert_user_dose2", p, commandType: CommandType.StoredProcedure);
                     }
                     else
+                    {
                         connection.Execute("dbo.insert_user_dose_precaution", p, commandType: CommandType.StoredProcedure);
-
+                    }
                     return "OK";
                 }
             }
             catch (Exception ex)
             {
+                ErrorLogging(ex);
                 return ex.Message;
             }
         }

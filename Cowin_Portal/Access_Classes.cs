@@ -3,11 +3,16 @@ using System.ComponentModel;
 
 namespace Cowin_Portal
 {
-    public class User_SignIn
+    public class User_Login
+    {
+        public int id { get; set; }
+        public string password { get; set; }
+        public string salt { get; set; }
+    }
+    public class User_SignIn : User_Login
     {
         public string phonenumber { get; set; }
         public string username { get; set; }
-        public string password { get; set; }
     }
     public class User_full_info
     {
@@ -32,6 +37,7 @@ namespace Cowin_Portal
         public int id { get; set; }
         public string name { get; set; }
     }
+
     public class Districts
     {
         public int id { get; set; }

@@ -14,37 +14,47 @@ namespace Cowin_Portal
             InitializeComponent();
         }
 
-        public string display_text()
+        internal string display_text()
         {
             return "Register for vaccination";
         }
-
+        private string get_groupbox_radiobuttion(Panel groupbox)
+        {
+            string res = "";
+            foreach (RadioButton r in groupbox.Controls)
+            {
+                if (r.Checked)
+                    res = r.Text;
+            }
+            return res;
+        }
         private bool validate_user_register()
         {
             errorProvider_register.Clear();
-            RegexValidation regex_register = new RegexValidation();
-            if (Regex.IsMatch(NameInsText.Text, regex_register.FULLNAME_REGEX) == false)
+
+            RegexValidation rgx = new RegexValidation();
+            if (rgx.isValid_fullname(NameInsText.Text) == false)
             {
                 errorProvider_register.SetError(this.NameInsText, "Enter valid name");
                 return false;
             }
+            string res = get_groupbox_radiobuttion(panel1);
+
             bool isChecked = false;
-            foreach (RadioButton r in panel1.Controls)
-            {
-                if (r.Checked)
-                    isChecked = true;
-            }
+            if (res != "")
+                isChecked = true;
+
             if (isChecked == false)
             {
                 errorProvider_register.SetError(this.genderLabel, "Please select a gender");
                 return false;
             }
-            if (Regex.IsMatch(YearInsText.Text, regex_register.YEAR_REGEX) == false)
+            if(rgx.isValid_birthyear(YearInsText.Text))
             {
                 errorProvider_register.SetError(this.YearInsText, "Birth year must be between 1945 and 2013");
                 return false;
             }
-            if (Regex.IsMatch(AadhaarInsText.Text, regex_register.AADHAAR_REGEX) == false)
+            if (rgx.isValid_aadhaar(AadhaarInsText.Text))
             {
                 errorProvider_register.SetError(this.AadhaarInsText, "Please enter a valid 14-digit aadhaar");
                 return false;
@@ -68,7 +78,7 @@ namespace Cowin_Portal
             return gender;
         }
 
-        public string generate_random_refID()
+        private string generate_random_refID()
         {
             Random rnd = new Random();
 
@@ -85,20 +95,19 @@ namespace Cowin_Portal
                 return;
             DataAccess db = new DataAccess();
             string res = db.insert_user_register(user_id, NameInsText.Text, get_radiobutton_string(), int.Parse(YearInsText.Text), AadhaarInsText.Text, generate_random_refID());
-            if (res != "OK")
-            {
-                MessageBox.Show
-                    ("Exception catch here - details  : " + res,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
+            if (res == "OK")
             {
                 MessageBox.Show
                     ("Registered !",
                     "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clear_textbox();
                 open_userinfo_form();
+            }
+            else
+            {
+                MessageBox.Show
+                    ("Exception catch here - details  : " + res,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void open_userinfo_form()
@@ -110,7 +119,6 @@ namespace Cowin_Portal
             };
 
             Form frm = this.Parent.FindForm();
-
             Control match = frm.Controls.Find("panel_display", true).FirstOrDefault();
             if (match != null && match is Panel)
             {

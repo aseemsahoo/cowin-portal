@@ -306,7 +306,7 @@
             this.state_comboBox.Name = "state_comboBox";
             this.state_comboBox.Size = new System.Drawing.Size(195, 36);
             this.state_comboBox.TabIndex = 113;
-            this.state_comboBox.SelectedIndexChanged += new System.EventHandler(this.state_comboBox_SelectedIndexChanged_1);
+            this.state_comboBox.SelectedIndexChanged += new System.EventHandler(this.state_comboBox_SelectedIndexChanged);
             // 
             // Centers_gridview
             // 
@@ -365,7 +365,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(584, 514);
             this.Controls.Add(this.Centers_gridview);
@@ -382,9 +381,7 @@
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Dashboard_slots";
-            this.Text = "x";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_slots)).EndInit();
             this.age_groupbox.ResumeLayout(false);
             this.age_groupbox.PerformLayout();

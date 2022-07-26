@@ -113,6 +113,7 @@
             this.user_aboutButton.Size = new System.Drawing.Size(200, 50);
             this.user_aboutButton.TabIndex = 9;
             this.user_aboutButton.Text = "About";
+            this.user_aboutButton.Click += new System.EventHandler(this.user_aboutButton_Click);
             // 
             // user_centersButton
             // 

@@ -14,33 +14,62 @@ namespace Cowin_Portal
         List<User_full_info> curr_user = new List<User_full_info>();
         List<User_dose_data> curr_user_doses = new List<User_dose_data>();
 
-        public string display_text()
-        {
-            return "Your Information";
-        }
         public User_Dashboard_userinfo(int userID)
         {
             InitializeComponent();
             user_id = userID;
             fill_form(user_id);
         }
+        internal string display_text()
+        {
+            return "Your Information";
+        }
+
+        private void fill_form(int userID)
+        {
+            DataAccess db = new DataAccess();
+
+            curr_user = db.get_full_details(userID);
+            curr_user_doses = db.get_all_doses(userID);
+
+            fill_user_data();
+            fill_dose_data(0, dose1Label, vaccine1Label, hospital1Label, date1Label, dose1Pic, dose1Button);
+            fill_dose_data(1, dose2Label, vaccine2Label, hospital2Label, date2Label, dose2Pic, dose2Button);
+            fill_dose_data(2, dosePrecautionLabel, vaccinePrecautionLabel, hospitalPrecautionLabel, datePrecautionLabel, dosePrecautionPic, dosePrecautionButton);
+        }
+        private void fill_user_data()
+        {
+            if (curr_user[0].gender == "Male")
+                user_pictureBox.Image = Properties.Resources.icons8_circled_user_male;
+            else
+                user_pictureBox.Image = Properties.Resources.icons8_circled_user_female;
+
+            name_label.Text = curr_user[0].fullname;
+            ref_id_label.Text = curr_user[0].ref_id;
+            secret_code_label.Text = curr_user[0].ref_id.Substring(10);
+            aadhaar_label.Text ="XXXX XXXX " + curr_user[0].aadhaar_no.Substring(8);
+            year_label.Text = curr_user[0].birth_year.ToString();
+        }
+
         private void fill_dose_data(int i, Label doseLabel, Label vaccineLabel, Label hospitalLabel, Label dateLabel, PictureBox dosePic, Guna2Button doseButton)
         {
-            doseLabel.Text = "DOSE " + (i + 1).ToString();
-            if (i == 2)
-                doseLabel.Text = "PRECAUTION DOSE";
-
             if (curr_user_doses.Count <= i || (i != 0 && (curr_user_doses[i - 1].dose_date - DateTime.Today).TotalDays >= 0))
             {
                 // red
-                dosePic.Image = Cowin_Portal.Properties.Resources.icons8_red;
+                dosePic.Image = Properties.Resources.icons8_red;
+                vaccineLabel.Text = dateLabel.Text = "";
+                doseButton.Text = "Schedule";
+
                 hospitalLabel.Text = "Appointment not scheduled";
                 
-                doseButton.Text = "Schedule";
                 if (i == 0)
+                {
                     doseButton.Enabled = true;
-                if (i == 0 || curr_user_doses.Count < i)
                     return;
+                }
+                if (curr_user_doses.Count < i)
+                    return;
+
                 var diff_days = (curr_user_doses[i - 1].dose_date - DateTime.Today).TotalDays;
                 if (curr_user_doses.Count == i && diff_days < 0)
                     doseButton.Enabled = true;
@@ -57,7 +86,7 @@ namespace Cowin_Portal
             if (days >= 0)
             {
                 // yellow
-                dosePic.Image = Cowin_Portal.Properties.Resources.icons8_gold;
+                dosePic.Image = Properties.Resources.icons8_gold;
                 doseButton.Text = "Reschedule";
                 doseButton.Enabled = true;
 
@@ -69,7 +98,7 @@ namespace Cowin_Portal
             else
             {
                 // green
-                dosePic.Image = Cowin_Portal.Properties.Resources.icons8_green;
+                dosePic.Image = Properties.Resources.icons8_green;
                 doseButton.Text = "Schedule";
                 doseButton.Enabled = false;
 
@@ -78,31 +107,6 @@ namespace Cowin_Portal
                 hospitalLabel.ForeColor = Color.LimeGreen;
                 dateLabel.ForeColor = Color.LimeGreen;
             }
-        }
-        private void fill_user_data()
-        {
-            if (curr_user[0].gender == "Male")
-                user_pictureBox.Image = Cowin_Portal.Properties.Resources.icons8_circled_user_male;
-            else
-                user_pictureBox.Image = Cowin_Portal.Properties.Resources.icons8_circled_user_female;
-
-            name_label.Text = curr_user[0].fullname;
-            ref_id_label.Text = curr_user[0].ref_id;
-            secret_code_label.Text = curr_user[0].ref_id.Substring(10);
-            aadhaar_last_label.Text = curr_user[0].aadhaar_no.Substring(8);
-            year_label.Text = curr_user[0].birth_year.ToString();
-        }
-        public void fill_form(int userID)
-        {
-            DataAccess db = new DataAccess();
-
-            curr_user = db.get_full_details(userID);
-            curr_user_doses = db.get_all_doses(userID);
-
-            fill_user_data();
-            fill_dose_data(0, dose1Label, vaccine1Label, hospital1Label, date1Label, dose1Pic, dose1Button);
-            fill_dose_data(1, dose2Label, vaccine2Label, hospital2Label, date2Label, dose2Pic, dose2Button);
-            fill_dose_data(2, dosePrecautionLabel, vaccinePrecautionLabel, hospitalPrecautionLabel, datePrecautionLabel, dosePrecautionPic, dosePrecautionButton);
         }
 
         private void open_appointment_form(int dose_type)
@@ -135,12 +139,10 @@ namespace Cowin_Portal
         {
             open_appointment_form(0);
         }
-
         private void dose2Button_Click(object sender, EventArgs e)
         {
             open_appointment_form(1);
         }
-
         private void dosePrecautionButton_Click(object sender, EventArgs e)
         {
             open_appointment_form(2);

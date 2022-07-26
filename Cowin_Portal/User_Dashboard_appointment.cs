@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Cowin_Portal
 {
-    public partial class User_Dashboard_appointment : Form
+    public partial class User_Dashboard_appointment : Base_search_class
     {
         int user_id;
         int dose_type, vaccine_id, age_id;
@@ -14,19 +14,10 @@ namespace Cowin_Portal
 
         User_full_info curr_user = new User_full_info();
 
-        List<Hospital> display = new List<Hospital>();
-        List<States> state_list = new List<States>();
-        List<Districts> district_list = new List<Districts>();
-
-        public string display_text()
-        {
-            return "Schedule vaccination appointment";
-        }
-
         public User_Dashboard_appointment(int userId, int doseType)
         {
             InitializeComponent();
-            initialize_state_dropdown();
+            initialize_state_dropdown(state_comboBox);
 
             user_id = userId;
             dose_type = doseType;
@@ -46,6 +37,11 @@ namespace Cowin_Portal
             }
             vaccineDatePicker.MinDate = DateTime.Today;
             vaccineDatePicker.MaxDate = DateTime.Today.AddDays(10);
+        }
+
+        internal string display_text()
+        {
+            return "Schedule vaccination appointment";
         }
 
         private void set_age_radiobutton()
@@ -73,6 +69,14 @@ namespace Cowin_Portal
             }
         }
 
+        private void set_radiobutton(GroupBox groupbox, string s)
+        {
+            foreach (RadioButton r in groupbox.Controls)
+            {
+                if (r.Text == s)
+                    r.Checked = true;
+            }
+        }
         private void load_age_vaccine_refid()
         {
             DataAccess db = new DataAccess();
@@ -85,52 +89,11 @@ namespace Cowin_Portal
             set_radiobutton(vaccine_groupbox, vaccine_from_id());
         }
 
-        private void initialize_state_dropdown()
-        {
-            DataAccess db = new DataAccess();
-            state_list = db.get_all_states();
-            foreach (States s in state_list)
-            {
-                state_comboBox.Items.Add(s.name);
-            }
-        }
-
-        private void set_radiobutton(GroupBox groupbox, string s)
-        {
-            foreach (RadioButton r in groupbox.Controls)
-            {
-                if (r.Text == s)
-                    r.Checked = true;
-            }
-        }
-
         private void state_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = state_comboBox.SelectedIndex;
-            int state_id = state_list[index].id;
-
-            DataAccess db = new DataAccess();
-            district_list = db.get_districts(state_id);
-
-            district_comboBox.Items.Clear();
-            district_comboBox.SelectedIndex = -1;
-            district_comboBox.Text = "";
-            foreach (Districts d in district_list)
-            {
-                district_comboBox.Items.Add(d.name);
-            }
+            get_districts(state_comboBox, district_comboBox);
         }
 
-        private string get_groupbox_radiobuttion(GroupBox groupbox)
-        {
-            string res = "";
-            foreach (RadioButton r in groupbox.Controls)
-            {
-                if (r.Checked)
-                    res = r.Text;
-            }
-            return res;
-        }
         private bool validate_controls()
         {
             errorProvider_ap.Clear();
@@ -162,15 +125,7 @@ namespace Cowin_Portal
                 vaccine_index = vaccine_id;
                 return;
             }
-            string vaccine = get_groupbox_radiobuttion(vaccine_groupbox);
-
-            if (vaccine == "Covishield")
-                vaccine_index = 1;
-            else
-            if (vaccine == "Covaxin")
-                vaccine_index = 2;
-            else
-                vaccine_index = 3;
+            get_vaccine_index_base(vaccine_groupbox, ref vaccine_index);
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -178,8 +133,6 @@ namespace Cowin_Portal
 
             if (validate_controls() == false)
                 return;
-            int index = district_comboBox.SelectedIndex;
-            int district_id = district_list[index].id;
 
             int vaccine_index = 0, age_limit;
             if (dose_type != 0)
@@ -192,34 +145,44 @@ namespace Cowin_Portal
                 age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox).Substring(0, 2));
                 get_vaccine_index(ref vaccine_index);
             }
-
-            DataAccess db = new DataAccess();
-            display = db.search_center(district_id, vaccine_index, age_limit);
-
-            Centers_gridview.DataSource = display;
-            Centers_gridview.CurrentCell = null;
-
-
-            Centers_gridview.Columns[0].Width = (int)(Centers_gridview.Width * 0.45);
-            Centers_gridview.Columns[1].Width = (int)(Centers_gridview.Width * 0.4);
-            Centers_gridview.Columns[2].Width = (int)(Centers_gridview.Width * 0.15);
+            load_DataGridView(district_comboBox, Centers_gridview, ref vaccine_index, ref age_limit);
         }
+        /*
+        ---------------------------------------------------------------------------------
+                            End of first tab
+        ---------------------------------------------------------------------------------
+        */
         private void slot_select_nextButton_Click(object sender, EventArgs e)
         {
             if (validate_controls() == false)
+            {
                 return;
+            }
             if (Centers_gridview.CurrentCell == null)
             {
                 errorProvider_ap.SetError(this.slot_search_label, "Please select a center");
                 return;
             }
-            display_on_second_tab();
+            int index = Centers_gridview.CurrentCell.RowIndex;
+            int hospital_id = display[index].id;
+
+            string vaccine;
+            if (dose_type == 0)
+            {
+                vaccine = get_groupbox_radiobuttion(vaccine_groupbox);
+            }
+            else
+                vaccine = vaccine_from_id();
+
+            hospital_nameLabel.Text = display[index].name;
+            hospital_addressLabel.Text = display[index].address;
+            vaccineLabel.Text = vaccine;
+
+            fullname_label.Text = curr_user.fullname;
+            ref_idLabel.Text = curr_user.ref_id;
+
             appointment_stepsPages.SelectedIndex = 1;
         }
-
-        //---------------------------------------------------------------------------------
-        // End of first tab
-        //---------------------------------------------------------------------------------
 
         private string vaccine_from_id()
         {
@@ -234,41 +197,9 @@ namespace Cowin_Portal
             return vaccine_name;
         }
 
-        private void display_on_second_tab()
-        {
-            int index = Centers_gridview.CurrentCell.RowIndex;
-            int hospital_id = display[index].id;
-
-            string vaccine;
-            if (dose_type == 0)
-                vaccine = get_groupbox_radiobuttion(vaccine_groupbox);
-            else
-                vaccine = vaccine_from_id();
-
-            hospital_nameLabel.Text = display[index].name;
-            hospital_addressLabel.Text = display[index].address;
-            vaccineLabel.Text = vaccine;
-            fullname_label.Text = curr_user.fullname;
-            ref_idLabel.Text = curr_user.ref_id;
-        }
-
-        private void appointment_stepsPages_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (appointment_stepsPages.SelectedIndex)
-            {
-                case 1:
-                    ck2.Checked = true;
-                    l2.ForeColor = Color.Navy;
-                    break;
-                case 2:
-                    ck3.Checked = true;
-                    l3.ForeColor = Color.Navy;
-                    break;
-            }
-        }
-
         private bool validate_date_time()
         {
+            errorProvider_ap.Clear();
             if (dose_type != 0)
             {
                 DateTime chosen_date = vaccineDatePicker.Value;
@@ -286,10 +217,9 @@ namespace Cowin_Portal
                     return false;
                 }
             }
-            errorProvider_ap.Clear();
             if (get_groupbox_radiobuttion(time_groupbox) == "")
             {
-                errorProvider_ap.SetError(this.time_groupbox, "wrong 2");
+                errorProvider_ap.SetError(this.time_groupbox, "Please select a time slot");
                 return false;
             }
             return true;
@@ -315,8 +245,27 @@ namespace Cowin_Portal
 
             if (res != "OK")
                 return;
-
             appointment_stepsPages.SelectedIndex = 2;
+        }
+
+        /*
+        ---------------------------------------------------------------------------------
+                            End of second tab
+        ---------------------------------------------------------------------------------
+        */
+        private void appointment_stepsPages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (appointment_stepsPages.SelectedIndex)
+            {
+                case 1:
+                    ck2.Checked = true;
+                    l2.ForeColor = Color.Navy;
+                    break;
+                case 2:
+                    ck3.Checked = true;
+                    l3.ForeColor = Color.Navy;
+                    break;
+            }
         }
 
         private void finish_button_Click(object sender, EventArgs e)

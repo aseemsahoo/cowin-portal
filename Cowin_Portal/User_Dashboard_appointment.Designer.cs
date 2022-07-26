@@ -36,6 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.appointment_stepsPages = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Centers_gridview = new System.Windows.Forms.DataGridView();
             this.district_comboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.state_comboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.slot_select_nextButton = new Guna.UI2.WinForms.Guna2Button();
@@ -91,10 +92,10 @@
             this.ck_panel1 = new System.Windows.Forms.Panel();
             this.ck_panel3 = new System.Windows.Forms.Panel();
             this.ck_panel2 = new System.Windows.Forms.Panel();
-            this.Centers_gridview = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.appointment_stepsPages.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).BeginInit();
             this.vaccine_groupbox.SuspendLayout();
             this.age_groupbox.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -107,14 +108,13 @@
             this.ck_panel1.SuspendLayout();
             this.ck_panel3.SuspendLayout();
             this.ck_panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.appointment_stepsPages);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 55);
+            this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(584, 458);
             this.panel2.TabIndex = 0;
@@ -156,6 +156,59 @@
             this.tabPage1.Size = new System.Drawing.Size(576, 432);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "slot_select";
+            // 
+            // Centers_gridview
+            // 
+            this.Centers_gridview.AllowUserToAddRows = false;
+            this.Centers_gridview.AllowUserToDeleteRows = false;
+            this.Centers_gridview.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Centers_gridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Centers_gridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Centers_gridview.BackgroundColor = System.Drawing.Color.Beige;
+            this.Centers_gridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Centers_gridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Centers_gridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Centers_gridview.ColumnHeadersHeight = 22;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Centers_gridview.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Centers_gridview.EnableHeadersVisualStyles = false;
+            this.Centers_gridview.GridColor = System.Drawing.Color.White;
+            this.Centers_gridview.Location = new System.Drawing.Point(22, 185);
+            this.Centers_gridview.MultiSelect = false;
+            this.Centers_gridview.Name = "Centers_gridview";
+            this.Centers_gridview.ReadOnly = true;
+            this.Centers_gridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Centers_gridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.Centers_gridview.RowHeadersVisible = false;
+            this.Centers_gridview.RowTemplate.Height = 30;
+            this.Centers_gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Centers_gridview.Size = new System.Drawing.Size(537, 182);
+            this.Centers_gridview.TabIndex = 111;
             // 
             // district_comboBox
             // 
@@ -784,7 +837,6 @@
             // guna2ContainerControl1
             // 
             this.guna2ContainerControl1.Controls.Add(this.guna2Separator3);
-            this.guna2ContainerControl1.Enabled = false;
             this.guna2ContainerControl1.FillColor = System.Drawing.Color.WhiteSmoke;
             this.errorProvider_ap.SetIconAlignment(this.guna2ContainerControl1, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.guna2ContainerControl1.Location = new System.Drawing.Point(0, 45);
@@ -944,66 +996,12 @@
             this.ck_panel2.Size = new System.Drawing.Size(20, 20);
             this.ck_panel2.TabIndex = 2;
             // 
-            // Centers_gridview
-            // 
-            this.Centers_gridview.AllowUserToAddRows = false;
-            this.Centers_gridview.AllowUserToDeleteRows = false;
-            this.Centers_gridview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Centers_gridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.Centers_gridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Centers_gridview.BackgroundColor = System.Drawing.Color.Beige;
-            this.Centers_gridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Centers_gridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Centers_gridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Centers_gridview.ColumnHeadersHeight = 22;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Centers_gridview.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Centers_gridview.EnableHeadersVisualStyles = false;
-            this.Centers_gridview.GridColor = System.Drawing.Color.White;
-            this.Centers_gridview.Location = new System.Drawing.Point(22, 185);
-            this.Centers_gridview.MultiSelect = false;
-            this.Centers_gridview.Name = "Centers_gridview";
-            this.Centers_gridview.ReadOnly = true;
-            this.Centers_gridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Centers_gridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.Centers_gridview.RowHeadersVisible = false;
-            this.Centers_gridview.RowTemplate.Height = 30;
-            this.Centers_gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Centers_gridview.Size = new System.Drawing.Size(537, 182);
-            this.Centers_gridview.TabIndex = 111;
-            // 
             // User_Dashboard_appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(584, 513);
+            this.ClientSize = new System.Drawing.Size(584, 514);
             this.Controls.Add(this.ck_panel2);
             this.Controls.Add(this.ck_panel3);
             this.Controls.Add(this.ck_panel1);
@@ -1014,13 +1012,13 @@
             this.Controls.Add(this.l3);
             this.Controls.Add(this.l2);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Dashboard_appointment";
             this.Text = "User_Dashboard_appointment";
             this.panel2.ResumeLayout(false);
             this.appointment_stepsPages.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).EndInit();
             this.vaccine_groupbox.ResumeLayout(false);
             this.vaccine_groupbox.PerformLayout();
             this.age_groupbox.ResumeLayout(false);
@@ -1038,7 +1036,6 @@
             this.ck_panel1.ResumeLayout(false);
             this.ck_panel3.ResumeLayout(false);
             this.ck_panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Centers_gridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1096,13 +1093,13 @@
         private System.Windows.Forms.Label l3;
         private System.Windows.Forms.Label l2;
         private System.Windows.Forms.Label ref_id_textLabel;
-        private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
         private System.Windows.Forms.Panel ck_panel2;
         private System.Windows.Forms.Panel ck_panel3;
         private System.Windows.Forms.Panel ck_panel1;
         private Guna.UI2.WinForms.Guna2CustomRadioButton ck1;
         private System.Windows.Forms.Label l1;
         private System.Windows.Forms.DataGridView Centers_gridview;
+        private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
     }
 }
