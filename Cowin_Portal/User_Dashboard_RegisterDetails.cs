@@ -89,12 +89,12 @@ namespace Cowin_Portal
             string ref_id = n1.ToString() + n2.ToString() + n3.ToString();
             return ref_id;
         }
-        private void user_registerButton_Click(object sender, EventArgs e)
+        private async void user_registerButton_Click(object sender, EventArgs e)
         {
             if (validate_user_register() == false)
                 return;
             DataAccess db = new DataAccess();
-            string res = db.insert_user_register(user_id, NameInsText.Text, get_radiobutton_string(), int.Parse(YearInsText.Text), AadhaarInsText.Text, generate_random_refID());
+            string res = await db.insert_user_register(user_id, NameInsText.Text, get_radiobutton_string(), int.Parse(YearInsText.Text), AadhaarInsText.Text, generate_random_refID());
             if (res == "OK")
             {
                 MessageBox.Show

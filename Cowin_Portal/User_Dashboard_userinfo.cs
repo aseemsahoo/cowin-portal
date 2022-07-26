@@ -17,7 +17,7 @@ namespace Cowin_Portal
         public User_Dashboard_userinfo(int userID)
         {
             InitializeComponent();
-            user_id = userID;
+            this.user_id = userID;
             fill_form(user_id);
         }
         internal string display_text()
@@ -25,12 +25,12 @@ namespace Cowin_Portal
             return "Your Information";
         }
 
-        private void fill_form(int userID)
+        private async void fill_form(int user_id)
         {
             DataAccess db = new DataAccess();
 
-            curr_user = db.get_full_details(userID);
-            curr_user_doses = db.get_all_doses(userID);
+            curr_user = await db.get_full_details(user_id);
+            curr_user_doses = await db.get_all_doses(user_id);
 
             fill_user_data();
             fill_dose_data(0, dose1Label, vaccine1Label, hospital1Label, date1Label, dose1Pic, dose1Button);
@@ -111,7 +111,7 @@ namespace Cowin_Portal
 
         private void open_appointment_form(int dose_type)
         {
-            User_Dashboard_appointment user_appointment_form = new User_Dashboard_appointment(user_id, dose_type)
+            User_Dashboard_appointment user_appointment_form = new User_Dashboard_appointment(curr_user, dose_type)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false,

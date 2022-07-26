@@ -54,7 +54,7 @@ namespace Cowin_Portal
             int vaccine_index = 0;
             get_vaccine_index(ref vaccine_index);
 
-            load_DataGridView(district_comboBox, Centers_gridview, ref vaccine_index, ref age_limit);
+            load_DataGridView(district_comboBox, Centers_gridview, vaccine_index, age_limit);
         }
     }
 }

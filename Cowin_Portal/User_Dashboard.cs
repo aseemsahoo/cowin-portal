@@ -9,12 +9,14 @@ namespace Cowin_Portal
         public User_Dashboard(int userId)
         {
             InitializeComponent();
-            user_id = userId;
-
-            DataAccess db = new DataAccess();
-            username_label.Text = db.get_username(user_id);
-
+            this.user_id = userId;  
+            get_username();
             user_dashboardButton_Click(new object(), new EventArgs());
+        }
+        private async void get_username()
+        {
+            DataAccess db = new DataAccess();
+            username_label.Text = await db.get_username(user_id);
         }
 
         private Form activeForm = null;
@@ -36,10 +38,10 @@ namespace Cowin_Portal
             childForm.Show();
         }
 
-        private void user_dashboardButton_Click(object sender, EventArgs e)
+        private async void user_dashboardButton_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
-            int isRegister = db.get_register_status(user_id);
+            int isRegister = await db.get_register_status(user_id);
             if (isRegister == 1)
             {
                 User_Dashboard_userinfo u_info = new User_Dashboard_userinfo(user_id);

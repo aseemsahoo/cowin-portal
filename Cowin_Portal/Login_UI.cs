@@ -74,7 +74,7 @@ namespace Cowin_Portal
             return true;
         }
 
-        private void signup_final_button_Click(object sender, EventArgs e)
+        private async void signup_final_button_Click(object sender, EventArgs e)
         {
             if (validate_signup() == false)
                 return;
@@ -84,7 +84,7 @@ namespace Cowin_Portal
             string salt = sh.GetSalt();
             string hashed_password = sh.Hash(passwordInsTxt.Text, salt);
 
-            string res = db.insert_user(PhNumberInsTxt.Text, usernameInsTxt.Text, hashed_password, salt);
+            string res = await db.insert_user(PhNumberInsTxt.Text, usernameInsTxt.Text, hashed_password, salt);
             if (res == "OK")
             {
                 MessageBox.Show
@@ -101,7 +101,7 @@ namespace Cowin_Portal
             }
         }
 
-        private void login_final_button_Click(object sender, EventArgs e)
+        private async void login_final_button_Click(object sender, EventArgs e)
         {
             if (validate_login() == false)
                 return;
@@ -109,7 +109,7 @@ namespace Cowin_Portal
             DataAccess db = new DataAccess();
             SaltHash sh = new SaltHash();
 
-            List<User_Login> curr_user = db.get_login_data(login_username.Text);
+            List<User_Login> curr_user = await db.get_login_data(login_username.Text);
 
             if (curr_user.Count == 0)
             {

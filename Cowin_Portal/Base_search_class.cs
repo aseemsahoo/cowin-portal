@@ -15,22 +15,22 @@ namespace Cowin_Portal
             InitializeComponent();
         }
 
-        public void initialize_state_dropdown(Guna2ComboBox state_comboBox)
+        public async void initialize_state_dropdown(Guna2ComboBox state_comboBox)
         {
             DataAccess db = new DataAccess();
-            state_list = db.get_all_states();
+            state_list = await db.get_all_states();
             foreach (States s in state_list)
             {
                 state_comboBox.Items.Add(s.name);
             }
         }
-        public void get_districts(Guna2ComboBox state_comboBox, Guna2ComboBox district_comboBox)
+        public async void get_districts(Guna2ComboBox state_comboBox, Guna2ComboBox district_comboBox)
         {
             int index = state_comboBox.SelectedIndex;
             int state_id = state_list[index].id;
 
             DataAccess db = new DataAccess();
-            district_list = db.get_districts(state_id);
+            district_list = await db.get_districts(state_id);
 
             district_comboBox.Items.Clear();
             district_comboBox.SelectedIndex = -1;
@@ -65,13 +65,13 @@ namespace Cowin_Portal
             return vaccine;
         }
 
-        public void load_DataGridView(Guna2ComboBox district_comboBox, DataGridView Centers_gridview, ref int vaccine_index, ref int age_limit)
+        public async void load_DataGridView(Guna2ComboBox district_comboBox, DataGridView Centers_gridview, int vaccine_index, int age_limit)
         {
             int index = district_comboBox.SelectedIndex;
             int district_id = district_list[index].id;
 
             DataAccess db = new DataAccess();
-            display = db.search_center(district_id, vaccine_index, age_limit);
+            display = await db.search_center(district_id, vaccine_index, age_limit);
 
             Centers_gridview.DataSource = display;
             Centers_gridview.CurrentCell = null;

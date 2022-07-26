@@ -12,7 +12,6 @@ namespace Cowin_Portal
 {
     public class DataAccess
     {
-
         public static void ErrorLogging(Exception ex)
         {
             {
@@ -70,7 +69,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<User_Login> get_login_data(string u_name)
+        internal async Task<List<User_Login>> get_login_data(string u_name)
         {
             try
             {
@@ -79,8 +78,9 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_username", u_name);
 
-                    var output = connection.Query<User_Login>("dbo_get_login_data", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
+
+                    var output = await connection.QueryAsync<User_Login>("dbo_get_login_data", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -90,7 +90,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal string get_username(int user_id)
+        internal async Task<string> get_username(int user_id)
         {
             try
             {
@@ -99,8 +99,8 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_userId", user_id);
 
-                    var output = connection.Query<string>("dbo_get_username", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output[0];
+                    var output = await connection.QueryAsync<string>("dbo_get_username", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList()[0];
                 }
             }
             catch (Exception ex)
@@ -110,7 +110,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal int get_register_status(int user_id)
+        internal async Task<int> get_register_status(int user_id)
         {
             try
             {
@@ -119,8 +119,8 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_userId", user_id);
 
-                    var output = connection.Query<int>("dbo_get_register_status", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output[0];
+                    var output = await connection.QueryAsync<int>("dbo_get_register_status", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList()[0];
                 }
             }
             catch (Exception ex)
@@ -130,7 +130,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal string insert_user(string phone_no, string u_name, string pw, string _salt)
+        internal async Task<string> insert_user(string phone_no, string u_name, string pw, string _salt)
         {
             try
             {
@@ -142,7 +142,7 @@ namespace Cowin_Portal
                     p.Add("p_password", pw);
                     p.Add("p_salt", _salt);
 
-                    connection.Execute("dbo_insert_user", p, commandType: CommandType.StoredProcedure);
+                    await connection.ExecuteAsync("dbo_insert_user", p, commandType: CommandType.StoredProcedure);
                     return "OK";
                 }
             }
@@ -153,7 +153,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal string insert_user_register(int user_ID, string name, string gen, int yr, string aadhaar, string r_id)
+        internal async Task<string> insert_user_register(int user_ID, string name, string gen, int yr, string aadhaar, string r_id)
         {
             try
             {
@@ -167,7 +167,7 @@ namespace Cowin_Portal
                     p.Add("p_gender", gen);
                     p.Add("p_birth_year", yr);
 
-                    connection.Execute("dbo_insert_user_register", p, commandType: CommandType.StoredProcedure);
+                    await connection.ExecuteAsync("dbo_insert_user_register", p, commandType: CommandType.StoredProcedure);
                     return "OK";
                 }
             }
@@ -178,14 +178,14 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<States> get_all_states()
+        internal async Task<List<States>> get_all_states()
         {
             try
             {
                 using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<States>("dbo_get_states").ToList();
-                    return output;
+                    var output = await connection.QueryAsync<States>("dbo_get_states");
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -195,27 +195,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<User_full_info> get_full_details(int userID)
-        {
-            try
-            {
-                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
-                {
-                    var p = new DynamicParameters();
-                    p.Add("p_userId", userID);
-
-                    var output = connection.Query<User_full_info>("dbo_get_user_dashboard_info", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorLogging(ex);
-                throw;
-            }
-        }
-
-        internal List<User_dose_data> get_all_doses(int userID)
+        internal async Task<List<User_full_info>> get_full_details(int userID)
         {
             try
             {
@@ -224,8 +204,8 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_userId", userID);
 
-                    var output = connection.Query<User_dose_data>("dbo_get_dose_info", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
+                    var output = await connection.QueryAsync<User_full_info>("dbo_get_user_dashboard_info", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -235,7 +215,27 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<Hospital> search_center(int district_index, int vaccine_index, int _age_limit)
+        internal async Task<List<User_dose_data>> get_all_doses(int userID)
+        {
+            try
+            {
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", userID);
+
+                    var output = await connection.QueryAsync<User_dose_data>("dbo_get_dose_info", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogging(ex);
+                throw;
+            }
+        }
+
+        internal async Task<List<Hospital>> search_center(int district_index, int vaccine_index, int _age_limit)
         {
             try
             {
@@ -246,8 +246,8 @@ namespace Cowin_Portal
                     p.Add("p_vaccine_id", vaccine_index);
                     p.Add("p_age_limit", _age_limit);
 
-                    var output = connection.Query<Hospital>("dbo_get_centers", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
+                    var output = await connection.QueryAsync<Hospital>("dbo_get_centers", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -257,7 +257,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<Districts> get_districts(int stateID)
+        internal async Task<List<Districts>> get_districts(int stateID)
         {
             try
             {
@@ -266,8 +266,8 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_state_id", stateID);
 
-                    var output = connection.Query<Districts>("dbo_get_districts", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
+                    var output = await connection.QueryAsync<Districts>("dbo_get_districts", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -277,7 +277,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<int> get_dose1_vaccine(int user_id)
+        internal async Task<List<int>> get_dose1_vaccine(int user_id)
         {
             try
             {
@@ -286,8 +286,8 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_userId", user_id);
 
-                    var output = connection.Query<int>("dbo_get_dose1_vaccine", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
+                    var output = await connection.QueryAsync<int>("dbo_get_dose1_vaccine", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -297,7 +297,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<int> get_dose1_age(int user_id)
+        internal async Task<List<int>> get_dose1_age(int user_id)
         {
             try
             {
@@ -306,8 +306,8 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_userId", user_id);
 
-                    var output = connection.Query<int>("dbo_get_dose1_age", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
+                    var output = await connection.QueryAsync<int>("dbo_get_dose1_age", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -317,7 +317,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal List<DateTime> get_dose1_date(int user_id)
+        internal async Task<List<DateTime>> get_dose1_date(int user_id)
         {
             try
             {
@@ -326,8 +326,8 @@ namespace Cowin_Portal
                     var p = new DynamicParameters();
                     p.Add("p_userId", user_id);
 
-                    var output = connection.Query<DateTime>("dbo_get_dose1_date", p, commandType: CommandType.StoredProcedure).ToList();
-                    return output;
+                    var output = await connection.QueryAsync<DateTime>("dbo_get_dose1_date", p, commandType: CommandType.StoredProcedure);
+                    return output.ToList();
                 }
             }
             catch (Exception ex)
@@ -337,7 +337,7 @@ namespace Cowin_Portal
             }
         }
 
-        internal string insert_user_dose_data(int user_id, int hospital_id, string date, string time, int dose_type)
+        internal async Task<string> insert_user_dose_data(int user_id, int hospital_id, string date, string time, int dose_type)
         {
             try
             {
