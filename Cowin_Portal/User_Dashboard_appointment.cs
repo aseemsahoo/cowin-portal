@@ -25,9 +25,9 @@ namespace Cowin_Portal
             DataAccess db = new DataAccess();
             curr_user = db.get_full_details(user_id)[0];
 
+            set_age_radiobutton();
             if (dose_type == 0)
             {
-                set_age_radiobutton();
                 vaccine_groupbox.Enabled = true;
             }
             else

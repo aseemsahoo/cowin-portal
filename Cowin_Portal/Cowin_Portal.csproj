@@ -129,12 +129,6 @@
       <DependentUpon>Base_search_class.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login_UI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +183,6 @@
     </Compile>
     <EmbeddedResource Include="Base_search_class.resx">
       <DependentUpon>Base_search_class.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_UI.resx">
       <DependentUpon>Login_UI.cs</DependentUpon>

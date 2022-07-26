@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using System.Data;
+using MySql.Data.MySqlClient;
 using System.IO;
-using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Globalization;
 
 namespace Cowin_Portal
 {
     public class DataAccess
     {
+
         public static void ErrorLogging(Exception ex)
         {
             {
@@ -21,7 +23,7 @@ namespace Cowin_Portal
                 var yearPath = root + "\\" + currentDate.Year.ToString() + "\\";
                 var MonthPath = yearPath + currentDate.Year + "-" + monthName + "\\";
                 var errorFile = MonthPath + "ErrorLogs-" + String.Format("{0:d-M-yyyy}", currentDate.Date) + ".txt";
-                
+
                 if (!Directory.Exists(root))
                 {
                     Directory.CreateDirectory(root);
@@ -52,12 +54,11 @@ namespace Cowin_Portal
                 }
             }
         }
-
         internal bool test_connection()
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     return true;
                 }
@@ -73,16 +74,19 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<User_Login>("dbo.get_login_data @username", new { username = u_name });
-                    return output.ToList();
+                    var p = new DynamicParameters();
+                    p.Add("p_username", u_name);
+
+                    var output = connection.Query<User_Login>("dbo_get_login_data", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -90,10 +94,13 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<string>("dbo.get_username @userId", new { userId = user_id });
-                    return output.ToList()[0];
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", user_id);
+
+                    var output = connection.Query<string>("dbo_get_username", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output[0];
                 }
             }
             catch (Exception ex)
@@ -107,18 +114,19 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var p = new { userId = user_id };
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", user_id);
 
-                    var output = connection.Query<int>("dbo.get_register_status", p, commandType: CommandType.StoredProcedure);
-                    return output.ToList()[0];
+                    var output = connection.Query<int>("dbo_get_register_status", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output[0];
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return ex.GetHashCode();
+                return ex.HResult;
             }
         }
 
@@ -126,19 +134,15 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    User_SignIn curr_user = new User_SignIn
-                    {
-                        phonenumber = phone_no,
-                        username = u_name,
-                        password = pw,
-                        salt = _salt
-                    };
-                    List<User_SignIn> user_insert = new List<User_SignIn>();
-                    user_insert.Add(curr_user);
+                    var p = new DynamicParameters();
+                    p.Add("p_phonenumber", phone_no);
+                    p.Add("p_username", u_name);
+                    p.Add("p_password", pw);
+                    p.Add("p_salt", _salt);
 
-                    connection.Execute("dbo.insert_user @phonenumber, @username, @password, @salt", user_insert);
+                    connection.Execute("dbo_insert_user", p, commandType: CommandType.StoredProcedure);
                     return "OK";
                 }
             }
@@ -153,21 +157,17 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    User_full_info curr_user = new User_full_info
-                    {
-                        user_id = user_ID,
-                        fullname = name,
-                        aadhaar_no = aadhaar,
-                        ref_id = r_id,
-                        gender = gen,
-                        birth_year = yr
-                    };
-                    List<User_full_info> user_insert = new List<User_full_info>();
-                    user_insert.Add(curr_user);
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", user_ID);
+                    p.Add("p_fullname", name);
+                    p.Add("p_aadhaar_no", aadhaar);
+                    p.Add("p_ref_id", r_id);
+                    p.Add("p_gender", gen);
+                    p.Add("p_birth_year", yr);
 
-                    connection.Execute("dbo.insert_user_register @user_id, @fullname, @aadhaar_no, @ref_id, @gender, @birth_year", user_insert);
+                    connection.Execute("dbo_insert_user_register", p, commandType: CommandType.StoredProcedure);
                     return "OK";
                 }
             }
@@ -182,16 +182,16 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<States>("dbo.get_states");
-                    return output.ToList();
+                    var output = connection.Query<States>("dbo_get_states").ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -199,16 +199,19 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<User_full_info>("dbo.get_user_dashboard_info @userId", new { userId = userID });
-                    return output.ToList();
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", userID);
+
+                    var output = connection.Query<User_full_info>("dbo_get_user_dashboard_info", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -216,19 +219,19 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection =
-                    new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var p = new { userId = userID };
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", userID);
 
-                    var output = connection.Query<User_dose_data>("dbo.get_dose_info @userId", p);
-                    return output.ToList();
+                    var output = connection.Query<User_dose_data>("dbo_get_dose_info", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -236,22 +239,21 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var p = new
-                    {
-                        district_id = district_index,
-                        vaccine_id = vaccine_index,
-                        age_limit = _age_limit
-                    };
-                    var output = connection.Query<Hospital>("dbo.get_centers @district_id, @vaccine_id, @age_limit", p);
-                    return output.ToList();
+                    var p = new DynamicParameters();
+                    p.Add("p_district_id", district_index);
+                    p.Add("p_vaccine_id", vaccine_index);
+                    p.Add("p_age_limit", _age_limit);
+
+                    var output = connection.Query<Hospital>("dbo_get_centers", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -259,16 +261,19 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<Districts>("dbo.get_districts @state_id", new { state_id = stateID });
-                    return output.ToList();
+                    var p = new DynamicParameters();
+                    p.Add("p_state_id", stateID);
+
+                    var output = connection.Query<Districts>("dbo_get_districts", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -276,16 +281,19 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<int>("dbo.get_dose1_vaccine @userId", new { userId = user_id });
-                    return output.ToList();
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", user_id);
+
+                    var output = connection.Query<int>("dbo_get_dose1_vaccine", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -293,16 +301,19 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<int>("dbo.get_dose1_age @userId", new { userId = user_id });
-                    return output.ToList();
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", user_id);
+
+                    var output = connection.Query<int>("dbo_get_dose1_age", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
@@ -310,46 +321,46 @@ namespace Cowin_Portal
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
-                    var output = connection.Query<DateTime>("dbo.get_dose1_date @userId", new { userId = user_id });
+                    var p = new DynamicParameters();
+                    p.Add("p_userId", user_id);
 
-                    return output.ToList();
+                    var output = connection.Query<DateTime>("dbo_get_dose1_date", p, commandType: CommandType.StoredProcedure).ToList();
+                    return output;
                 }
             }
             catch (Exception ex)
             {
                 ErrorLogging(ex);
-                return null;
+                throw;
             }
         }
 
         internal string insert_user_dose_data(int user_id, int hospital_id, string date, string time, int dose_type)
         {
-
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
+                using (var connection = new MySqlConnection(Helper.CnnVal("ProjectDB")))
                 {
                     var p = new DynamicParameters();
-                    p.Add("@userId", user_id);
-                    p.Add("@centerId", hospital_id);
-                    p.Add("@date", date);
-                    p.Add("@time", time);
+                    p.Add("p_userId", user_id);
+                    p.Add("p_centerId", hospital_id);
+                    p.Add("p_date", date);
+                    p.Add("p_time", time);
 
                     if (dose_type == 0)
                     {
-                        connection.Execute("dbo.insert_user_dose1", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo_insert_user_dose1", p, commandType: CommandType.StoredProcedure);
                     }
                     else
                     if (dose_type == 1)
                     {
-                        connection.Execute("dbo.insert_user_dose2", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo_insert_user_dose2", p, commandType: CommandType.StoredProcedure);
                     }
                     else
-                    {
-                        connection.Execute("dbo.insert_user_dose_precaution", p, commandType: CommandType.StoredProcedure);
-                    }
+                        connection.Execute("dbo_insert_user_dose_precaution", p, commandType: CommandType.StoredProcedure);
+
                     return "OK";
                 }
             }
