@@ -14,14 +14,15 @@ namespace Cowin_Portal
 
         User_full_info curr_user = new User_full_info();
 
-        public User_Dashboard_appointment(List<User_full_info> curr_user, int dose_type)
+        public User_Dashboard_appointment(List<User_full_info> curr_user, List<User_dose_data> curr_user_doses)
         {
             InitializeComponent();
             initialize_state_dropdown(state_comboBox);
 
             this.curr_user = curr_user[0];
-            this.dose_type = dose_type;
+            this.dose_type = curr_user_doses.Count();
             this.user_id = curr_user[0].user_id;
+
             set_age_radiobutton();
             if (dose_type == 0)
             {
@@ -29,7 +30,7 @@ namespace Cowin_Portal
             }
             else
             {
-                load_age_vaccine_refid();
+                load_age_vaccine_date(curr_user_doses);
                 vaccine_groupbox.Enabled = false;
             }
             vaccineDatePicker.MinDate = DateTime.Today;
@@ -74,17 +75,11 @@ namespace Cowin_Portal
                     r.Checked = true;
             }
         }
-        private async void load_age_vaccine_refid()
+        private void load_age_vaccine_date(List<User_dose_data> curr_user_doses)
         {
-            DataAccess db = new DataAccess();
-
-            var list1 = await db.get_dose1_age(user_id);
-            var list2 = await db.get_dose1_vaccine(user_id);
-            var list3 = await db.get_dose1_date(user_id);
-
-            age_id = list1[0];
-            vaccine_id = list2[0];
-            dose1_date = list3[0].ToString("yyyy-MM-dd");
+            this.age_id = curr_user_doses[0].age_limit;
+            vaccine_to_index(curr_user_doses[0].vaccine_name, ref vaccine_id);
+            this.dose1_date = curr_user_doses[0].dose_date.ToString("yyyy-MM-dd");
 
             set_radiobutton(age_groupbox, age_id + "+");
             set_radiobutton(vaccine_groupbox, vaccine_from_id());

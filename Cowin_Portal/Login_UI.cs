@@ -116,13 +116,16 @@ namespace Cowin_Portal
                 errorProvider_cowin.SetError(this.login_username, "Username doesn't exist");
             }
             else
+
+
+            // change this to FALSE
             if(sh.Verify(login_password.Text, curr_user[0].password) == false)
             {
                 errorProvider_cowin.SetError(this.login_password, "Wrong Password");
             }
             else
             {
-                User_Dashboard User_d = new User_Dashboard(curr_user[0].id);
+                User_Dashboard User_d = new User_Dashboard(curr_user[0].id, login_username.Text);
                 this.Hide();
                 if(User_d.IsDisposed == false)
                     User_d.ShowDialog();

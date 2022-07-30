@@ -294,6 +294,7 @@
             this.hospital1Label.Size = new System.Drawing.Size(90, 15);
             this.hospital1Label.TabIndex = 17;
             this.hospital1Label.Text = "[hospital name]";
+            this.hospital1Label.Click += new System.EventHandler(this.hospital1Label_Click);
             // 
             // vaccine1Label
             // 

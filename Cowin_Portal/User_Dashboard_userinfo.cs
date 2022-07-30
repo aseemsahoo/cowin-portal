@@ -111,7 +111,7 @@ namespace Cowin_Portal
 
         private void open_appointment_form(int dose_type)
         {
-            User_Dashboard_appointment user_appointment_form = new User_Dashboard_appointment(curr_user, dose_type)
+            User_Dashboard_appointment user_appointment_form = new User_Dashboard_appointment(curr_user, curr_user_doses)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false,
@@ -146,6 +146,11 @@ namespace Cowin_Portal
         private void dosePrecautionButton_Click(object sender, EventArgs e)
         {
             open_appointment_form(2);
+        }
+
+        private void hospital1Label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

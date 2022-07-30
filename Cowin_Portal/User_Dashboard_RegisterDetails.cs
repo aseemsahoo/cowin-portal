@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 
 namespace Cowin_Portal
 {
@@ -49,12 +48,12 @@ namespace Cowin_Portal
                 errorProvider_register.SetError(this.genderLabel, "Please select a gender");
                 return false;
             }
-            if(rgx.isValid_birthyear(YearInsText.Text))
+            if(rgx.isValid_birthyear(YearInsText.Text) == false)
             {
                 errorProvider_register.SetError(this.YearInsText, "Birth year must be between 1945 and 2013");
                 return false;
             }
-            if (rgx.isValid_aadhaar(AadhaarInsText.Text))
+            if (rgx.isValid_aadhaar(AadhaarInsText.Text) == false)
             {
                 errorProvider_register.SetError(this.AadhaarInsText, "Please enter a valid 14-digit aadhaar");
                 return false;

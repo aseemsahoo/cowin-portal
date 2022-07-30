@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 
@@ -51,10 +52,8 @@ namespace Cowin_Portal
             return res;
         }
 
-        public string get_vaccine_index_base(GroupBox vaccine_groupbox, ref int vaccine_index)
+        public void vaccine_to_index(string vaccine, ref int vaccine_index)
         {
-            string vaccine = get_groupbox_radiobuttion(vaccine_groupbox);
-
             if (vaccine == "Covishield")
                 vaccine_index = 1;
             else
@@ -62,8 +61,16 @@ namespace Cowin_Portal
                 vaccine_index = 2;
             else
                 vaccine_index = 3;
+        }
+
+        public string get_vaccine_index_base(GroupBox vaccine_groupbox, ref int vaccine_index)
+        {
+            string vaccine = get_groupbox_radiobuttion(vaccine_groupbox);
+
+            vaccine_to_index(vaccine, ref vaccine_index);
             return vaccine;
         }
+
 
         public async void load_DataGridView(Guna2ComboBox district_comboBox, DataGridView Centers_gridview, int vaccine_index, int age_limit)
         {

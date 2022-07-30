@@ -6,21 +6,15 @@ namespace Cowin_Portal
     public partial class User_Dashboard : Form
     {
         private int user_id;
-        public User_Dashboard(int userId)
+        public User_Dashboard(int userId, string username)
         {
             InitializeComponent();
-            this.user_id = userId;  
-            get_username();
+            this.user_id = userId;
+            this.username_label.Text = username;
             user_dashboardButton_Click(new object(), new EventArgs());
         }
-        private async void get_username()
-        {
-            DataAccess db = new DataAccess();
-            username_label.Text = await db.get_username(user_id);
-        }
-
+        
         private Form activeForm = null;
-
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)

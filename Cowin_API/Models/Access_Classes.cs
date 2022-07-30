@@ -1,10 +1,11 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
-namespace Cowin_Portal
+namespace Cowin_API.Models
 {
     public class User_Login
     {
+        [Key]
         public int id { get; set; }
         public string password { get; set; }
         public string salt { get; set; }
@@ -35,12 +36,14 @@ namespace Cowin_Portal
 
     public class States
     {
+        [Key]
         public int id { get; set; }
         public string name { get; set; }
     }
 
     public class Districts
     {
+        [Key]
         public int id { get; set; }
         public string name { get; set; }
     }
@@ -48,6 +51,7 @@ namespace Cowin_Portal
     public class Hospital
     {
         [Browsable(false)]
+        [Key]
         public int id { get; set; }
         public string name { get; set; }
         public string address { get; set; }
