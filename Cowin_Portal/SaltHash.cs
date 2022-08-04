@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BCrypt.Net;
-
-namespace Cowin_Portal
+﻿namespace Cowin_Portal
 {
     public class SaltHash
     {

@@ -1,4 +1,4 @@
-﻿namespace Cowin_Portal
+﻿namespace Cowin_Portal.User_Dashboard_forms
 {
     partial class User_Dashboard_userinfo
     {
@@ -203,7 +203,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 678);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(567, 30);
+            this.panel1.Size = new System.Drawing.Size(584, 30);
             this.panel1.TabIndex = 97;
             // 
             // panel2
@@ -211,7 +211,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 648);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(567, 30);
+            this.panel2.Size = new System.Drawing.Size(584, 30);
             this.panel2.TabIndex = 98;
             // 
             // guna2Panel1
@@ -532,7 +532,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(584, 514);
+            this.ClientSize = new System.Drawing.Size(601, 514);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);

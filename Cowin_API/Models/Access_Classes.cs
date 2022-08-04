@@ -33,6 +33,14 @@ namespace Cowin_API.Models
         public string district_name { get; set; }
         public string state_name { get; set; }
     }
+    public class User_dose_input
+    {
+        public int user_id { get; set; }
+        public int hospital_id { get; set; }
+        public string date { get; set; }
+        public string time { get; set; }
+        public int dose_type { get; set; }
+    }
 
     public class States
     {

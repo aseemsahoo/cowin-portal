@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.User_Dashboard_forms
 {
     public partial class User_Dashboard_RegisterDetails : Form
     {
@@ -48,7 +48,7 @@ namespace Cowin_Portal
                 errorProvider_register.SetError(this.genderLabel, "Please select a gender");
                 return false;
             }
-            if(rgx.isValid_birthyear(YearInsText.Text) == false)
+            if (rgx.isValid_birthyear(YearInsText.Text) == false)
             {
                 errorProvider_register.SetError(this.YearInsText, "Birth year must be between 1945 and 2013");
                 return false;
@@ -92,8 +92,18 @@ namespace Cowin_Portal
         {
             if (validate_user_register() == false)
                 return;
-            DataAccess db = new DataAccess();
-            string res = await db.insert_user_register(user_id, NameInsText.Text, get_radiobutton_string(), int.Parse(YearInsText.Text), AadhaarInsText.Text, generate_random_refID());
+            ApiAccess db = new ApiAccess();
+
+            User_full_info curr_user = new User_full_info
+            {
+                user_id = user_id,
+                fullname = NameInsText.Text,
+                gender = get_radiobutton_string(),
+                birth_year = int.Parse(YearInsText.Text),
+                aadhaar_no = AadhaarInsText.Text,
+                ref_id = generate_random_refID()
+            };
+            string res = await db.insert_user_register(curr_user);
             if (res == "OK")
             {
                 MessageBox.Show
@@ -109,6 +119,7 @@ namespace Cowin_Portal
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void open_userinfo_form()
         {
             User_Dashboard_userinfo user_info_form = new User_Dashboard_userinfo(user_id)

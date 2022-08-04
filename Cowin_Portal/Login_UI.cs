@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
+﻿using Cowin_Portal.User_Dashboard_forms;
+using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Cowin_Portal
 {
@@ -14,11 +14,11 @@ namespace Cowin_Portal
             set_status_text();
         }
 
-        private void set_status_text()
+        private async void set_status_text()
         {
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
 
-            bool res = db.test_connection();
+            bool res = await db.test_connection();
             if (res == true)
             {
                 status_label.Text = "Connected to Database";
@@ -78,13 +78,21 @@ namespace Cowin_Portal
         {
             if (validate_signup() == false)
                 return;
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
             SaltHash sh = new SaltHash();
 
             string salt = sh.GetSalt();
             string hashed_password = sh.Hash(passwordInsTxt.Text, salt);
 
-            string res = await db.insert_user(PhNumberInsTxt.Text, usernameInsTxt.Text, hashed_password, salt);
+            User_SignIn curr_user = new User_SignIn
+            {
+                id = -1,
+                phonenumber = PhNumberInsTxt.Text,
+                username = usernameInsTxt.Text,
+                password = hashed_password,
+                salt = salt
+            };
+            string res = await db.insert_user(curr_user);
             if (res == "OK")
             {
                 MessageBox.Show
@@ -106,7 +114,7 @@ namespace Cowin_Portal
             if (validate_login() == false)
                 return;
 
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
             SaltHash sh = new SaltHash();
 
             List<User_Login> curr_user = await db.get_login_data(login_username.Text);
@@ -116,10 +124,7 @@ namespace Cowin_Portal
                 errorProvider_cowin.SetError(this.login_username, "Username doesn't exist");
             }
             else
-
-
-            // change this to FALSE
-            if(sh.Verify(login_password.Text, curr_user[0].password) == false)
+            if (sh.Verify(login_password.Text, curr_user[0].password) == false)
             {
                 errorProvider_cowin.SetError(this.login_password, "Wrong Password");
             }
@@ -127,7 +132,7 @@ namespace Cowin_Portal
             {
                 User_Dashboard User_d = new User_Dashboard(curr_user[0].id, login_username.Text);
                 this.Hide();
-                if(User_d.IsDisposed == false)
+                if (User_d.IsDisposed == false)
                     User_d.ShowDialog();
                 this.Close();
             }

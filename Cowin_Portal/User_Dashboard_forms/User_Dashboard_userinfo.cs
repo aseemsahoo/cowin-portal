@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.User_Dashboard_forms
 {
     public partial class User_Dashboard_userinfo : Form
     {
@@ -27,7 +27,7 @@ namespace Cowin_Portal
 
         private async void fill_form(int user_id)
         {
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
 
             curr_user = await db.get_full_details(user_id);
             curr_user_doses = await db.get_all_doses(user_id);
@@ -47,7 +47,7 @@ namespace Cowin_Portal
             name_label.Text = curr_user[0].fullname;
             ref_id_label.Text = curr_user[0].ref_id;
             secret_code_label.Text = curr_user[0].ref_id.Substring(10);
-            aadhaar_label.Text ="XXXX XXXX " + curr_user[0].aadhaar_no.Substring(8);
+            aadhaar_label.Text = "XXXX XXXX " + curr_user[0].aadhaar_no.Substring(8);
             year_label.Text = curr_user[0].birth_year.ToString();
         }
 
@@ -61,7 +61,7 @@ namespace Cowin_Portal
                 doseButton.Text = "Schedule";
 
                 hospitalLabel.Text = "Appointment not scheduled";
-                
+
                 if (i == 0)
                 {
                     doseButton.Enabled = true;
@@ -111,7 +111,7 @@ namespace Cowin_Portal
 
         private void open_appointment_form(int dose_type)
         {
-            User_Dashboard_appointment user_appointment_form = new User_Dashboard_appointment(curr_user, curr_user_doses)
+            User_Dashboard_appointment user_appointment_form = new User_Dashboard_appointment(curr_user, curr_user_doses, dose_type)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false,

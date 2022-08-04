@@ -1,4 +1,4 @@
-﻿namespace Cowin_Portal
+﻿namespace Cowin_Portal.User_Dashboard_forms
 {
     partial class Base_search_class
     {
@@ -40,6 +40,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Base_search_class";
             this.Text = "Base_search_class";
+            this.Load += new System.EventHandler(this.Base_search_class_Load);
             this.ResumeLayout(false);
 
         }

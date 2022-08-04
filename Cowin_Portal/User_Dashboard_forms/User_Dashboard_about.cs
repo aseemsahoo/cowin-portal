@@ -1,7 +1,7 @@
-﻿using System.Windows.Forms;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using System.Windows.Forms;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.User_Dashboard_forms
 {
     public partial class User_Dashboard_about : Form
     {

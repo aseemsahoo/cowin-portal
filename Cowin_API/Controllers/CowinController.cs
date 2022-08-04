@@ -1,5 +1,4 @@
 ﻿using Cowin_API.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cowin_API.Controllers
@@ -8,21 +7,20 @@ namespace Cowin_API.Controllers
     [ApiController]
     public class CowinController : ControllerBase
     {
-        private readonly DataAccess db;
+        private readonly API_DataAccess db;
 
         public CowinController()
         {
-            db = new DataAccess();
+            db = new API_DataAccess();
         }
 
         [HttpGet]
-        [Route("Getuser/{username}")]
-        public IEnumerable<User_Login> GetUser(string username)
+        [Route("Getconnection")]
+        public bool GetConnection()
         {
-            return db.get_login_data(username);
+            return db.test_connection();
         }
 
-        // introduce hyphens between words
         [HttpGet]
         [Route("Getregisterstatus/{id}")]
         public int GetRegisterStatus(int id)
@@ -60,7 +58,7 @@ namespace Cowin_API.Controllers
 
         // https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=245&date=12-10-2021
         [HttpGet]
-        [Route("Getalldoses/{district_index}/{vaccine_index}/{age_limit}")]
+        [Route("Getcenters/{district_index}/{vaccine_index}/{age_limit}")]
         public IEnumerable<Hospital> GetCenters(int district_index, int vaccine_index, int age_limit)
         {
             return db.search_center(district_index, vaccine_index, age_limit);
@@ -69,10 +67,10 @@ namespace Cowin_API.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public string PostUser(string phone_no, string u_name, string pw, string salt)
+        public string PostUser([FromBody] User_SignIn curr_user)
         {
             if (ModelState.IsValid)
-                return db.insert_user(phone_no, u_name, pw, salt);
+                return db.insert_user(curr_user);
             return "";
         }
 
@@ -87,10 +85,10 @@ namespace Cowin_API.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public string PostDoseData(int user_id, int hospital_id, string date, string time, int dose_type)
+        public string PostDoseData([FromBody] User_dose_input curr_dose)
         {
             if (ModelState.IsValid)
-                return db.insert_user_dose_data(user_id, hospital_id, date, time, dose_type);
+                return db.insert_user_dose_data(curr_dose);
             return "";
         }
     }

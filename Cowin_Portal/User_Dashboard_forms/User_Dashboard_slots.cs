@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.User_Dashboard_forms
 {
     public partial class User_Dashboard_slots : Base_search_class
     {
@@ -49,8 +49,8 @@ namespace Cowin_Portal
         {
             if (validate_controls() == false)
                 return;
-            
-            int age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox).Substring(0,2));
+
+            int age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox).Substring(0, 2));
             int vaccine_index = 0;
             get_vaccine_index(ref vaccine_index);
 

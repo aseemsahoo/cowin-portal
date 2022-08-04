@@ -1,4 +1,4 @@
-﻿namespace Cowin_Portal
+﻿namespace Cowin_Portal.User_Dashboard_forms
 {
     partial class User_Dashboard_RegisterDetails
     {

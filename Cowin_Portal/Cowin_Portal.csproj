@@ -58,41 +58,26 @@
     <Reference Include="BCrypt.Net-Next, Version=4.0.0.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.0\lib\net48\BCrypt.Net-Next.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
-      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="Flurl, Version=3.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.3.0.6\lib\net472\Flurl.dll</HintPath>
     </Reference>
-    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Protobuf, Version=3.21.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.21.4\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Flurl.Http, Version=3.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.3.2.4\lib\net472\Flurl.Http.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.3.3, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.3\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4, Version=1.2.16.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.1.2.16\lib\net46\K4os.Compression.LZ4.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.16.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.16\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Hash.xxHash, Version=1.0.7.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Hash.xxHash.1.0.7\lib\net46\K4os.Hash.xxHash.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.30\lib\net48\MySql.Data.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -105,20 +90,11 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.30\lib\net48\Ubiety.Dns.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.30\lib\net48\ZstdNet.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Access_Classes.cs" />
@@ -128,7 +104,7 @@
     <Compile Include="Base_search_class.Designer.cs">
       <DependentUpon>Base_search_class.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess.cs" />
+    <Compile Include="ApiAccess.cs" />
     <Compile Include="Login_UI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,40 +121,40 @@
     </Compile>
     <Compile Include="RegexValidation.cs" />
     <Compile Include="SaltHash.cs" />
-    <Compile Include="User_Dashboard.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User_Dashboard.Designer.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard.Designer.cs">
       <DependentUpon>User_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Dashboard_about.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_about.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User_Dashboard_about.Designer.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_about.Designer.cs">
       <DependentUpon>User_Dashboard_about.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Dashboard_appointment.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_appointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User_Dashboard_appointment.Designer.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_appointment.Designer.cs">
       <DependentUpon>User_Dashboard_appointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Dashboard_RegisterDetails.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_RegisterDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User_Dashboard_RegisterDetails.Designer.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_RegisterDetails.Designer.cs">
       <DependentUpon>User_Dashboard_RegisterDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Dashboard_slots.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_slots.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User_Dashboard_slots.Designer.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_slots.Designer.cs">
       <DependentUpon>User_Dashboard_slots.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Dashboard_userinfo.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_userinfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User_Dashboard_userinfo.Designer.cs">
+    <Compile Include="User_Dashboard_forms\User_Dashboard_userinfo.Designer.cs">
       <DependentUpon>User_Dashboard_userinfo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Base_search_class.resx">
@@ -193,22 +169,22 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Dashboard.resx">
+    <EmbeddedResource Include="User_Dashboard_forms\User_Dashboard.resx">
       <DependentUpon>User_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Dashboard_about.resx">
+    <EmbeddedResource Include="User_Dashboard_forms\User_Dashboard_about.resx">
       <DependentUpon>User_Dashboard_about.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Dashboard_appointment.resx">
+    <EmbeddedResource Include="User_Dashboard_forms\User_Dashboard_appointment.resx">
       <DependentUpon>User_Dashboard_appointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Dashboard_RegisterDetails.resx">
+    <EmbeddedResource Include="User_Dashboard_forms\User_Dashboard_RegisterDetails.resx">
       <DependentUpon>User_Dashboard_RegisterDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Dashboard_slots.resx">
+    <EmbeddedResource Include="User_Dashboard_forms\User_Dashboard_slots.resx">
       <DependentUpon>User_Dashboard_slots.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Dashboard_userinfo.resx">
+    <EmbeddedResource Include="User_Dashboard_forms\User_Dashboard_userinfo.resx">
       <DependentUpon>User_Dashboard_userinfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

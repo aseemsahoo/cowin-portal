@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.User_Dashboard_forms
 {
     public partial class User_Dashboard : Form
     {
@@ -13,7 +13,7 @@ namespace Cowin_Portal
             this.username_label.Text = username;
             user_dashboardButton_Click(new object(), new EventArgs());
         }
-        
+
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
@@ -34,7 +34,7 @@ namespace Cowin_Portal
 
         private async void user_dashboardButton_Click(object sender, EventArgs e)
         {
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
             int isRegister = await db.get_register_status(user_id);
             if (isRegister == 1)
             {
@@ -43,7 +43,7 @@ namespace Cowin_Portal
                 dashboard_label.Text = u_info.display_text();
             }
             else
-            if(isRegister == 0)
+            if (isRegister == 0)
             {
                 User_Dashboard_RegisterDetails u_details = new User_Dashboard_RegisterDetails(user_id);
                 openChildForm(u_details);
@@ -52,7 +52,7 @@ namespace Cowin_Portal
             else
             {
                 MessageBox.Show
-                    ("Error Code: " + 
+                    ("Error Code: " +
                     isRegister.ToString() +
                     " The application will stop running.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

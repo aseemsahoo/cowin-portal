@@ -5,10 +5,10 @@ using System.Globalization;
 
 namespace Cowin_API.Models
 {
-    public class DataAccess
+    public class API_DataAccess
     {
         private string conStr;
-        public DataAccess()
+        public API_DataAccess()
         {
             conStr = @"Server=localhost;Database=cowin_database;User Id=guest;Password=root123;";
         }
@@ -64,8 +64,23 @@ namespace Cowin_API.Models
 
         internal bool test_connection()
         {
-            return true;
-            // do this
+            try
+            {
+                using (IDbConnection conn = connection)
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogging(ex);
+                return false;
+            }
         }
 
         internal IEnumerable<User_Login> get_login_data(string u_name)
@@ -108,19 +123,21 @@ namespace Cowin_API.Models
             }
         }
 
-        internal string insert_user(string phone_no, string u_name, string pw, string salt)
+        internal string insert_user(User_SignIn curr_user)
         {
             try
             {
                 using (IDbConnection conn = connection)
                 {
+                    /*
                     var p = new DynamicParameters();
                     p.Add("@phonenumber", phone_no);
                     p.Add("@username", u_name);
                     p.Add("@password", pw);
                     p.Add("@salt", salt);
+                    */
 
-                    connection.Execute("dbo.insert_user", p, commandType: CommandType.StoredProcedure);
+                    connection.Execute("dbo.insert_user", curr_user);
                     return "OK";
                 }
             }
@@ -137,15 +154,17 @@ namespace Cowin_API.Models
             {
                 using (IDbConnection conn = connection)
                 {
-                    var p = new DynamicParameters();
-                    p.Add("@userId", user.user_id);
-                    p.Add("@fullname", user.fullname);
-                    p.Add("@aadhaar_no", user.aadhaar_no);
-                    p.Add("@ref_id", user.ref_id);
-                    p.Add("@gender", user.gender);
-                    p.Add("@birth_year", user.birth_year);
+                    /* 
+                     var p = new DynamicParameters();
+                     p.Add("@userId", user.user_id);
+                     p.Add("@fullname", user.fullname);
+                     p.Add("@aadhaar_no", user.aadhaar_no);
+                     p.Add("@ref_id", user.ref_id);
+                     p.Add("@gender", user.gender);
+                     p.Add("@birth_year", user.birth_year);
+                    */
 
-                    connection.Execute("dbo.insert_user_register", p, commandType: CommandType.StoredProcedure);
+                    connection.Execute("dbo.insert_user_register", user);
                     return "OK";
                 }
             }
@@ -255,30 +274,24 @@ namespace Cowin_API.Models
             }
         }
 
-        internal string insert_user_dose_data(int user_id, int hospital_id, string date, string time, int dose_type)
+        internal string insert_user_dose_data(User_dose_input curr_dose)
         {
             try
             {
                 using (IDbConnection conn = connection)
                 {
-                    var p = new DynamicParameters();
-                    p.Add("@userId", user_id);
-                    p.Add("@centerId", hospital_id);
-                    p.Add("@date", date);
-                    p.Add("@time", time);
-
-                    if (dose_type == 0)
+                    if (curr_dose.dose_type == 0)
                     {
-                        connection.Execute("dbo.insert_user_dose1", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo.insert_user_dose1", curr_dose);
                     }
                     else
-                    if (dose_type == 1)
+                    if (curr_dose.dose_type == 1)
                     {
-                        connection.Execute("dbo.insert_user_dose2", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo.insert_user_dose2", curr_dose);
                     }
                     else
                     {
-                        connection.Execute("dbo.insert_user_dose_precaution", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo.insert_user_dose_precaution", curr_dose);
                     }
                     return "OK";
                 }

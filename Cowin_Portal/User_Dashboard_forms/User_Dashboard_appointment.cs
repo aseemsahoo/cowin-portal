@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.User_Dashboard_forms
 {
     public partial class User_Dashboard_appointment : Base_search_class
     {
@@ -14,13 +14,13 @@ namespace Cowin_Portal
 
         User_full_info curr_user = new User_full_info();
 
-        public User_Dashboard_appointment(List<User_full_info> curr_user, List<User_dose_data> curr_user_doses)
+        public User_Dashboard_appointment(List<User_full_info> curr_user, List<User_dose_data> curr_user_doses, int dose_type)
         {
             InitializeComponent();
             initialize_state_dropdown(state_comboBox);
 
             this.curr_user = curr_user[0];
-            this.dose_type = curr_user_doses.Count();
+            this.dose_type = dose_type;
             this.user_id = curr_user[0].user_id;
 
             set_age_radiobutton();
@@ -46,7 +46,7 @@ namespace Cowin_Portal
         {
             int birth_year = curr_user.birth_year;
             int age = DateTime.Now.Year - birth_year;
-            if( age < 18)
+            if (age < 18)
             {
                 MessageBox.Show
                     ("You must be minimum 18 years of age. " +
@@ -235,14 +235,21 @@ namespace Cowin_Portal
             int index = Centers_gridview.CurrentCell.RowIndex;
             int hospital_id = display[index].id;
 
-            DataAccess db = new DataAccess();
-            string res = await db.insert_user_dose_data(user_id, hospital_id, date, time, dose_type);
+            ApiAccess db = new ApiAccess();
+            User_dose_input user_dose = new User_dose_input()
+            {
+                user_id = user_id,
+                hospital_id = hospital_id,
+                date = date,
+                time = time,
+                dose_type = dose_type
+            };
+            string res = await db.insert_user_dose_data(user_dose);
 
             if (res != "OK")
                 return;
             appointment_stepsPages.SelectedIndex = 2;
         }
-
         /*
         ---------------------------------------------------------------------------------
                             End of second tab

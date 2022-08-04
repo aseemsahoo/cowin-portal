@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.User_Dashboard_forms
 {
     public partial class Base_search_class : Form
     {
@@ -18,7 +18,7 @@ namespace Cowin_Portal
 
         public async void initialize_state_dropdown(Guna2ComboBox state_comboBox)
         {
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
             state_list = await db.get_all_states();
             foreach (States s in state_list)
             {
@@ -30,7 +30,7 @@ namespace Cowin_Portal
             int index = state_comboBox.SelectedIndex;
             int state_id = state_list[index].id;
 
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
             district_list = await db.get_districts(state_id);
 
             district_comboBox.Items.Clear();
@@ -77,7 +77,7 @@ namespace Cowin_Portal
             int index = district_comboBox.SelectedIndex;
             int district_id = district_list[index].id;
 
-            DataAccess db = new DataAccess();
+            ApiAccess db = new ApiAccess();
             display = await db.search_center(district_id, vaccine_index, age_limit);
 
             Centers_gridview.DataSource = display;
@@ -86,6 +86,11 @@ namespace Cowin_Portal
             Centers_gridview.Columns[0].Width = (int)(Centers_gridview.Width * 0.45);
             Centers_gridview.Columns[1].Width = (int)(Centers_gridview.Width * 0.4);
             Centers_gridview.Columns[2].Width = (int)(Centers_gridview.Width * 0.15);
+        }
+
+        private void Base_search_class_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
