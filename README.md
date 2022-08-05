@@ -110,19 +110,25 @@ You need the following installed on your desktop:
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) (for development purposes only)
 
 # Installation
+**I am a tester:** 
+- Download the latest build from the [releases](https://github.com/aseemsahoo/cowin-portal/releases) section.
 
-[will be added later]
+**I am a developer:** 
+- Follow the steps [here](https://docs.microsoft.com/en-us/visualstudio/version-control/git-clone-repository?view=vs-2022) to clone this repository. Clone URL: `https://github.com/aseemsahoo/cowin-portal.git`
+
+- Alternatively, you may directly clone the project by selecting the 'Open with Visual Studio' option as shown below.
+![](https://i.imgur.com/CQJNcbX.png?2)
 
 ---
 
 # Roadmap
-- [x] Add Icons & Images
-- [x] Add 'Reschedule Appointment'
-- [x] Add Error Logging
-- [x] Integrate application with Web API
-- [ ] Add API key authentication
-- [ ] Add 'Download Certificate'c
-- [ ] Add OTP authentication
+- :white_check_mark: Add Icons & Images
+- :white_check_mark: Add 'Reschedule Appointment'
+- :white_check_mark: Add Error Logging
+- :white_check_mark: Integrate application with Web API
+- :red_square: Add API key authentication
+- :red_square: Add 'Download Certificate'c
+- :red_square: Add OTP authentication
 
 ---
 
