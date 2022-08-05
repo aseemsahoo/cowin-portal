@@ -7,10 +7,14 @@ namespace Cowin_API.Models
 {
     public class API_DataAccess
     {
+        private string conStr_remote, conStr_local;
         private string conStr;
         public API_DataAccess()
         {
-            conStr = @"Server=localhost;Database=cowin_database;User Id=guest;Password=root123;";
+            conStr_remote = "Data Source=SQL8004.site4now.net;Initial Catalog=db_a8aadf_cowindatabase;User Id=db_a8aadf_cowindatabase_admin;Password=aseemS30!";
+            //conStr_remote = @"Data Source = sql8004.site4now.net; Network Library = DBMSSOCN; Initial Catalog = db_a8aadf_cowindatabase; User ID = db_a8aadf_cowindatabase_admin; Password = aseemS30!;";
+            conStr_local = @"Server=localhost;Initial Catalog=cowin_database;User Id=guest;Password=root123;";
+            conStr = conStr_remote;
         }
         public IDbConnection connection
         {
@@ -62,10 +66,14 @@ namespace Cowin_API.Models
             }
         }
 
-        internal bool test_connection()
+        internal bool test_connection(int num)
         {
             try
             {
+                if (num == 1)
+                    conStr = conStr_local;
+                else
+                    conStr = conStr_remote;
                 using (IDbConnection conn = connection)
                 {
                     if (conn.State != ConnectionState.Open)
@@ -110,7 +118,7 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@userId", user_id);
+                    p.Add("@user_id", user_id);
 
                     var output = connection.Query<int>("dbo.get_register_status", p, commandType: CommandType.StoredProcedure);
                     return output.ToList()[0];
@@ -129,15 +137,7 @@ namespace Cowin_API.Models
             {
                 using (IDbConnection conn = connection)
                 {
-                    /*
-                    var p = new DynamicParameters();
-                    p.Add("@phonenumber", phone_no);
-                    p.Add("@username", u_name);
-                    p.Add("@password", pw);
-                    p.Add("@salt", salt);
-                    */
-
-                    connection.Execute("dbo.insert_user", curr_user);
+                    connection.Execute("dbo.insert_user @phonenumber, @username, @password, @salt", curr_user);
                     return "OK";
                 }
             }
@@ -154,17 +154,7 @@ namespace Cowin_API.Models
             {
                 using (IDbConnection conn = connection)
                 {
-                    /* 
-                     var p = new DynamicParameters();
-                     p.Add("@userId", user.user_id);
-                     p.Add("@fullname", user.fullname);
-                     p.Add("@aadhaar_no", user.aadhaar_no);
-                     p.Add("@ref_id", user.ref_id);
-                     p.Add("@gender", user.gender);
-                     p.Add("@birth_year", user.birth_year);
-                    */
-
-                    connection.Execute("dbo.insert_user_register", user);
+                    connection.Execute("dbo.insert_user_register @user_id, @fullname, @aadhaar_no, @ref_id, @gender, @birth_year", user);
                     return "OK";
                 }
             }
@@ -219,7 +209,7 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@userId", userID);
+                    p.Add("@user_id", userID);
 
                     var output = connection.Query<User_full_info>("dbo.get_user_dashboard_info", p, commandType: CommandType.StoredProcedure);
                     return output.ToList();
@@ -239,7 +229,7 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@userId", userID);
+                    p.Add("@user_id", userID);
 
                     var output = connection.Query<User_dose_data>("dbo.get_dose_info", p, commandType: CommandType.StoredProcedure);
                     return output.ToList();
@@ -282,16 +272,16 @@ namespace Cowin_API.Models
                 {
                     if (curr_dose.dose_type == 0)
                     {
-                        connection.Execute("dbo.insert_user_dose1", curr_dose);
+                        connection.Execute("dbo.insert_user_dose1 @user_id, @centerId, @date, @time", curr_dose);
                     }
                     else
                     if (curr_dose.dose_type == 1)
                     {
-                        connection.Execute("dbo.insert_user_dose2", curr_dose);
+                        connection.Execute("dbo.insert_user_dose2 @user_id, @centerId, @date, @time", curr_dose);
                     }
                     else
                     {
-                        connection.Execute("dbo.insert_user_dose_precaution", curr_dose);
+                        connection.Execute("dbo.insert_user_dose_precaution @user_id, @centerId, @date, @time", curr_dose);
                     }
                     return "OK";
                 }

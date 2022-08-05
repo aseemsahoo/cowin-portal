@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.Accessibility
 {
     public class User_Login
     {

@@ -1,17 +1,28 @@
 ﻿using Flurl;
 using Flurl.Http;
+using Flurl.Http.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Globalization;
 using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Cowin_Portal
+namespace Cowin_Portal.Accessibility
 {
+    public class UntrustedCertClientFactory : DefaultHttpClientFactory
+    {
+        public override HttpMessageHandler CreateMessageHandler()
+        {
+            return new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (_, _, _, _) => true
+            };
+        }
+    }
     public class ApiAccess
     {
-        private string base_url = "https://localhost:7066/api/Cowin/";
+        private string base_url = "https://localhost:5001/api/Cowin/";
         public static void ErrorLogging(Exception ex)
         {
             {
@@ -54,16 +65,13 @@ namespace Cowin_Portal
             }
         }
 
-        internal async Task<bool> test_connection()
+        internal async Task<bool> test_connection(int status)
         {
             try
             {
-                using (var connection = new SqlConnection(Helper.CnnVal("ProjectDB")))
-                {
-                    var url = base_url.AppendPathSegments("getconnection");
-                    var output = await url.GetJsonAsync<bool>();
-                    return output;
-                }
+                var url = base_url.AppendPathSegments("getconnection", status);
+                var output = await url.GetJsonAsync<bool>();
+                return output;
             }
             catch (Exception ex)
             {

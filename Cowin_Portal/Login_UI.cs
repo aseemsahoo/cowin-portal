@@ -1,4 +1,5 @@
-﻿using Cowin_Portal.User_Dashboard_forms;
+﻿using Cowin_Portal.Accessibility;
+using Cowin_Portal.User_Dashboard_forms;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -16,9 +17,21 @@ namespace Cowin_Portal
 
         private async void set_status_text()
         {
+            int status = 0;
+            DialogResult dr = MessageBox.Show
+                ("Is the remote database (.mdf) file loaded in your SQL server?",
+                "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                status = 1;
+            }
+            else
+            {
+                status = 0;
+            }
             ApiAccess db = new ApiAccess();
 
-            bool res = await db.test_connection();
+            bool res = await db.test_connection(status);
             if (res == true)
             {
                 status_label.Text = "Connected to Database";

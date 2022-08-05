@@ -15,10 +15,17 @@ namespace Cowin_API.Controllers
         }
 
         [HttpGet]
-        [Route("Getconnection")]
-        public bool GetConnection()
+        [Route("Getconnection/{id}")]
+        public bool GetConnection(int id)
         {
-            return db.test_connection();
+            return db.test_connection(id);
+        }
+
+        [HttpGet]
+        [Route("Getuser/{username}")]
+        public IEnumerable<User_Login> GetUser(string username)
+        {
+            return db.get_login_data(username);
         }
 
         [HttpGet]
@@ -56,14 +63,12 @@ namespace Cowin_API.Controllers
             return db.get_all_doses(id);
         }
 
-        // https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=245&date=12-10-2021
         [HttpGet]
         [Route("Getcenters/{district_index}/{vaccine_index}/{age_limit}")]
         public IEnumerable<Hospital> GetCenters(int district_index, int vaccine_index, int age_limit)
         {
             return db.search_center(district_index, vaccine_index, age_limit);
         }
-
 
         [HttpPost]
         [Route("[action]")]

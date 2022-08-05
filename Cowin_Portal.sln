@@ -4,13 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cowin_Portal", "Cowin_Portal\Cowin_Portal.csproj", "{1904932A-B28A-4E63-A791-97664C5A11E3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A1E38485-8579-4321-933C-389C4DF85412} = {A1E38485-8579-4321-933C-389C4DF85412}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cowin_API", "Cowin_API\Cowin_API.csproj", "{A1E38485-8579-4321-933C-389C4DF85412}"
-EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Cowin_Database", "Cowin_Database\Cowin_Database.sqlproj", "{AAD8D095-FCA8-40C0-93E3-D056EEE224AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,12 +21,6 @@ Global
 		{A1E38485-8579-4321-933C-389C4DF85412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1E38485-8579-4321-933C-389C4DF85412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1E38485-8579-4321-933C-389C4DF85412}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAD8D095-FCA8-40C0-93E3-D056EEE224AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAD8D095-FCA8-40C0-93E3-D056EEE224AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AAD8D095-FCA8-40C0-93E3-D056EEE224AE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{AAD8D095-FCA8-40C0-93E3-D056EEE224AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AAD8D095-FCA8-40C0-93E3-D056EEE224AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAD8D095-FCA8-40C0-93E3-D056EEE224AE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
