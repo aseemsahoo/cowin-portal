@@ -11,7 +11,7 @@ namespace Cowin_API.Models
         private string conStr;
         public API_DataAccess()
         {
-            conStr_remote = "Data Source=SQL8004.site4now.net;Initial Catalog=db_a8aadf_cowindatabase;User Id=db_a8aadf_cowindatabase_admin;Password=aseemS30!";
+            conStr_remote = "Data Source=SQL8004.site4now.net;Initial Catalog=db_a8aadf_cowindatabase;User Id=db_a8aadf_cowindatabase_admin;Password=cxzx1434!";
             conStr_local = @"Server=localhost;Initial Catalog=cowin_database;User Id=interview;Password=root123;";
             conStr = conStr_remote;
         }
