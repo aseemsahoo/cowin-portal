@@ -245,7 +245,7 @@ namespace Cowin_Portal.User_Dashboard_forms
             User_dose_input user_dose = new User_dose_input()
             {
                 user_id = user_id,
-                hospital_id = hospital_id,
+                centerId = hospital_id,
                 date = date,
                 time = time,
                 dose_type = dose_type
