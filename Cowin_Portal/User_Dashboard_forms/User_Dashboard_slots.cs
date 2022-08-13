@@ -32,6 +32,11 @@ namespace Cowin_Portal.User_Dashboard_forms
                 errorProvider_slots.SetError(this.district_comboBox, "Please select a district");
                 return false;
             }
+            if (get_groupbox_radiobuttion(age_groupbox) == "")
+            {
+                errorProvider_slots.SetError(this.age_groupbox, "Please select appropriate age");
+                return false;
+            }
             if (get_groupbox_radiobuttion(vaccine_groupbox) == "")
             {
                 errorProvider_slots.SetError(this.vaccine_groupbox, "Please select a vaccine");

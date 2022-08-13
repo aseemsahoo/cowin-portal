@@ -106,6 +106,11 @@ namespace Cowin_Portal.User_Dashboard_forms
             }
             if (dose_type == 0)
             {
+                if (get_groupbox_radiobuttion(age_groupbox) == "")
+                {
+                    errorProvider_ap.SetError(this.age_groupbox, "Please select appropriate age");
+                    return false;
+                }
                 if (get_groupbox_radiobuttion(vaccine_groupbox) == "")
                 {
                     errorProvider_ap.SetError(this.vaccine_groupbox, "Please select a vaccine");
