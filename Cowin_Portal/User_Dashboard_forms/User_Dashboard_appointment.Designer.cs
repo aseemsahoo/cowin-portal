@@ -943,9 +943,9 @@
             this.l1.ForeColor = System.Drawing.Color.Navy;
             this.l1.Location = new System.Drawing.Point(33, 21);
             this.l1.Name = "l1";
-            this.l1.Size = new System.Drawing.Size(103, 17);
+            this.l1.Size = new System.Drawing.Size(98, 17);
             this.l1.TabIndex = 39;
-            this.l1.Text = "Select Time Slot";
+            this.l1.Text = "Select a Center";
             // 
             // ck1
             // 
@@ -998,8 +998,8 @@
             // 
             // User_Dashboard_appointment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(584, 514);
             this.Controls.Add(this.ck_panel2);

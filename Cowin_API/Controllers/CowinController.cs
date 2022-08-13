@@ -35,18 +35,22 @@ namespace Cowin_API.Controllers
             return db.get_register_status(id);
         }
 
-        [HttpGet]
-        [Route("Getdistricts/{id}")]
-        public IEnumerable<Districts> GetDistricts(int id)
+        [HttpPost]
+        [Route("[action]")]
+        public string PostUser([FromBody] User_SignIn curr_user)
         {
-            return db.get_districts(id);
+            if (ModelState.IsValid)
+                return db.insert_user(curr_user);
+            return "";
         }
 
-        [HttpGet]
-        [Route("Getstates")]
-        public IEnumerable<States> GetStates()
+        [HttpPost]
+        [Route("[action]")]
+        public string PostRegisteredUser([FromBody] User_full_info user)
         {
-            return db.get_all_states();
+            if (ModelState.IsValid)
+                return db.insert_user_register(user);
+            return "";
         }
 
         [HttpGet]
@@ -64,28 +68,23 @@ namespace Cowin_API.Controllers
         }
 
         [HttpGet]
+        [Route("Getdistricts/{id}")]
+        public IEnumerable<Districts> GetDistricts(int id)
+        {
+            return db.get_districts(id);
+        }
+
+        [HttpGet]
+        [Route("Getstates")]
+        public IEnumerable<States> GetStates()
+        {
+            return db.get_all_states();
+        }
+        [HttpGet]
         [Route("Getcenters/{district_index}/{vaccine_index}/{age_limit}")]
         public IEnumerable<Hospital> GetCenters(int district_index, int vaccine_index, int age_limit)
         {
             return db.search_center(district_index, vaccine_index, age_limit);
-        }
-
-        [HttpPost]
-        [Route("[action]")]
-        public string PostUser([FromBody] User_SignIn curr_user)
-        {
-            if (ModelState.IsValid)
-                return db.insert_user(curr_user);
-            return "";
-        }
-
-        [HttpPost]
-        [Route("[action]")]
-        public string PostRegisteredUser([FromBody] User_full_info user)
-        {
-            if (ModelState.IsValid)
-                return db.insert_user_register(user);
-            return "";
         }
 
         [HttpPost]
