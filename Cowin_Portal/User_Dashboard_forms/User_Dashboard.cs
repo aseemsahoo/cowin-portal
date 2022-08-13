@@ -36,7 +36,7 @@ namespace Cowin_Portal.User_Dashboard_forms
 
         private async void user_dashboardButton_Click(object sender, EventArgs e)
         {
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
             int isRegister = await db.get_register_status(user_id);
             if (isRegister == 1)
             {

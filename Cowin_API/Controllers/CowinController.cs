@@ -7,11 +7,11 @@ namespace Cowin_API.Controllers
     [ApiController]
     public class CowinController : ControllerBase
     {
-        private readonly API_DataAccess db;
+        private readonly DataAccess db;
 
         public CowinController()
         {
-            db = new API_DataAccess();
+            db = new DataAccess();
         }
 
         [HttpGet]

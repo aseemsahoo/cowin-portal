@@ -19,7 +19,7 @@ namespace Cowin_Portal.User_Dashboard_forms
 
         public async void initialize_state_dropdown(Guna2ComboBox state_comboBox)
         {
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
             state_list = await db.get_all_states();
             foreach (States s in state_list)
             {
@@ -31,7 +31,7 @@ namespace Cowin_Portal.User_Dashboard_forms
             int index = state_comboBox.SelectedIndex;
             int state_id = state_list[index].id;
 
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
             district_list = await db.get_districts(state_id);
 
             district_comboBox.Items.Clear();
@@ -78,7 +78,7 @@ namespace Cowin_Portal.User_Dashboard_forms
             int index = district_comboBox.SelectedIndex;
             int district_id = district_list[index].id;
 
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
             display = await db.search_center(district_id, vaccine_index, age_limit);
 
             Centers_gridview.DataSource = display;

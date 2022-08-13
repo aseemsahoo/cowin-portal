@@ -5,11 +5,11 @@ using System.Globalization;
 
 namespace Cowin_API.Models
 {
-    public class API_DataAccess
+    public class DataAccess
     {
         private string conStr_remote, conStr_local;
         private string conStr;
-        public API_DataAccess()
+        public DataAccess()
         {
             conStr_remote = "Data Source=SQL8004.site4now.net;Initial Catalog=db_a8aadf_cowindatabase;User Id=db_a8aadf_cowindatabase_admin;Password=aseemS30!";
             //conStr_remote = @"Data Source = sql8004.site4now.net; Network Library = DBMSSOCN; Initial Catalog = db_a8aadf_cowindatabase; User ID = db_a8aadf_cowindatabase_admin; Password = aseemS30!;";

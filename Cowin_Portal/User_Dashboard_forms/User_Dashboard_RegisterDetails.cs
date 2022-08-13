@@ -93,7 +93,7 @@ namespace Cowin_Portal.User_Dashboard_forms
         {
             if (validate_user_register() == false)
                 return;
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
 
             User_full_info curr_user = new User_full_info
             {

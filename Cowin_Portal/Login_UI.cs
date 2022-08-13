@@ -15,7 +15,7 @@ namespace Cowin_Portal
             set_status_text();
         }
 
-        private async void set_status_text()
+        private void set_status_text()
         {
             int status = 0;
             DialogResult dr = MessageBox.Show
@@ -29,9 +29,9 @@ namespace Cowin_Portal
             {
                 status = 0;
             }
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
 
-            bool res = await db.test_connection(status);
+            bool res = db.test_connection(status);
             if (res == true)
             {
                 status_label.Text = "Connected to Database";
@@ -91,7 +91,7 @@ namespace Cowin_Portal
         {
             if (validate_signup() == false)
                 return;
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
             SaltHash sh = new SaltHash();
 
             string salt = sh.GetSalt();
@@ -127,7 +127,7 @@ namespace Cowin_Portal
             if (validate_login() == false)
                 return;
 
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
             SaltHash sh = new SaltHash();
 
             List<User_Login> curr_user = await db.get_login_data(login_username.Text);

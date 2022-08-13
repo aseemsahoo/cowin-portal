@@ -106,6 +106,11 @@ namespace Cowin_Portal.User_Dashboard_forms
             }
             if (dose_type == 0)
             {
+                if (get_groupbox_radiobuttion(age_groupbox) == "")
+                {
+                    errorProvider_ap.SetError(this.age_groupbox, "Please select age");
+                    return false;
+                }
                 if (get_groupbox_radiobuttion(vaccine_groupbox) == "")
                 {
                     errorProvider_ap.SetError(this.vaccine_groupbox, "Please select a vaccine");
@@ -236,7 +241,7 @@ namespace Cowin_Portal.User_Dashboard_forms
             int index = Centers_gridview.CurrentCell.RowIndex;
             int hospital_id = display[index].id;
 
-            ApiAccess db = new ApiAccess();
+            DataAccess db = new DataAccess();
             User_dose_input user_dose = new User_dose_input()
             {
                 user_id = user_id,
