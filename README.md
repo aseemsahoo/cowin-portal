@@ -111,12 +111,13 @@ You need the following installed on your desktop:
 
 # Installation
 **I am a tester:** 
-- Download the latest build from the [releases](https://github.com/aseemsahoo/cowin-portal/releases) section.
+- Download the latest build from the [releases](https://github.com/aseemsahoo/cowin-portal/releases) section. Run `autostart.bat`
 
 **I am a developer:** 
 - Follow the steps [here](https://docs.microsoft.com/en-us/visualstudio/version-control/git-clone-repository?view=vs-2022) to clone this repository. Clone URL: `https://github.com/aseemsahoo/cowin-portal.git`
 
 - Alternatively, you may directly clone the project by selecting the 'Open with Visual Studio' option as shown below.
+
 ![](https://i.imgur.com/CQJNcbX.png?2)
 
 ---
@@ -127,7 +128,7 @@ You need the following installed on your desktop:
 - :white_check_mark: Add Error Logging
 - :white_check_mark: Integrate application with Web API
 - :red_square: Add API key authentication
-- :red_square: Add 'Download Certificate'c
+- :red_square: Add 'Download Certificate'
 - :red_square: Add OTP authentication
 
 ---
