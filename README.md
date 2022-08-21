@@ -4,6 +4,8 @@ vaccination and certification of various users.
 
 APIs are used to pull data from the SQL Server and, if users modify/upload existing/new data, the API makes sure the CRUD operation is invoked accordingly. For more information about APIs, please scroll down to the API section
 
+You can view the database diagram [here](https://github.com/aseemsahoo/cowin-portal/blob/master/Database_Diagram.pdf).
+
 # Table of contents
 <!--ts-->
    * [Implementaion](#implementaion)
