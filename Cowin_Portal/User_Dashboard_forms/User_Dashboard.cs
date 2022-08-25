@@ -45,20 +45,10 @@ namespace Cowin_Portal.User_Dashboard_forms
                 dashboard_label.Text = u_info.display_text();
             }
             else
-            if (isRegister == 0)
             {
                 User_Dashboard_RegisterDetails u_details = new User_Dashboard_RegisterDetails(user_id);
                 openChildForm(u_details);
                 dashboard_label.Text = u_details.display_text();
-            }
-            else
-            {
-                MessageBox.Show
-                    ("Error Code: " +
-                    isRegister.ToString() +
-                    " The application will stop running.",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
             }
         }
 

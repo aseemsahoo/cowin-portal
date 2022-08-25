@@ -120,16 +120,6 @@ namespace Cowin_Portal.User_Dashboard_forms
             return true;
         }
 
-        private void get_vaccine_index(ref int vaccine_index)
-        {
-            if (dose_type != 0)
-            {
-                vaccine_index = vaccine_id;
-                return;
-            }
-            get_vaccine_index_base(vaccine_groupbox, ref vaccine_index);
-        }
-
         private void searchButton_Click(object sender, EventArgs e)
         {
             if (validate_controls() == false)
@@ -144,7 +134,7 @@ namespace Cowin_Portal.User_Dashboard_forms
             else
             {
                 age_limit = Convert.ToInt32(get_groupbox_radiobuttion(age_groupbox).Substring(0, 2));
-                get_vaccine_index(ref vaccine_index);
+                get_vaccine_index_base(vaccine_groupbox, ref vaccine_index);
             }
             load_DataGridView(district_comboBox, Centers_gridview, vaccine_index, age_limit);
         }
@@ -173,8 +163,9 @@ namespace Cowin_Portal.User_Dashboard_forms
                 vaccine = get_groupbox_radiobuttion(vaccine_groupbox);
             }
             else
+            {
                 vaccine = vaccine_from_id();
-
+            }
             hospital_nameLabel.Text = display[index].name;
             hospital_addressLabel.Text = display[index].address;
             vaccineLabel.Text = vaccine;
@@ -208,7 +199,7 @@ namespace Cowin_Portal.User_Dashboard_forms
 
                 var days = (chosen_date - dose_date).TotalDays;
 
-                if (days <= 180)
+                if (days <= 90)
                 {
                     MessageBox.Show
                         ("Gap between two doses must be at least 3 months. Please try later. " +
