@@ -4,7 +4,7 @@ namespace Cowin_Portal
 {
     public class RegexValidation
     {
-        private string FULLNAME_REGEX = "^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]{1,})?)";
+        private string FULLNAME_REGEX = "^([A-Z]{1}[a-z]{2,}\\s[A-Z]{1}[a-z]{2,})$";
 
         private string PHONENUMBER_REGEX = "^[6-9]{1}[0-9]{9}$";
 
@@ -12,7 +12,7 @@ namespace Cowin_Portal
 
         private string YEAR_REGEX = "^(194[5-9]|19[5-9]\\d|200\\d|201[0-3])$";
 
-        private string USERNAME_REGEX = "^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$";
+        private string USERNAME_REGEX = "^([a-zA-Z]{6}[a-zA-Z0-9]{1,10})$";
 
         private string PASSWORD_REGEX = "^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*)$";
 
