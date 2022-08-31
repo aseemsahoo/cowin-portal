@@ -114,6 +114,7 @@ You need the following installed on your desktop:
 # Installation
 **I am a tester:** 
 - Download the latest build from the [releases](https://github.com/aseemsahoo/cowin-portal/releases) section. Run `autostart.bat`
+- To view the API calls, you can go to https://localhost:5001/swagger/index.html after running `autostart.bat`.
 
 **I am a developer:** 
 - Follow the steps [here](https://docs.microsoft.com/en-us/visualstudio/version-control/git-clone-repository?view=vs-2022) to clone this repository. Clone URL: `https://github.com/aseemsahoo/cowin-portal.git`
