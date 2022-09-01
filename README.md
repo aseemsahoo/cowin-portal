@@ -99,7 +99,6 @@ This project is created with:
 Frameworks used are:
 - Dapper - a simple object mapper for .Net
 - Flurl - a fluent, portable URL builder
-- Newtonsoft.Json - .NET's powerful JSON serializer
 - BCrypt - an easy way to keep your passwords secure
 - Guna UI - an easy way to craft stunning desktop UI
 
