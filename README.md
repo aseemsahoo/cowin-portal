@@ -1,3 +1,4 @@
+<a name="readme-top"></a>
 # Cowin Portal
 This project is an attempt at understanding the functioning of the Cowin web portal. It provides a similar platform for management of registration, appointment scheduling, managing 
 vaccination and certification of various users. 
@@ -57,6 +58,8 @@ This step involves selecting a date and time slot for the vaccination.
 
 ![](https://i.imgur.com/mvCZvCi.jpg)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
 # Application programming interface (API)
@@ -88,6 +91,8 @@ This step involves selecting a date and time slot for the vaccination.
 | `POST`   | `/api/Cowin/GetCenters/{district_id}/{vaccine_id}/{age_limit}`| Retrieve all centers in a district by vaccine & age limit|
 | `POST`   | `/api/Cowin/PostDoseData`                | Insert the appointment schedule data of the user |
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
 # Technologies & Frameworks
@@ -101,6 +106,8 @@ Frameworks used are:
 - Flurl - a fluent, portable URL builder
 - BCrypt - an easy way to keep your passwords secure
 - Guna UI - an easy way to craft stunning desktop UI
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
@@ -122,6 +129,8 @@ You need the following installed on your desktop:
 
 ![](https://i.imgur.com/CQJNcbX.png?2)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
 # Roadmap
@@ -133,7 +142,8 @@ You need the following installed on your desktop:
 - :red_square: Add 'Download Certificate'
 - :red_square: Add OTP authentication
 
----
+See the [open issues](https://github.com/aseemsahoo/cowin-portal/issues) for a full list of proposed features (and known issues).
+
 
 # Acknowledgments
 * [APIs | APISetu](https://apisetu.gov.in/api/cowin#/)
@@ -142,3 +152,5 @@ You need the following installed on your desktop:
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Syncfusion Metro Studio](https://help.syncfusion.com/metro-studio/overview)
 * [Flat UI Colors](https://flatuicolors.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
