@@ -13,9 +13,11 @@ namespace Cowin_Portal
         [STAThread]
         static void Main()
         {
+            /*
             FlurlHttp.ConfigureClient
                 ("https://localhost:5001/api/Cowin/", 
                 cli => cli.Settings.HttpClientFactory = new UntrustedCertClientFactory());
+            */
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login_UI());

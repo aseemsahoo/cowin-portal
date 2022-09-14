@@ -1,4 +1,5 @@
-﻿using Flurl;
+﻿using Cowin_Library.Users;
+using Flurl;
 using Flurl.Http;
 using Flurl.Http.Configuration;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Cowin_Portal.Accessibility
 {
+    /*
     public class UntrustedCertClientFactory : DefaultHttpClientFactory
     {
         public override HttpMessageHandler CreateMessageHandler()
@@ -20,6 +22,7 @@ namespace Cowin_Portal.Accessibility
             };
         }
     }
+    */
     public class ApiAccess
     {
         private string base_url = "https://localhost:5001/api/Cowin/";

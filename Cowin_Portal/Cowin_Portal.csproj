@@ -118,7 +118,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accessibility\Access_Classes.cs" />
     <Compile Include="Base_search_class.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,8 +138,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegexValidation.cs" />
-    <Compile Include="SaltHash.cs" />
+    <Compile Include="Security\RegexValidation.cs" />
+    <Compile Include="Security\SaltHash.cs" />
     <Compile Include="User_Dashboard_forms\User_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +255,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cowin_Library\Cowin_Library.csproj">
+      <Project>{9e40be06-3577-4883-99b0-d76c79f0fac1}</Project>
+      <Name>Cowin_Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cowin_Portal", "Cowin_Porta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cowin_API", "Cowin_API\Cowin_API.csproj", "{A1E38485-8579-4321-933C-389C4DF85412}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cowin_Library", "Cowin_Library\Cowin_Library.csproj", "{9E40BE06-3577-4883-99B0-D76C79F0FAC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{A1E38485-8579-4321-933C-389C4DF85412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1E38485-8579-4321-933C-389C4DF85412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1E38485-8579-4321-933C-389C4DF85412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E40BE06-3577-4883-99B0-D76C79F0FAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E40BE06-3577-4883-99B0-D76C79F0FAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E40BE06-3577-4883-99B0-D76C79F0FAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E40BE06-3577-4883-99B0-D76C79F0FAC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

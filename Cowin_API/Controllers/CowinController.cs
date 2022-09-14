@@ -1,4 +1,5 @@
 ﻿using Cowin_API.Models;
+using Cowin_Library.Users;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cowin_API.Controllers

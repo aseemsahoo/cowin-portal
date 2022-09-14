@@ -1,4 +1,4 @@
-﻿namespace Cowin_Portal
+﻿namespace Cowin_Portal.Security
 {
     public class SaltHash
     {

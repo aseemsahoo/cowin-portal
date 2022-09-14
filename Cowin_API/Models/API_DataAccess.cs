@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using Cowin_Library.Users;
+using Dapper;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
