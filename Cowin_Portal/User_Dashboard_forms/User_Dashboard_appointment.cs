@@ -193,6 +193,11 @@ namespace Cowin_Portal.User_Dashboard_forms
         private bool validate_date_time()
         {
             errorProvider_ap.Clear();
+            if (get_groupbox_radiobuttion(time_groupbox) == "")
+            {
+                errorProvider_ap.SetError(this.time_groupbox, "Please select a time slot");
+                return false;
+            }
             if (dose_type != 0)
             {
                 DateTime chosen_date = vaccineDatePicker.Value;
@@ -200,20 +205,15 @@ namespace Cowin_Portal.User_Dashboard_forms
 
                 var days = (chosen_date - dose_date).TotalDays;
 
-                if (days <= 90)
+                if (days <= 30)
                 {
                     MessageBox.Show
-                        ("Gap between two doses must be at least 3 months. Please try later. " +
+                        ("Gap between two doses must be at least 30 days. Please try later. " +
                         "You will be re-directed back to the user dashboard.",
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     finish_button_Click(new Object(), new EventArgs());
                     return false;
                 }
-            }
-            if (get_groupbox_radiobuttion(time_groupbox) == "")
-            {
-                errorProvider_ap.SetError(this.time_groupbox, "Please select a time slot");
-                return false;
             }
             return true;
         }
