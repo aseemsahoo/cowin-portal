@@ -1,4 +1,5 @@
-﻿using Cowin_Library.Users;
+﻿using Cowin_Library.Logging;
+using Cowin_Library.Users;
 using Flurl;
 using Flurl.Http;
 using System;
@@ -24,48 +25,6 @@ namespace Cowin_Portal.Accessibility
     public class ApiAccess
     {
         private string base_url = "https://localhost:5001/api/Cowin/";
-        public static void ErrorLogging(Exception ex)
-        {
-            {
-                var currentDate = DateTime.Now;
-                var monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(currentDate.Month);
-
-                var root = AppDomain.CurrentDomain.BaseDirectory + "\\logs";
-                var yearPath = root + "\\" + currentDate.Year.ToString() + "\\";
-                var MonthPath = yearPath + currentDate.Year + "-" + monthName + "\\";
-                var errorFile = MonthPath + "ErrorLogs-" + String.Format("{0:d-M-yyyy}", currentDate.Date) + ".txt";
-
-                if (!Directory.Exists(root))
-                {
-                    Directory.CreateDirectory(root);
-                }
-                if (!Directory.Exists(yearPath))
-                {
-                    Directory.CreateDirectory(yearPath);
-                }
-                if (!Directory.Exists(MonthPath))
-                {
-                    Directory.CreateDirectory(MonthPath);
-                }
-                if (!File.Exists(errorFile))
-                {
-                    FileStream fs = File.Create(errorFile);
-                    fs.Close();
-                }
-                using (StreamWriter sw = File.AppendText(errorFile))
-                {
-                    sw.WriteLine("=============Error Logging ===========");
-                    sw.WriteLine("===========Start============= " + currentDate);
-                    sw.WriteLine("<Error Message>: ");
-                    sw.WriteLine(ex.Message);
-                    sw.WriteLine("<Stack Trace>: ");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine("===========End============= " + currentDate);
-                    sw.WriteLine();
-                }
-            }
-        }
-
         internal async Task<bool> test_connection(int status)
         {
             try
@@ -76,7 +35,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 return false;
             }
         }
@@ -91,7 +51,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -106,7 +67,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -121,7 +83,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -136,7 +99,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -151,7 +115,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -166,7 +131,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -181,7 +147,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -196,7 +163,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -211,7 +179,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -226,7 +195,8 @@ namespace Cowin_Portal.Accessibility
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }

@@ -1,4 +1,5 @@
-﻿using Cowin_Library.Users;
+﻿using Cowin_API.Logging;
+using Cowin_Library.Users;
 using Dapper;
 using System.Data;
 using System.Data.SqlClient;
@@ -24,48 +25,6 @@ namespace Cowin_API.Models
             }
         }
 
-        public static void ErrorLogging(Exception ex)
-        {
-            {
-                var currentDate = DateTime.Now;
-                var monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(currentDate.Month);
-
-                var root = AppDomain.CurrentDomain.BaseDirectory + "\\logs";
-                var yearPath = root + "\\" + currentDate.Year.ToString() + "\\";
-                var MonthPath = yearPath + currentDate.Year + "-" + monthName + "\\";
-                var errorFile = MonthPath + "ErrorLogs-" + String.Format("{0:d-M-yyyy}", currentDate.Date) + ".txt";
-
-                if (!Directory.Exists(root))
-                {
-                    Directory.CreateDirectory(root);
-                }
-                if (!Directory.Exists(yearPath))
-                {
-                    Directory.CreateDirectory(yearPath);
-                }
-                if (!Directory.Exists(MonthPath))
-                {
-                    Directory.CreateDirectory(MonthPath);
-                }
-                if (!File.Exists(errorFile))
-                {
-                    FileStream fs = File.Create(errorFile);
-                    fs.Close();
-                }
-                using (StreamWriter sw = File.AppendText(errorFile))
-                {
-                    sw.WriteLine("=============Error Logging ===========");
-                    sw.WriteLine("===========Start============= " + currentDate);
-                    sw.WriteLine("<Error Message>: ");
-                    sw.WriteLine(ex.Message);
-                    sw.WriteLine("<Stack Trace>: ");
-                    sw.WriteLine(ex.StackTrace);
-                    sw.WriteLine("===========End============= " + currentDate);
-                    sw.WriteLine();
-                }
-            }
-        }
-
         internal bool test_connection(int num)
         {
             try
@@ -86,7 +45,8 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 return false;
             }
         }
@@ -106,7 +66,8 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -126,8 +87,10 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
-                return ex.GetHashCode();
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
+                //return ex.GetHashCode();
+                throw;
             }
         }
 
@@ -143,8 +106,10 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
-                return ex.Message;
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
+                //return ex.Message;
+                throw;
             }
         }
 
@@ -160,8 +125,10 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
-                return ex.Message;
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
+                //return ex.Message;
+                throw;
             }
         }
 
@@ -180,7 +147,8 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -197,7 +165,8 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -217,7 +186,8 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -237,7 +207,8 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -259,7 +230,8 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
                 throw;
             }
         }
@@ -288,8 +260,10 @@ namespace Cowin_API.Models
             }
             catch (Exception ex)
             {
-                ErrorLogging(ex);
-                return ex.Message;
+                FileLogger logs = new FileLogger();
+                logs.logError(ex);
+                //return ex.Message;
+                throw; 
             }
         }
     }

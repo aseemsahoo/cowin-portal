@@ -45,6 +45,7 @@
     <Compile Include="Centers\Hospital.cs" />
     <Compile Include="Doses\User_dose_input.cs" />
     <Compile Include="Doses\User_dose_data.cs" />
+    <Compile Include="Logging\FileLogger.cs" />
     <Compile Include="Places\Districts.cs" />
     <Compile Include="Places\States.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
