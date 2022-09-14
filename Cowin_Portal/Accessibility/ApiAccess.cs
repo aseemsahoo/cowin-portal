@@ -1,12 +1,10 @@
 ﻿using Cowin_Library.Users;
 using Flurl;
 using Flurl.Http;
-using Flurl.Http.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Cowin_Portal.Accessibility

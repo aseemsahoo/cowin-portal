@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-namespace Cowin_Library.Users
+﻿namespace Cowin_Library.Users
 {
     public class User_full_info
     {

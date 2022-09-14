@@ -1,6 +1,4 @@
-﻿using Cowin_Portal.Accessibility;
-using Flurl.Http;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Cowin_Portal
