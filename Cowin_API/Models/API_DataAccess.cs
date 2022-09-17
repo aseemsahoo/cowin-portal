@@ -9,14 +9,21 @@ namespace Cowin_API.Models
 {
     public class API_DataAccess
     {
-        private string conStr_remote, conStr_local;
+        private IConfiguration _configuration;
+
         private string conStr;
         public API_DataAccess()
         {
-            conStr_remote = "Data Source=SQL8004.site4now.net;Initial Catalog=db_a8aadf_cowindatabase;User Id=db_a8aadf_cowindatabase_admin;Password=cxzx1434!";
-            conStr_local = "Server=localhost;Initial Catalog=cowin_database;User Id=interview;Password=root123;";
-            conStr = conStr_remote;
+            _configuration = GetConfiguration();
+            conStr = this._configuration.GetConnectionString("Local");
         }
+
+        private IConfigurationRoot GetConfiguration()
+        {
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            return builder.Build();
+        }
+
         public IDbConnection connection
         {
             get
@@ -30,9 +37,9 @@ namespace Cowin_API.Models
             try
             {
                 if (num == 1)
-                    conStr = conStr_local;
+                    conStr = this._configuration.GetConnectionString("Local");
                 else
-                    conStr = conStr_remote;
+                    conStr = this._configuration.GetConnectionString("Global");
                 using (IDbConnection conn = connection)
                 {
                     if (conn.State != ConnectionState.Open)
