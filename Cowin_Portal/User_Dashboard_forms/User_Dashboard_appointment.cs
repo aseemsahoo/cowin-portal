@@ -26,6 +26,7 @@ namespace Cowin_Portal.User_Dashboard_forms
             this.user_id = curr_user[0].user_id;
 
             set_age_radiobutton();
+			
             if (dose_type == 0)
             {
                 vaccine_groupbox.Enabled = true;
@@ -56,8 +57,7 @@ namespace Cowin_Portal.User_Dashboard_forms
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 finish_button_Click(new Object(), new EventArgs());
             }
-            else
-            if (age >= 18 && age < 45)
+            else if (age >= 18 && age < 45)
             {
                 age18_radiobutton.Checked = true;
                 age_groupbox.Enabled = false;
@@ -80,9 +80,9 @@ namespace Cowin_Portal.User_Dashboard_forms
         private void load_age_vaccine_date(List<User_dose_data> curr_user_doses)
         {
             this.age_id = curr_user_doses[0].age_limit;
-            vaccine_to_index(curr_user_doses[0].vaccine_name, ref vaccine_id);
             this.dose1_date = curr_user_doses[0].dose_date.ToString("yyyy-MM-dd");
-
+			
+            vaccine_to_index(curr_user_doses[0].vaccine_name, ref vaccine_id);
             set_radiobutton(age_groupbox, age_id + "+");
             set_radiobutton(vaccine_groupbox, vaccine_from_id());
         }
