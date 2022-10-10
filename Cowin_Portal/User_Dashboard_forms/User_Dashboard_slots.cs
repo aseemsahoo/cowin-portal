@@ -9,6 +9,7 @@ namespace Cowin_Portal.User_Dashboard_forms
             InitializeComponent();
             initialize_state_dropdown(state_comboBox);
         }
+		
         internal string display_text()
         {
             return "Search for a vaccination center";
