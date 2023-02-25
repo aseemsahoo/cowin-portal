@@ -1,5 +1,6 @@
 ﻿using Cowin_Library.Users;
 using Dapper;
+using Npgsql;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
@@ -13,14 +14,15 @@ namespace Cowin_API.Models
         public API_DataAccess()
         {
             conStr_remote = "Data Source=SQL8004.site4now.net;Initial Catalog=db_a8aadf_cowindatabase;User Id=db_a8aadf_cowindatabase_admin;Password=cxzx1434!";
-            conStr_local = "Server=localhost;Initial Catalog=cowin_database;User Id=interview;Password=root123;";
+            conStr_local = "Server=localhost;Port=5432;Database=cowin_database;User Id=postgres;Password=root123;";
+            conStr_remote = conStr_local;
             conStr = conStr_remote;
         }
         public IDbConnection connection
         {
-            get
+            get 
             {
-                return new SqlConnection(conStr);
+                return new NpgsqlConnection(conStr);
             }
         }
 
@@ -73,7 +75,7 @@ namespace Cowin_API.Models
                 if (num == 1)
                     conStr = conStr_local;
                 else
-                    conStr = conStr_remote;
+                    conStr = conStr_local;
                 using (IDbConnection conn = connection)
                 {
                     if (conn.State != ConnectionState.Open)
@@ -172,9 +174,19 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@state_id", stateID);
+                    p.Add("p_state_id", stateID);
 
-                    var output = connection.Query<Districts>("dbo.get_districts", p, commandType: CommandType.StoredProcedure);
+                    var func = "get_districts";
+
+                    var output = connection.Query<Districts>
+                        (
+                                sql: func,
+                                p,
+                                commandType: CommandType.StoredProcedure,
+                                commandTimeout: 900) 
+                        as List<Districts>;
+
+                    //var output = connection.Query<Districts>("get_districts", p, commandType: CommandType.StoredProcedure);
                     return output.ToList();
                 }
             }
