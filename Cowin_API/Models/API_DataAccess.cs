@@ -13,9 +13,8 @@ namespace Cowin_API.Models
         private string conStr;
         public API_DataAccess()
         {
-            conStr_remote = "Data Source=SQL8004.site4now.net;Initial Catalog=db_a8aadf_cowindatabase;User Id=db_a8aadf_cowindatabase_admin;Password=cxzx1434!";
+            conStr_remote = "Server=localhost;Port=5432;Database=cowin_database;User Id=postgres;Password=root123;";
             conStr_local = "Server=localhost;Port=5432;Database=cowin_database;User Id=postgres;Password=root123;";
-            conStr_remote = conStr_local;
             conStr = conStr_remote;
         }
         public IDbConnection connection
@@ -75,7 +74,7 @@ namespace Cowin_API.Models
                 if (num == 1)
                     conStr = conStr_local;
                 else
-                    conStr = conStr_local;
+                    conStr = conStr_remote;
                 using (IDbConnection conn = connection)
                 {
                     if (conn.State != ConnectionState.Open)
@@ -100,9 +99,9 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@username", u_name);
+                    p.Add("p_username", u_name);
 
-                    var output = connection.Query<User_Login>("dbo.get_login_data", p, commandType: CommandType.StoredProcedure);
+                    var output = connection.Query<User_Login>("SELECT * from public.get_login_data(@p_username)", p, commandType: CommandType.Text);
                     return output.ToList();
                 }
             }
@@ -120,9 +119,9 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@user_id", user_id);
+                    p.Add("p_user_id", user_id);
 
-                    var output = connection.Query<int>("dbo.get_register_status", p, commandType: CommandType.StoredProcedure);
+                    var output = connection.Query<int>("SELECT * from public.get_register_status(@p_user_id)", p, commandType: CommandType.Text);
                     return output.ToList()[0];
                 }
             }
@@ -139,7 +138,7 @@ namespace Cowin_API.Models
             {
                 using (IDbConnection conn = connection)
                 {
-                    connection.Execute("dbo.insert_user @phonenumber, @username, @password, @salt", curr_user);
+                    connection.Execute("CALL public.insert_user(@phonenumber, @username, @password, @salt)", curr_user);
                     return "OK";
                 }
             }
@@ -156,7 +155,7 @@ namespace Cowin_API.Models
             {
                 using (IDbConnection conn = connection)
                 {
-                    connection.Execute("dbo.insert_user_register @user_id, @fullname, @aadhaar_no, @ref_id, @gender, @birth_year", user);
+                    connection.Execute("CALL public.insert_user_register(@user_id, @fullname, @aadhaar_no, @ref_id, @gender, @birth_year)", user);
                     return "OK";
                 }
             }
@@ -176,17 +175,7 @@ namespace Cowin_API.Models
                     var p = new DynamicParameters();
                     p.Add("p_state_id", stateID);
 
-                    var func = "get_districts";
-
-                    var output = connection.Query<Districts>
-                        (
-                                sql: func,
-                                p,
-                                commandType: CommandType.StoredProcedure,
-                                commandTimeout: 900) 
-                        as List<Districts>;
-
-                    //var output = connection.Query<Districts>("get_districts", p, commandType: CommandType.StoredProcedure);
+                    var output = connection.Query<Districts> ("SELECT * from public.get_districts(@p_state_id)", p, commandType: CommandType.Text);
                     return output.ToList();
                 }
             }
@@ -203,7 +192,7 @@ namespace Cowin_API.Models
             {
                 using (IDbConnection conn = connection)
                 {
-                    var output = connection.Query<States>("dbo.get_states");
+                    var output = connection.Query<States>("SELECT * from public.get_states()");
                     return output.ToList();
                 }
             }
@@ -221,9 +210,9 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@user_id", userID);
+                    p.Add("p_user_id", userID);
 
-                    var output = connection.Query<User_full_info>("dbo.get_user_dashboard_info", p, commandType: CommandType.StoredProcedure);
+                    var output = connection.Query<User_full_info>("SELECT * from public.get_user_dashboard_info(@p_user_id)", p, commandType: CommandType.Text);
                     return output.ToList();
                 }
             }
@@ -241,9 +230,9 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@user_id", userID);
+                    p.Add("p_user_id", userID);
 
-                    var output = connection.Query<User_dose_data>("dbo.get_dose_info", p, commandType: CommandType.StoredProcedure);
+                    var output = connection.Query<User_dose_data>("SELECT * from public.get_dose_info(@p_user_id)", p, commandType: CommandType.Text);
                     return output.ToList();
                 }
             }
@@ -261,11 +250,11 @@ namespace Cowin_API.Models
                 using (IDbConnection conn = connection)
                 {
                     var p = new DynamicParameters();
-                    p.Add("@district_id", district_index);
-                    p.Add("@vaccine_id", vaccine_index);
-                    p.Add("@age_limit", age_limit);
+                    p.Add("p_district_id", district_index);
+                    p.Add("p_vaccine_id", vaccine_index);
+                    p.Add("p_age_limit", age_limit);
 
-                    var output = connection.Query<Hospital>("dbo.get_centers", p, commandType: CommandType.StoredProcedure);
+                    var output = connection.Query<Hospital>("SELECT * from public.get_centers(@p_district_id, @p_vaccine_id, @p_age_limit)", p, commandType: CommandType.Text);
                     return output.ToList();
                 }
             }
@@ -284,16 +273,16 @@ namespace Cowin_API.Models
                 {
                     if (curr_dose.dose_type == 0)
                     {
-                        connection.Execute("dbo.insert_user_dose1 @user_id, @centerId, @date, @time", curr_dose);
+                        connection.Execute("CALL public.insert_user_dose1(@user_id, @centerId, @date, @time)", curr_dose);
                     }
                     else
                     if (curr_dose.dose_type == 1)
                     {
-                        connection.Execute("dbo.insert_user_dose2 @user_id, @centerId, @date, @time", curr_dose);
+                        connection.Execute("CALL public.insert_user_dose2(@user_id, @centerId, @date, @time)", curr_dose);
                     }
                     else
                     {
-                        connection.Execute("dbo.insert_user_dose_precaution @user_id, @centerId, @date, @time", curr_dose);
+                        connection.Execute("CALL public.insert_user_dose_precaution(@user_id, @centerId, @date, @time)", curr_dose);
                     }
                     return "OK";
                 }

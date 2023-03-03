@@ -1,4 +1,7 @@
-﻿namespace Cowin_Library.Users
+﻿using System;
+using System.Data.Odbc;
+
+namespace Cowin_Library.Users
 {
     public class User_dose_input
     {
