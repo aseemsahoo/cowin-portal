@@ -48,7 +48,7 @@ namespace Cowin_Portal.User_Dashboard_forms
 
             name_label.Text = curr_user[0].fullname;
             ref_id_label.Text = curr_user[0].ref_id;
-            secret_code_label.Text = curr_user[0].ref_id.Substring(10);
+            secret_code_label.Text = curr_user[0].ref_id.Substring(8);
             aadhaar_label.Text = "XXXX XXXX " + curr_user[0].aadhaar_no.Substring(8);
             year_label.Text = curr_user[0].birth_year.ToString();
         }
@@ -151,6 +151,11 @@ namespace Cowin_Portal.User_Dashboard_forms
         }
 
         private void hospital1Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void User_Dashboard_userinfo_Load(object sender, EventArgs e)
         {
 
         }
