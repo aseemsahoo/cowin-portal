@@ -22,7 +22,6 @@ You can view the database diagram [here](https://github.com/aseemsahoo/cowin-por
    * [Technologies & Frameworks](#technologies--frameworks)
    * [Prerequisites](#prerequisites)
    * [Installation](#installation)
-   * [Roadmap](#roadmap)
    * [Acknowledgments](#acknowledgments)
 <!--te-->
 
@@ -129,21 +128,8 @@ You need the following installed on your desktop:
 
 ![](https://i.imgur.com/CQJNcbX.png?2)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
-
-# Roadmap
-- :white_check_mark: Add Icons & Images
-- :white_check_mark: Add 'Reschedule Appointment'
-- :white_check_mark: Add Error Logging
-- :white_check_mark: Integrate application with Web API
-- :red_square: Add API key authentication
-- :red_square: Add 'Download Certificate'
-- :red_square: Add OTP authentication
-
-See the [open issues](https://github.com/aseemsahoo/cowin-portal/issues) for a full list of proposed features (and known issues).
-
 
 # Acknowledgments
 * [APIs | APISetu](https://apisetu.gov.in/api/cowin#/)
