@@ -552,6 +552,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Dashboard_userinfo";
             this.Text = "User_dashboard_userinfo";
+            this.Load += new System.EventHandler(this.User_Dashboard_userinfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.user_pictureBox)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
